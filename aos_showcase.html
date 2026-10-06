@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحة تفاعلية عصرية مع مكتبة AOS</title>
+
+  <!-- Google Fonts: Cairo & Readex Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    :root {
+      --bg-main: #070913;
+      --bg-surface: #0e1326;
+      --bg-surface-elevated: #151c36;
+      --accent-primary: #3b82f6;
+      --accent-secondary: #8b5cf6;
+      --accent-gold: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(59, 130, 246, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Readex Pro', 'Cairo', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Ambient Background Glows */
+    .ambient-glow-top {
+      position: absolute;
+      top: -150px;
+      right: 10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ambient-glow-mid {
+      position: absolute;
+      top: 50%;
+      left: -100px;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.14) 0%, transparent 70%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Global Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .brand-logo {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #60a5fa, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #60a5fa;
+    }
+
+    /* Section Base */
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 60px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #93c5fd;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Cairo', sans-serif;
+      font-size: 2.3rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* 1. Hero Section */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-family: 'Cairo', sans-serif;
+      font-size: 3.4rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      line-height: 1.8;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 16px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 35px -5px rgba(124, 58, 237, 0.5);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface);
+      color: #cbd5e1;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-surface-elevated);
+      color: #ffffff;
+      border-color: var(--border-glow);
+      transform: translateY(-2px);
+    }
+
+    /* 2. Features Cards Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .feature-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 36px 28px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-glow);
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5);
+      background: var(--bg-surface-elevated);
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 22px;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover .card-icon {
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    .card-title {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* 3. Image & Text Split Section */
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .split-text h3 {
+      font-family: 'Cairo', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+
+    .split-text p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+    }
+
+    .split-list {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .split-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      color: #e2e8f0;
+    }
+
+    .split-list li::before {
+      content: '✓';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+    .split-visual {
+      position: relative;
+    }
+
+    .visual-frame {
+      width: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border-glow);
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      aspect-ratio: 16/10;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .visual-mockup-badge {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.5));
+    }
+
+    .visual-mockup-title {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .visual-mockup-sub {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* 4. CTA Section */
+    .cta-card {
+      background: linear-gradient(135deg, #1e1b4b, #0f172a);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      border-radius: 32px;
+      padding: 70px 40px;
+      text-align: center;
+      box-shadow: 0 25px 50px -10px rgba(79, 70, 229, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-title {
+      font-family: 'Cairo', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+
+    .cta-desc {
+      color: #cbd5e1;
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 36px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 900px) {
+      .hero-title {
+        font-size: 2.6rem;
+      }
+      .split-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Ambient Glows -->
+  <div class="ambient-glow-top"></div>
+  <div class="ambient-glow-mid"></div>
+
+  <!-- Header Navigation -->
+  <header class="container">
+    <nav class="navbar" data-aos="fade-down" data-aos-duration="800">
+      <div class="brand-logo">
+        <span>⚡</span>
+        <span>حركات التمرير الحديثة</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero">الرئيسية</a></li>
+        <li><a href="#features">المميزات</a></li>
+        <li><a href="#showcase">العرض</a></li>
+        <li><a href="#cta">التواصل</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 1. HERO SECTION (fade-down) -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="section-badge" data-aos="fade-down" data-aos-delay="100">
+          ✨ تأثيرات حركة تفاعلية مع AOS Library
+        </div>
+        <h1 class="hero-title" data-aos="fade-down" data-aos-delay="250">
+          صمم واجهات عصرية تخطف الأنظار مع <span>حركات التمرير السلسة</span>
+        </h1>
+        <p class="hero-subtitle" data-aos="fade-down" data-aos-delay="400">
+          استمتع بتجربة تفاعلية ممتعة؛ فكلما مرّرت الصفحة لأسفل، تتنفس العناصر بالحياة بحركات منضبطة تزيد من جاذبية موقعك واحترافيته.
+        </p>
+        <div class="hero-buttons" data-aos="fade-down" data-aos-delay="550">
+          <a href="#features" class="btn btn-primary">
+            <span>استكشف المميزات</span>
+            <span>↓</span>
+          </a>
+          <a href="#cta" class="btn btn-secondary">
+            <span>ابدأ الآن مجاناً</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. FEATURES CARDS SECTION (fade-up with staggered delays) -->
+  <section id="features">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge">مميزات التصميم</div>
+        <h2 class="section-title">بطاقات تفاعلية تظهر بتدريج متتابع</h2>
+        <p class="section-desc">
+          تطبيق خاصية <code>data-aos-delay</code> على كل عنصر يمنح المتصفح انطباعاً انسيابياً راقياً.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-icon">🚀</div>
+          <h3 class="card-title">سرعة وأداء فائق</h3>
+          <p class="card-desc">
+            المكتبة تعتمد كلياً على تسريع العتاد عبر CSS3 3D Transforms، مما يضمن 60 إطاراً في الثانية دون ثقل.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="card-icon">🎨</div>
+          <h3 class="card-title">تصميم مريح للعين</h3>
+          <p class="card-desc">
+            ألوان متناسقة بالنمط الداكن مع تدرجات لونية ناعمة وظلال تفاعلية تضفي عمقاً بصرياً على الصفحة.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="card-icon">📱</div>
+          <h3 class="card-title">تجاوب كامل 100%</h3>
+          <p class="card-desc">
+            تعمل بانسيابية على كل الشاشات؛ الهواتف الذكية، الأجهزة اللوحية، وشاشات سطح المكتب العريضة.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="550">
+          <div class="card-icon">⚡</div>
+          <h3 class="card-title">سهولة التخصيص</h3>
+          <p class="card-desc">
+            تستطيع تعديل السرعة (duration)، المسافة (offset)، وتكرار الحركة بأسطر معدودة داخل كود التهيئة.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. IMAGE & TEXT SECTION (fade-left & fade-right) -->
+  <section id="showcase">
+    <div class="container">
+      <div class="split-section">
+        <!-- Text Side (Coming from Right in RTL) -->
+        <div class="split-text" data-aos="fade-right" data-aos-duration="1000">
+          <div class="section-badge">التكامل التقني</div>
+          <h3>حركات متقابلة تصنع توازناً بصرياً مبهراً</h3>
+          <p>
+            عندما يأتي النص من جانب والصورة من الجانب المعاكس، يشعر المستخدم بتناسق هندسي فخم يوجه انتباهه للنقاط الجوهرية.
+          </p>
+          <ul class="split-list">
+            <li>دعم كامل لاتجاه اليمين إلى اليسار (RTL).</li>
+            <li>إمكانية ضبط التأخير والسرعة لكل كتلة على حدة.</li>
+            <li>كود HTML نظيف ومتوافق مع معايير الويب القياسية.</li>
+          </ul>
+          <a href="#cta" class="btn btn-primary">جرب الحركة بنفسك</a>
+        </div>
+
+        <!-- Visual Side (Coming from Left in RTL) -->
+        <div class="split-visual" data-aos="fade-left" data-aos-duration="1000">
+          <div class="visual-frame">
+            <div class="visual-mockup-badge">🔮</div>
+            <div class="visual-mockup-title">معاينة الحركات المباشرة</div>
+            <div class="visual-mockup-sub">تأثير Fade-Left انسيابي بتوقيت 1000ms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CALL TO ACTION SECTION (zoom-in) -->
+  <section id="cta">
+    <div class="container">
+      <div class="cta-card" data-aos="zoom-in" data-aos-duration="900">
+        <h2 class="cta-title">هل أنت جاهز لنقل موقعك إلى المستوى التالي؟</h2>
+        <p class="cta-desc">
+          ابدأ بتطبيق تأثيرات AOS في مشاريعك بكل سهولة وأبهر زوارك بتجربة تصفح فريدة لا تُنسى.
+        </p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary" onclick="alert('أهلاً بك! تم النقر على الزر التفاعلي.'); return false;">
+            <span>ابدأ الاستخدام فوراً</span>
+            <span>🚀</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 جميع الحقوق محفوظة — تم الإعداد بأحدث تقنيات الويب وAOS Library.</p>
+    </div>
+  </footer>
+
+  <!-- AOS JS CDN -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Initialization Code with Custom Settings -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({
+        // مدة الحركة بالمللي ثانية
+        duration: 1000,
+
+        // هل تتكرر الحركة عند النزول والصعود (false تعني تتكرر، true تعني تظهر مرة واحدة فقط)
+        once: false,
+
+        // المسافة بالبكسل قبل بدء ظهور العنصر
+        offset: 120,
+
+        // منحنى السرعة (easing) لانسيابية عالية
+        easing: 'ease-out-cubic',
+
+        // تفعيل الحركة أثناء الصعود بالصفحة أيضاً
+        mirror: true,
+
+        // تعطيل الحركة على الأجهزة القديمة جداً إن لزم (اختياري)
+        disable: false
+      });
+    });
+  </script>
+</body>
+</html>

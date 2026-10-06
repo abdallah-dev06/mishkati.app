@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   GLOBAL PERSONA-ADAPTIVE THEMING TOKENS: "مُثابِر" & "مُثابِرة"
+   Dark Obsidian Glassmorphism with Dynamic Accent Architecture
+   ========================================================================== */
+
+:root,
+[data-persona="muthabir"] {
+  --bg-obsidian-root: #060913;
+  --bg-obsidian-surface: #0A0F1D;
+  --bg-obsidian-elevated: #0F172A;
+  
+  /* Persona 1: مُثابِر (Golden Amber) */
+  --accent-primary: 245, 158, 11;
+  --accent-secondary: 217, 119, 6;
+  --accent-glow: rgba(245, 158, 11, 0.25);
+  --accent-border: rgba(245, 158, 11, 0.2);
+  --accent-subtle: rgba(245, 158, 11, 0.1);
+  --accent-hex: #F59E0B;
+  --accent-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+}
+
+[data-persona="muthabira"] {
+  --bg-obsidian-root: #060913;
+  --bg-obsidian-surface: #0A0F1D;
+  --bg-obsidian-elevated: #0F172A;
+
+  /* Persona 2: مُثابِرة (Warm Rose Gold / Blossom Pink & Dusty Rose) */
+  --accent-primary: 244, 114, 182;
+  --accent-secondary: 225, 29, 72;
+  --accent-glow: rgba(244, 114, 182, 0.25);
+  --accent-border: rgba(244, 114, 182, 0.25);
+  --accent-subtle: rgba(244, 114, 182, 0.1);
+  --accent-hex: #F472B6;
+  --accent-gradient: linear-gradient(135deg, #F472B6 0%, #E11D48 100%);
+}
+
+/* Base Body Surface & Anti-Flicker Obsidian Background */
+body {
+  background-color: var(--bg-obsidian-root);
+  color: #F8FAFC;
+  font-family: 'IBM Plex Sans Arabic', 'Tajawal', 'Cairo', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.65;
+  letter-spacing: normal;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Crisp text shadow utility for fine text on dark obsidian backgrounds */
+.text-crisp {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+}
+
+/* Dynamic Scrollbar reflecting active Persona */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(6, 9, 19, 0.7);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent-secondary), 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--accent-primary), 0.7);
+}
+
+/* ==========================================================================
+   DYNAMIC COLOR RE-MAPPING FOR MUTHABIRA (ROSE GOLD BLOSSOM)
+   Ensures 100% full coverage across every amber-accented component
+   ========================================================================== */
+[data-persona="muthabira"] .text-amber-400,
+[data-persona="muthabira"] .text-amber-300,
+[data-persona="muthabira"] .text-amber-200,
+[data-persona="muthabira"] .text-amber-500,
+[data-persona="muthabira"] .text-lantern-500,
+[data-persona="muthabira"] .text-lantern-400 {
+  color: rgb(var(--accent-primary)) !important;
+}
+
+[data-persona="muthabira"] .bg-amber-500,
+[data-persona="muthabira"] .bg-amber-600,
+[data-persona="muthabira"] .bg-lantern-600,
+[data-persona="muthabira"] .bg-lantern-500 {
+  background-color: rgb(var(--accent-primary)) !important;
+}
+
+[data-persona="muthabira"] .bg-amber-500\/10,
+[data-persona="muthabira"] .bg-amber-500\/15,
+[data-persona="muthabira"] .bg-amber-500\/20,
+[data-persona="muthabira"] .bg-amber-500\/25,
+[data-persona="muthabira"] .bg-amber-500\/30 {
+  background-color: var(--accent-subtle) !important;
+}
+
+[data-persona="muthabira"] .border-amber-500,
+[data-persona="muthabira"] .border-amber-400,
+[data-persona="muthabira"] .border-amber-500\/15,
+[data-persona="muthabira"] .border-amber-500\/20,
+[data-persona="muthabira"] .border-amber-500\/25,
+[data-persona="muthabira"] .border-amber-500\/30,
+[data-persona="muthabira"] .border-amber-500\/35,
+[data-persona="muthabira"] .border-amber-500\/40,
+[data-persona="muthabira"] .border-amber-400\/40 {
+  border-color: var(--accent-border) !important;
+}
+
+[data-persona="muthabira"] .shadow-lantern-glow,
+[data-persona="muthabira"] .shadow-amber-950\/40,
+[data-persona="muthabira"] .shadow-amber-950\/50 {
+  box-shadow: 0 0 25px -4px var(--accent-glow) !important;
+}
+
+[data-persona="muthabira"] .from-amber-500,
+[data-persona="muthabira"] .from-amber-400,
+[data-persona="muthabira"] .from-lantern-600 {
+  --tw-gradient-from: #F472B6 var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(244 114 182 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-persona="muthabira"] .to-amber-600,
+[data-persona="muthabira"] .to-amber-700,
+[data-persona="muthabira"] .to-lantern-700 {
+  --tw-gradient-to: #E11D48 var(--tw-gradient-to-position) !important;
+}
+
+/* Dynamic SVG Stroke & Fill mapping */
+[data-persona="muthabira"] svg.text-amber-400,
+[data-persona="muthabira"] svg.text-amber-500 {
+  color: rgb(var(--accent-primary)) !important;
+  stroke: rgb(var(--accent-primary)) !important;
+}
+
+/* Ambient Radial Glow Overlays */
+.persona-ambient-halo {
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events-none;
+  transition: all 0.5s ease;
+}
