@@ -1,5 +1,5 @@
 // Service Worker for "مِشكاتي" (Mishkati) PWA — Network-First Strategy
-const CACHE_NAME = 'mishkati-v12-playstore';
+const CACHE_NAME = 'mishkati-v13-mobile-fit';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

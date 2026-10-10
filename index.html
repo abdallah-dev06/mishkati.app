@@ -77,15 +77,39 @@
   </script>
 
   <style>
+    html, body {
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden !important;
+      position: relative;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
     body {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
       line-height: 1.65;
       letter-spacing: normal;
+      padding-top: env(safe-area-inset-top, 0px);
+    }
+    main, header, aside, footer, section {
+      max-width: 100vw;
     }
     .text-crisp {
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+    }
+
+    /* Hide scrollbar utility */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
     /* Custom Scrollbar */
@@ -380,6 +404,17 @@
       filter: blur(0px);
     }
 
+    @media (max-width: 640px) {
+      body.aos-init [data-aos="fade-left"]:not(.aos-animate),
+      body.aos-init [data-aos="fade-right"]:not(.aos-animate) {
+        transform: translate3d(0, 14px, 0) scale(0.99) !important;
+      }
+      .scroll-reveal-right,
+      .scroll-reveal-left {
+        transform: translate3d(0, 14px, 0) scale(0.99);
+      }
+    }
+
     /* Premium Zoom In */
     body.aos-init [data-aos="zoom-in"]:not(.aos-animate) {
       transform: scale(0.94);
@@ -392,7 +427,10 @@
       filter: blur(0px);
     }
 
-    /* SPA Safe Visibility: Guaranteed visibility for Muthabir Workspace & Siraj Assistant */
+    /* SPA Safe Visibility: Guaranteed visibility for Header, Pinned Bar, Muthabir Workspace & Siraj Assistant */
+    header,
+    header [data-aos],
+    #pinnedPrayerWidget,
     #homeSirajHub,
     #iosPrayerWidget,
     #workspaceView,
@@ -653,29 +691,29 @@
   </div>
 
   <!-- ================= 1. MAIN HEADER ================= -->
-  <header class="sticky top-0 z-40 glass-mishkat border-b border-lantern-500/15 dark:border-lantern-500/10 shadow-sm transition-all duration-300" data-aos="fade-down" data-aos-duration="600">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-3">
+  <header class="sticky top-0 z-40 w-full glass-mishkat border-b border-lantern-500/15 dark:border-lantern-500/10 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-1.5 sm:gap-3">
       
       <!-- Corner: Hamburger Menu Button (Drawer Trigger) & Minimalist Brand Badge -->
-      <div class="flex items-center gap-2 sm:gap-3" data-aos="fade-right" data-aos-delay="100">
-        <button id="openMenuBtn" onclick="openDrawer()" aria-label="فتح القائمة الجانبية" title="فتح القائمة" class="p-2 sm:px-3 sm:py-2 rounded-xl bg-amber-100/90 dark:bg-obsidian-800 text-amber-950 dark:text-amber-200 hover:bg-amber-200 dark:hover:bg-obsidian-700 border border-amber-300/40 dark:border-obsidian-700 flex items-center gap-1.5 text-xs font-bold transition shadow-sm cursor-pointer mishkat-btn-motion">
+      <div class="flex items-center gap-1.5 sm:gap-3 min-w-0 flex-shrink-0">
+        <button id="openMenuBtn" onclick="openDrawer()" aria-label="فتح القائمة الجانبية" title="فتح القائمة" class="p-2 sm:px-3 sm:py-2 rounded-xl bg-amber-100/90 dark:bg-obsidian-800 text-amber-950 dark:text-amber-200 hover:bg-amber-200 dark:hover:bg-obsidian-700 border border-amber-300/40 dark:border-obsidian-700 flex items-center gap-1.5 text-xs font-bold transition shadow-sm cursor-pointer mishkat-btn-motion flex-shrink-0">
           <svg class="w-5 h-5 text-lantern-600 dark:text-lantern-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
           <span class="hidden sm:inline">القائمة</span>
         </button>
 
-        <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-2 group cursor-pointer" title="العودة لمواقيت الصلاة">
-          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-lantern-500 via-amber-600 to-lantern-800 flex items-center justify-center shadow-md shadow-lantern-600/30 text-white flex-shrink-0 group-hover:scale-105 transition">
-            <span class="text-sm">🕯️</span>
+        <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer min-w-0" title="العودة لمواقيت الصلاة">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-br from-lantern-500 via-amber-600 to-lantern-800 flex items-center justify-center shadow-md shadow-lantern-600/30 text-white flex-shrink-0 group-hover:scale-105 transition">
+            <span class="text-xs sm:text-sm">🕯️</span>
           </div>
 
-          <div>
+          <div class="min-w-0">
             <div class="flex items-center gap-1.5">
-              <span class="text-lg sm:text-xl font-black bg-gradient-to-l from-amber-700 via-lantern-600 to-amber-500 dark:from-amber-400 dark:via-lantern-300 dark:to-yellow-200 bg-clip-text text-transparent">
+              <span class="text-base sm:text-xl font-black bg-gradient-to-l from-amber-700 via-lantern-600 to-amber-500 dark:from-amber-400 dark:via-lantern-300 dark:to-yellow-200 bg-clip-text text-transparent whitespace-nowrap">
                 مِشكاتي
               </span>
-              <span id="headerCityBadge" class="text-[10px] font-bold bg-amber-500/15 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/25 inline-flex items-center gap-1 shadow-inner">
+              <span id="headerCityBadge" class="hidden sm:inline-flex text-[10px] font-bold bg-amber-500/15 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/25 items-center gap-1 shadow-inner whitespace-nowrap">
                 <span>🇵🇸</span>
                 <span id="headerCityName">نابلس</span>
               </span>
@@ -684,9 +722,9 @@
         </a>
       </div>
 
-      <!-- Center: Palestine Real-time Live Digital Clock & Calendar Capsule + Qabas Portal -->
-      <div class="flex items-center gap-2 sm:gap-3" data-aos="zoom-in" data-aos-delay="200">
-        <div id="liveClockCapsule" class="bg-slate-900/70 dark:bg-slate-950/85 backdrop-blur-md border border-amber-500/25 rounded-full px-3 sm:px-4 py-1.5 flex items-center gap-2 sm:gap-2.5 shadow-sm shadow-black/20 hover:border-amber-500/40 transition-colors">
+      <!-- Center: Palestine Real-time Live Digital Clock & Calendar Capsule + Qabas Portal (Tablet/Desktop) -->
+      <div class="hidden sm:flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <div id="liveClockCapsule" class="hidden md:flex bg-slate-900/70 dark:bg-slate-950/85 backdrop-blur-md border border-amber-500/25 rounded-full px-3 sm:px-4 py-1.5 items-center gap-2 sm:gap-2.5 shadow-sm shadow-black/20 hover:border-amber-500/40 transition-colors">
           <svg class="w-3.5 h-3.5 text-amber-400 animate-pulse flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" stroke-width="2"/>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/>
@@ -700,8 +738,8 @@
             <span id="headerClockAmPm" class="text-[10px] text-amber-300/90 mr-1 font-sans font-bold">ص</span>
           </div>
           <!-- Dual localized date preview (Desktop / Tablet) -->
-          <span class="hidden md:inline text-slate-500 dark:text-slate-600">•</span>
-          <div class="hidden md:flex items-center gap-1.5 text-[11px] text-slate-300">
+          <span class="hidden lg:inline text-slate-500 dark:text-slate-600">•</span>
+          <div class="hidden lg:flex items-center gap-1.5 text-[11px] text-slate-300">
             <span id="headerLiveHijriDate">فلسطين</span>
             <span class="text-slate-500">•</span>
             <span id="headerLiveGregorianDate">جاري التحميل...</span>
@@ -714,7 +752,7 @@
           onclick="navigateTo('qabas'); return false;" 
           id="headerQabasBtn"
           title="قَبَس • ملتقى الاقتباسات وأبيات الشعر والخواطر"
-          class="relative inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full bg-gradient-to-r from-amber-500/20 via-lantern-500/25 to-amber-600/20 hover:from-amber-500/30 hover:to-amber-600/30 text-amber-900 dark:text-amber-200 border border-amber-500/40 hover:border-amber-400 text-xs font-black shadow-sm transition-all duration-200 cursor-pointer group mishkat-btn-motion"
+          class="relative inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full bg-gradient-to-r from-amber-500/20 via-lantern-500/25 to-amber-600/20 hover:from-amber-500/30 hover:to-amber-600/30 text-amber-900 dark:text-amber-200 border border-amber-500/40 hover:border-amber-400 text-xs font-black shadow-sm transition-all duration-200 cursor-pointer group mishkat-btn-motion whitespace-nowrap"
         >
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
@@ -722,47 +760,47 @@
           </span>
           <span class="text-sm">🖋️</span>
           <span class="font-serif tracking-wide text-xs sm:text-sm">قَـبَـس</span>
-          <span class="hidden lg:inline text-[10px] text-amber-800 dark:text-amber-300 font-normal border-r border-amber-500/30 pr-1.5 mr-0.5">اقتباسات وشعر</span>
+          <span class="hidden xl:inline text-[10px] text-amber-800 dark:text-amber-300 font-normal border-r border-amber-500/30 pr-1.5 mr-0.5">اقتباسات وشعر</span>
         </a>
       </div>
 
       <!-- Left: Auth Status, Persona Switcher, Audio Toggle & Dark/Light Theme -->
-      <div class="flex items-center gap-1.5 sm:gap-2.5" data-aos="fade-left" data-aos-delay="300">
+      <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
         <!-- Auth Header Container -->
-        <div id="authHeaderContainer"></div>
+        <div id="authHeaderContainer" class="flex-shrink-0"></div>
 
         <!-- Persona Switcher Capsule (مُثابِر / مُثابِرة) -->
-        <div id="personaToggleCapsule" class="relative inline-flex items-center p-0.5 sm:p-1 rounded-full bg-slate-900/80 dark:bg-obsidian-900 border border-slate-800 dark:border-obsidian-750 shadow-inner select-none">
+        <div id="personaToggleCapsule" class="relative inline-flex items-center p-0.5 rounded-full bg-slate-900/80 dark:bg-obsidian-900 border border-slate-800 dark:border-obsidian-750 shadow-inner select-none flex-shrink-0">
           <button
             id="personaBtnMuthabir"
             type="button"
             onclick="setPersonaMode('muthabir')"
             title="نمط مُثابِر • السمة الكهرمانية الذهبية والخطاب العام"
-            class="persona-btn active relative z-10 flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-full text-xs font-bold transition-all cursor-pointer text-amber-300 mishkat-btn-motion"
+            class="persona-btn active relative z-10 flex items-center gap-1 px-1.5 sm:px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-amber-300 mishkat-btn-motion whitespace-nowrap"
           >
-            <span class="text-xs">🧭</span>
-            <span class="font-serif text-[11px] sm:text-xs">مُثابِر</span>
+            <span class="text-[11px] sm:text-xs">🧭</span>
+            <span class="font-serif text-[10px] sm:text-xs">مُثابِر</span>
           </button>
           <button
             id="personaBtnMuthabira"
             type="button"
             onclick="setPersonaMode('muthabira')"
             title="نمط مُثابِرة • سمة الذهب الوردي المخملي والخطاب المؤنث الكريم"
-            class="persona-btn relative z-10 flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-full text-xs font-bold transition-all cursor-pointer text-slate-400 hover:text-pink-300 mishkat-btn-motion"
+            class="persona-btn relative z-10 flex items-center gap-1 px-1.5 sm:px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-slate-400 hover:text-pink-300 mishkat-btn-motion whitespace-nowrap"
           >
-            <span class="text-xs">🌸</span>
-            <span class="font-serif text-[11px] sm:text-xs">مُثابِرة</span>
+            <span class="text-[11px] sm:text-xs">🌸</span>
+            <span class="font-serif text-[10px] sm:text-xs">مُثابِرة</span>
           </button>
         </div>
 
         <!-- Audio Toggle -->
-        <button id="soundToggleBtn" title="تفعيل / كتم الأصوات" aria-label="تبديل الصوت" class="p-2 rounded-xl bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300 hover:bg-amber-100 dark:hover:bg-slate-700 focus:outline-none cursor-pointer mishkat-btn-motion">
+        <button id="soundToggleBtn" title="تفعيل / كتم الأصوات" aria-label="تبديل الصوت" class="p-1.5 sm:p-2 rounded-xl bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300 hover:bg-amber-100 dark:hover:bg-slate-700 focus:outline-none cursor-pointer mishkat-btn-motion flex-shrink-0">
           <svg id="soundOnIcon" class="w-4 h-4 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
           <svg id="soundOffIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/></svg>
         </button>
 
         <!-- Dark/Light Theme -->
-        <button id="themeToggleBtn" title="الوضع الليلي / النهاري" aria-label="تبديل الوضع الليلي" class="p-2 rounded-xl bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300 hover:bg-amber-100 dark:hover:bg-slate-700 focus:outline-none cursor-pointer mishkat-btn-motion">
+        <button id="themeToggleBtn" title="الوضع الليلي / النهاري" aria-label="تبديل الوضع الليلي" class="p-1.5 sm:p-2 rounded-xl bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300 hover:bg-amber-100 dark:hover:bg-slate-700 focus:outline-none cursor-pointer mishkat-btn-motion flex-shrink-0">
           <svg id="moonIcon" class="w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <svg id="sunIcon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </button>
@@ -772,35 +810,35 @@
   </header>
 
   <!-- ================= 2. PERSISTENT / PINNED PRAYER TIMES WIDGET (PALESTINIAN WAQF STANDARD) ================= -->
-  <aside id="pinnedPrayerWidget" class="sticky top-[53px] sm:top-[57px] z-30 bg-gradient-to-r from-obsidian-950 via-amber-950 to-obsidian-900 text-white border-b border-lantern-500/30 shadow-md transition-all duration-300" data-aos="fade-down" data-aos-duration="650" data-aos-delay="100">
+  <aside id="pinnedPrayerWidget" class="sticky top-[49px] sm:top-[57px] z-30 w-full bg-gradient-to-r from-obsidian-950 via-amber-950 to-obsidian-900 text-white border-b border-lantern-500/30 shadow-md transition-all duration-300">
     
     <!-- Compact View (Always Visible on Scroll) -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-2 text-xs">
+    <div class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 py-1.5 sm:py-2 flex items-center justify-between gap-1.5 sm:gap-2 text-xs">
       
       <!-- City, Town ID & Next Prayer Name -->
-      <div class="flex items-center gap-2 overflow-hidden">
-        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-lantern-500/25 text-amber-300 font-bold border border-lantern-400/30 text-[11px] whitespace-nowrap">
+      <div class="flex items-center gap-1.5 sm:gap-2 overflow-hidden min-w-0">
+        <span class="inline-flex items-center gap-1 px-2 sm:px-2.5 py-0.5 rounded-full bg-lantern-500/25 text-amber-300 font-bold border border-lantern-400/30 text-[10px] sm:text-[11px] whitespace-nowrap flex-shrink-0">
           <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
           <span id="pinnedCityLabel">نابلس</span>
         </span>
 
         <!-- Local Mosque Offset Badge -->
-        <span id="pinnedOffsetBadge" class="hidden xs:inline-flex items-center text-[10px] text-amber-300/80 bg-white/10 px-2 py-0.5 rounded-md" title="فرق توقيت المسجد المحلي">
+        <span id="pinnedOffsetBadge" class="hidden sm:inline-flex items-center text-[10px] text-amber-300/80 bg-white/10 px-2 py-0.5 rounded-md flex-shrink-0" title="فرق توقيت المسجد المحلي">
           ±0 د
         </span>
 
-        <div class="flex items-center gap-1.5 text-slate-200 whitespace-nowrap truncate">
-          <span class="text-slate-400 hidden xs:inline">الصلاة القادمة:</span>
-          <span id="pinnedNextPrayerName" class="font-bold text-amber-300">صلاة الظهر</span>
-          <span id="pinnedNextPrayerTime" class="text-slate-300 font-mono text-[11px] hidden sm:inline">(12:28 م)</span>
+        <div class="flex items-center gap-1 sm:gap-1.5 text-slate-200 whitespace-nowrap truncate min-w-0">
+          <span class="text-slate-400 hidden sm:inline">الصلاة القادمة:</span>
+          <span id="pinnedNextPrayerName" class="font-bold text-amber-300 text-[11px] sm:text-xs truncate">صلاة الظهر</span>
+          <span id="pinnedNextPrayerTime" class="text-slate-300 font-mono text-[10px] sm:text-[11px] hidden xs:inline">(12:28 م)</span>
         </div>
       </div>
 
       <!-- Live Ticking Countdown Timer (HH:MM:SS) -->
-      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-        <div class="flex items-center gap-1.5 bg-black/40 px-2.5 py-1 rounded-xl border border-white/10">
+      <div class="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
+        <div class="flex items-center gap-1.5 bg-black/40 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-xl border border-white/10">
           <span id="pinnedNextPrayerLabelPrefix" class="text-[10px] text-amber-200/80 hidden md:inline">الوقت المتبقي لرفع الأذان:</span>
-          <div id="pinnedCountdownTimer" class="font-mono text-xs sm:text-sm font-black text-amber-300 tracking-wider">
+          <div id="pinnedCountdownTimer" class="font-mono text-[11px] sm:text-sm font-black text-amber-300 tracking-wider">
             00:00:00
           </div>
         </div>
@@ -815,7 +853,7 @@
 
 
         <!-- Expand / Collapse Toggle Button -->
-        <button id="togglePrayerDetailsBtn" aria-expanded="false" class="p-1 px-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-slate-200 flex items-center gap-1 text-[11px] transition">
+        <button id="togglePrayerDetailsBtn" aria-expanded="false" class="p-1 px-2 sm:px-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-slate-200 flex items-center gap-1 text-[11px] transition">
           <span id="togglePrayerBtnText" class="hidden sm:inline">مواقيت الصلوات</span>
           <svg id="togglePrayerChevron" class="w-3.5 h-3.5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -830,14 +868,14 @@
       
       <!-- Top info bar inside dropdown: Waqf standard, dates, Qibla, offset adjuster -->
       <div class="flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-300 bg-black/30 p-2 rounded-xl border border-white/5">
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 flex-wrap">
           <span class="text-amber-400 font-bold">📜 معيار الحساب:</span>
           <span>وزارة الأوقاف الفلسطينية (الفجر 18°، العشاء 17.5°، العصر شافعي)</span>
-          <span class="text-slate-500">•</span>
+          <span class="text-slate-500 hidden sm:inline">•</span>
           <span class="text-amber-300/90 font-mono" id="expandedTimezoneLabel">Asia/Jerusalem</span>
         </div>
         
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 flex-wrap">
           <span class="text-amber-300 font-medium">🧭 القبلة: <strong id="expandedQibla">158° جنوب شرق</strong></span>
           <span>•</span>
           <button onclick="detectUserLocation()" class="text-amber-300 hover:text-white hover:underline flex items-center gap-1">
@@ -848,10 +886,10 @@
 
       <!-- Local Mosque Fine-Tuning Bar (±1 to ±3 min offset) -->
       <div class="flex flex-wrap items-center justify-between gap-2 p-2 rounded-xl bg-amber-950/40 border border-lantern-500/20 text-xs">
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 flex-wrap">
           <span class="text-amber-400">⚙️</span>
           <span class="font-bold text-slate-200">ضبط وقت المسجد المحلي في بلدتك/حارتك:</span>
-          <span class="text-[11px] text-slate-400">(يمكنك ضبط تقديم أو تأخير الدقائق ليتطابق مع أذان مسجدك بدقة)</span>
+          <span class="text-[11px] text-slate-400">(تقديم أو تأخير الدقائق ليتطابق مع أذان مسجدك)</span>
         </div>
 
         <div class="flex items-center gap-1.5">
@@ -876,11 +914,10 @@
 
   <!-- ================= 3. NAVIGATION DRAWER (SLIDE-OUT OVERLAY) ================= -->
   <!-- Drawer Backdrop Overlay -->
-  <div id="drawerOverlay" onclick="closeDrawer()" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none" aria-hidden="true"></div>
+  <div id="drawerOverlay" onclick="closeDrawer()" class="fixed inset-0 w-screen h-[100dvh] z-[60] bg-black/65 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none" aria-hidden="true"></div>
 
   <!-- Slide-out Navigation Drawer -->
-  <!-- Slide-out Navigation Drawer -->
-  <aside id="navigationDrawer" aria-label="القائمة الجانبية للأذكار ومساحة مثابر" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs sm:max-w-sm bg-slate-950/95 dark:bg-[#0A0F1D]/95 backdrop-blur-2xl border-l border-amber-500/15 shadow-2xl flex flex-col transform transition-transform duration-300 ease-in-out translate-x-full select-none">
+  <aside id="navigationDrawer" aria-label="القائمة الجانبية للأذكار ومساحة مثابر" class="fixed top-0 bottom-0 right-0 z-[70] w-[85vw] max-w-[320px] sm:max-w-sm h-[100dvh] bg-slate-950/98 dark:bg-[#0A0F1D]/98 backdrop-blur-2xl border-l border-amber-500/20 shadow-2xl flex flex-col transform transition-transform duration-300 ease-in-out translate-x-full select-none">
     
     <!-- Drawer Header -->
     <div class="p-4 sm:p-5 border-b border-amber-500/15 flex items-center justify-between bg-gradient-to-r from-amber-500/10 via-obsidian-950/40 to-transparent">
@@ -1116,19 +1153,19 @@
   </aside>
 
   <!-- ================= 4. MAIN CONTENT AREA ================= -->
-  <main class="flex-grow w-full transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-7">
+  <main class="flex-grow w-full overflow-x-hidden transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-7 pb-24 sm:pb-8">
 
     <!-- ==========================================================================
          VIEW A: STUDENT MAIN SCREEN / DASHBOARD (#homeView)
          Clean, focused on Palestine prayer times & academic-spiritual hub.
          Upper Hero: Prayer Times Widget & Siraj AI Assistant Side-by-Side (Desktop)
          ========================================================================== -->
-    <div id="homeView" class="space-y-5 sm:space-y-6 w-full mx-auto py-2 sm:py-3">
+    <div id="homeView" class="space-y-4 sm:space-y-6 w-full mx-auto py-1 sm:py-3">
 
       <!-- 1. «سَنَا البصيرة» (Sana Banner - Above at the Top) -->
       <section class="w-full" data-aos="fade-down" data-aos-duration="750">
-        <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-slate-900/70 backdrop-blur-xl border border-amber-500/20 p-4 sm:p-5 shadow-xl shadow-black/40 hover:border-amber-500/30 transition-all duration-300 mishkat-card-motion">
+        <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-slate-900/70 backdrop-blur-xl border border-amber-500/20 p-3.5 sm:p-5 shadow-xl shadow-black/40 hover:border-amber-500/30 transition-all duration-300 mishkat-card-motion">
           
           <!-- شريط العنوان -->
           <div class="flex items-center justify-between mb-2 border-b border-amber-500/15 pb-2">
@@ -1167,7 +1204,7 @@
 
           <!-- نص الحكمة مع حركة التلاشي -->
           <div id="sanaTextBox" class="transition-opacity duration-300 opacity-100">
-            <p id="sanaText" class="text-sm sm:text-base text-slate-100 font-serif leading-relaxed text-center py-1 sm:py-2 px-1 select-none font-medium">
+            <p id="sanaText" class="text-xs sm:text-base text-slate-100 font-serif leading-relaxed text-center py-1 sm:py-2 px-1 select-none font-medium">
               ...
             </p>
           </div>
@@ -1176,21 +1213,21 @@
       </section>
 
       <!-- 2 & 3. HERO GRID: Prayer Times Widget & Extended Siraj AI Assistant Side-by-Side -->
-      <section class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-start w-full">
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-start w-full">
         
         <!-- Right Side / Primary (lg:col-span-7): Apple iOS/macOS Dark Widget Prayer Times Card & Daily Tasks Widget -->
-        <div class="lg:col-span-7 flex flex-col space-y-5">
-          <section id="iosPrayerWidget" class="relative overflow-hidden rounded-3xl sm:rounded-[28px] bg-gradient-to-br from-[#0c1322] via-[#0f172a] to-[#081f18] border border-amber-500/25 p-5 sm:p-7 text-white shadow-xl shadow-amber-950/25 flex flex-col justify-between transition-all backdrop-blur-md mishkat-card-motion">
+        <div class="lg:col-span-7 flex flex-col space-y-4 sm:space-y-5 min-w-0">
+          <section id="iosPrayerWidget" class="relative overflow-hidden rounded-3xl sm:rounded-[28px] bg-gradient-to-br from-[#0c1322] via-[#0f172a] to-[#081f18] border border-amber-500/25 p-4 sm:p-7 text-white shadow-xl shadow-amber-950/25 flex flex-col justify-between transition-all backdrop-blur-md mishkat-card-motion">
             
             <!-- Subtle Ambient Background Glows -->
             <div class="absolute -right-20 -top-20 w-56 h-56 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -left-20 -bottom-20 w-56 h-56 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-            <div class="space-y-4 sm:space-y-5">
+            <div class="space-y-3.5 sm:space-y-5">
               <!-- Subtle Minimalist Top Bar: Palestinian City Selector & Mosque Controls -->
-              <div class="relative z-10 flex items-center justify-between gap-3 pb-1 border-b border-amber-500/15 text-xs">
+              <div class="relative z-10 flex items-center justify-between gap-2 pb-1.5 border-b border-amber-500/15 text-xs">
                 <!-- Palestinian Town Selector Pill Badge -->
-                <div class="relative inline-flex items-center gap-1.5 bg-amber-500/10 hover:bg-amber-500/15 border border-amber-500/25 rounded-full px-3 py-1.5 transition shadow-inner">
+                <div class="relative inline-flex items-center gap-1.5 bg-amber-500/10 hover:bg-amber-500/15 border border-amber-500/25 rounded-full px-2.5 sm:px-3 py-1 sm:py-1.5 transition shadow-inner min-w-0">
                   <span class="text-xs text-amber-400">📍</span>
                   <div class="relative">
                     <select id="heroCitySelect" onchange="syncCitySelection(this.value)" aria-label="اختر المدينة الفلسطينية" 
@@ -1201,11 +1238,11 @@
                       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
                     </div>
                   </div>
-                  <span class="text-[10px] text-amber-300/60 border-r border-amber-500/20 pr-2 mr-0.5">فلسطين 🇵🇸</span>
+                  <span class="text-[10px] text-amber-300/60 border-r border-amber-500/20 pr-1.5 mr-0.5 whitespace-nowrap">فلسطين 🇵🇸</span>
                 </div>
 
                 <!-- Quick Tools: Qibla & Mosque Minute Fine-Tuner -->
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
                   <!-- Qibla Pill -->
                   <div class="hidden sm:inline-flex items-center gap-1 text-[11px] text-amber-200/80 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">
                     <span>🧭</span>
@@ -1221,11 +1258,11 @@
               </div>
 
               <!-- Top Hero Row (Current / Next Event Highlight) -->
-              <div class="relative z-10 flex items-center justify-between gap-4 pt-1">
+              <div class="relative z-10 flex items-center justify-between gap-3 pt-1">
                 
                 <!-- Right Side: Arabic prayer / event name in traditional calligraphic font with full Tashkeel -->
                 <div class="text-right space-y-1">
-                  <h2 id="widgetHeroPrayerName" class="font-serif text-4xl sm:text-5xl lg:text-6xl text-amber-100 font-bold tracking-normal leading-tight drop-shadow-[0_2px_12px_rgba(245,158,11,0.25)] select-none">
+                  <h2 id="widgetHeroPrayerName" class="font-serif text-3xl sm:text-5xl lg:text-6xl text-amber-100 font-bold tracking-normal leading-tight drop-shadow-[0_2px_12px_rgba(245,158,11,0.25)] select-none">
                     العَصْر
                   </h2>
                   <div class="text-xs text-amber-400 font-medium flex items-center gap-1.5">
@@ -1237,13 +1274,13 @@
                 <!-- Left Side: Digital Time & Live Countdown -->
                 <div class="text-left flex flex-col items-end" dir="ltr">
                   <!-- Digital Time in clean tabular font -->
-                  <div id="widgetHeroTime" class="font-sans text-3xl sm:text-4xl font-semibold text-slate-100 tracking-tight tabular-nums">
+                  <div id="widgetHeroTime" class="font-sans text-2xl sm:text-4xl font-semibold text-slate-100 tracking-tight tabular-nums">
                     03:49
                   </div>
                   <!-- Subtitle Label & Countdown Value in glowing amber with Arabic units -->
                   <div class="flex flex-col items-end text-right" dir="rtl">
-                    <span id="widgetHeroSubtitle" class="text-xs text-slate-400 font-medium mt-1">الصلاة القادمة بعد</span>
-                    <span id="widgetHeroCountdown" class="text-xl font-bold text-amber-400 font-sans tracking-wide mt-0.5 tabular-nums drop-shadow-[0_0_8px_rgba(245,158,11,0.35)]">
+                    <span id="widgetHeroSubtitle" class="text-[11px] sm:text-xs text-slate-400 font-medium mt-0.5 sm:mt-1">الصلاة القادمة بعد</span>
+                    <span id="widgetHeroCountdown" class="text-lg sm:text-xl font-bold text-amber-400 font-sans tracking-wide mt-0.5 tabular-nums drop-shadow-[0_0_8px_rgba(245,158,11,0.35)]">
                       13د
                     </span>
                   </div>
@@ -1258,7 +1295,7 @@
             </div>
 
             <!-- Progress Timeline Bar (Bottom Edge) -->
-            <div class="relative z-10 pt-3">
+            <div class="relative z-10 pt-2.5 sm:pt-3">
               <div class="h-1.5 w-full bg-slate-800/80 rounded-full overflow-hidden border border-white/5" title="نسبة انقضاء الوقت بين الصلاتين">
                 <div id="heroProgressBar" class="h-full bg-gradient-to-r from-amber-600 via-amber-400 to-amber-300 rounded-full transition-all duration-500 shadow-[0_0_10px_rgba(245,158,11,0.5)]" style="width: 0%"></div>
               </div>
@@ -1267,28 +1304,28 @@
           </section>
 
           <!-- 2.5. قائمة مهام وعبادات اليوم التفاعلية مع إمكانية التشطيب المباشر (Home Screen Daily Tasks & Worship Checklist) -->
-          <section id="homeDailyTasksWidget" class="relative overflow-hidden rounded-3xl sm:rounded-[28px] bg-gradient-to-br from-[#0c1322] via-[#0f172a] to-[#081f18] border border-amber-500/25 p-5 sm:p-6 text-white shadow-xl shadow-amber-950/25 backdrop-blur-md space-y-4 mishkat-card-motion" data-aos="fade-up" data-aos-duration="650">
+          <section id="homeDailyTasksWidget" class="relative overflow-hidden rounded-3xl sm:rounded-[28px] bg-gradient-to-br from-[#0c1322] via-[#0f172a] to-[#081f18] border border-amber-500/25 p-4 sm:p-6 text-white shadow-xl shadow-amber-950/25 backdrop-blur-md space-y-3.5 sm:space-y-4 mishkat-card-motion" data-aos="fade-up" data-aos-duration="650">
             <!-- Ambient Atmospheric Glows -->
             <div class="absolute -right-20 -bottom-20 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -left-20 -top-20 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <!-- Widget Header -->
-            <div class="relative z-10 flex items-center justify-between gap-3 pb-3 border-b border-amber-500/15">
-              <div class="flex items-center gap-2.5">
-                <div class="w-9 h-9 rounded-2xl bg-gradient-to-br from-amber-500/25 to-amber-600/15 border border-amber-500/30 text-amber-300 flex items-center justify-center text-base shadow-sm">
+            <div class="relative z-10 flex items-center justify-between gap-2 pb-2.5 border-b border-amber-500/15 flex-wrap">
+              <div class="flex items-center gap-2 sm:gap-2.5 min-w-0">
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-2xl bg-gradient-to-br from-amber-500/25 to-amber-600/15 border border-amber-500/30 text-amber-300 flex items-center justify-center text-sm sm:text-base shadow-sm flex-shrink-0">
                   🎯
                 </div>
-                <div>
-                  <div class="flex items-center gap-2">
-                    <h3 class="text-sm sm:text-base font-black text-amber-100 font-serif">قَائِمَةُ مَهَـامِ وَعِبَادَاتِ اليَـوْم</h3>
-                    <span id="homeTasksCountBadge" class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono">0/0 مُنجزة</span>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-1.5 flex-wrap">
+                    <h3 class="text-xs sm:text-base font-black text-amber-100 font-serif">قَائِمَةُ مَهَـامِ وَعِبَادَاتِ اليَـوْم</h3>
+                    <span id="homeTasksCountBadge" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono">0/0 مُنجزة</span>
                   </div>
-                  <p class="text-[11px] text-slate-300">صلواتك، أذكارك، ومهامك — انقر لتشطيب إنجازك مباشرة</p>
+                  <p class="text-[10px] sm:text-[11px] text-slate-300 truncate">صلواتك، أذكارك، ومهامك — انقر لتشطيب إنجازك</p>
                 </div>
               </div>
 
               <!-- Quick Link to Full Masar Al-Yawm -->
-              <a href="#masar_yawm" onclick="navigateTo('masar_yawm'); return false;" class="text-xs font-bold text-amber-300 hover:text-amber-200 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 px-3 py-1.5 rounded-xl transition flex items-center gap-1 cursor-pointer mishkat-btn-motion shadow-xs" title="الانتقال إلى مسار اليوم الكامل ومتابعة العادات">
+              <a href="#masar_yawm" onclick="navigateTo('masar_yawm'); return false;" class="text-[11px] sm:text-xs font-bold text-amber-300 hover:text-amber-200 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl transition flex items-center gap-1 cursor-pointer mishkat-btn-motion shadow-xs whitespace-nowrap flex-shrink-0" title="الانتقال إلى مسار اليوم الكامل ومتابعة العادات">
                 <span>المسار الكامل</span>
                 <span>↗</span>
               </a>
@@ -3339,7 +3376,7 @@
         <!-- 2. ENLARGED FOCAL CENTER DISPLAY -->
         <div class="relative z-10 my-auto flex flex-col items-center justify-center text-center px-4">
           <!-- Giant Circular Progress Ring Framing Monospace Digits with Ambient Glow -->
-          <div class="relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] lg:w-[480px] lg:h-[480px] xl:w-[520px] xl:h-[520px] flex items-center justify-center">
+          <div class="relative w-[260px] h-[260px] sm:w-[420px] sm:h-[420px] lg:w-[480px] lg:h-[480px] xl:w-[520px] xl:h-[520px] flex items-center justify-center">
             <!-- Ambient Radial Glow Backdrop directly behind ring -->
             <div class="absolute inset-0 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);"></div>
 
@@ -3375,10 +3412,10 @@
 
             <!-- Inner Digits & Descriptor -->
             <div class="absolute inset-0 flex flex-col items-center justify-center space-y-2 select-none">
-              <div id="midmarZenClockDisplay" class="font-mono text-7xl sm:text-8xl md:text-9xl font-bold text-amber-400 tracking-wider tabular-nums drop-shadow-[0_4px_30px_rgba(245,158,11,0.45)]">
+              <div id="midmarZenClockDisplay" class="font-mono text-5xl sm:text-8xl md:text-9xl font-bold text-amber-400 tracking-wider tabular-nums drop-shadow-[0_4px_30px_rgba(245,158,11,0.45)]">
                 25:00
               </div>
-              <span id="midmarZenModeLabel" class="text-sm sm:text-base text-slate-300 font-sans tracking-wide">
+              <span id="midmarZenModeLabel" class="text-xs sm:text-base text-slate-300 font-sans tracking-wide">
                 طريقة 25 د
               </span>
             </div>
@@ -3604,9 +3641,9 @@
   </main>
 
   <!-- ================= 5. FOOTER ================= -->
-  <footer class="bg-white dark:bg-obsidian-900 border-t border-slate-200 dark:border-obsidian-800 py-6 text-center text-xs text-slate-500 dark:text-slate-400 mt-10 transition-all duration-300">
+  <footer class="bg-white dark:bg-obsidian-900 border-t border-slate-200 dark:border-obsidian-800 py-5 pb-24 sm:pb-6 text-center text-xs text-slate-500 dark:text-slate-400 mt-6 sm:mt-10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-center gap-2 font-bold text-slate-700 dark:text-slate-200 text-sm">
+      <div class="flex items-center justify-center gap-2 font-bold text-slate-700 dark:text-slate-200 text-xs sm:text-sm flex-wrap">
         <span class="text-lantern-600 dark:text-lantern-400">🕯️ مِشكاتي</span>
         <span>•</span>
         <span>نور يومك وعون دراستك</span>
@@ -3615,6 +3652,32 @@
       </div>
     </div>
   </footer>
+
+  <!-- ================= 5.5. NATIVE MOBILE BOTTOM NAVIGATION BAR (ANDROID & iOS) ================= -->
+  <nav id="mobileBottomNav" aria-label="شريط التنقل السفلي للهاتف" class="sm:hidden fixed bottom-0 inset-x-0 z-40 w-full bg-slate-950/95 dark:bg-[#0A0F1D]/95 backdrop-blur-2xl border-t border-amber-500/20 shadow-[0_-8px_30px_rgba(0,0,0,0.6)] select-none" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
+    <div class="grid grid-cols-5 items-center h-16 px-1">
+      <a href="#home" onclick="navigateTo('home'); return false;" data-mobile-nav="home" class="mobile-bottom-tab flex flex-col items-center justify-center gap-1 py-1.5 rounded-2xl text-amber-400 font-bold transition-all active:scale-95">
+        <span class="text-lg leading-none">🕌</span>
+        <span class="text-[10px] leading-tight">الرئيسية</span>
+      </a>
+      <a href="#sabah" onclick="navigateTo('sabah'); return false;" data-mobile-nav="azkar" class="mobile-bottom-tab flex flex-col items-center justify-center gap-1 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95">
+        <span class="text-lg leading-none">📿</span>
+        <span class="text-[10px] leading-tight">الأذكار</span>
+      </a>
+      <a href="#midmar" onclick="navigateTo('midmar'); return false;" data-mobile-nav="midmar" class="mobile-bottom-tab flex flex-col items-center justify-center gap-1 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95">
+        <span class="text-lg leading-none">🎯</span>
+        <span class="text-[10px] leading-tight">مِضمار</span>
+      </a>
+      <a href="#masar_yawm" onclick="navigateTo('masar_yawm'); return false;" data-mobile-nav="masar_yawm" class="mobile-bottom-tab flex flex-col items-center justify-center gap-1 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95">
+        <span class="text-lg leading-none">✅</span>
+        <span class="text-[10px] leading-tight">مسار اليوم</span>
+      </a>
+      <a href="#qabas" onclick="navigateTo('qabas'); return false;" data-mobile-nav="qabas" class="mobile-bottom-tab flex flex-col items-center justify-center gap-1 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95">
+        <span class="text-lg leading-none">🖋️</span>
+        <span class="text-[10px] leading-tight">قَبَس</span>
+      </a>
+    </div>
+  </nav>
 
   <!-- ================= MODAL: SIRAJ AI SETTINGS & API KEY ================= -->
   <div id="sirajSettingsModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/65 backdrop-blur-sm p-4 hidden">
@@ -5831,25 +5894,25 @@
         col.id = `hero-slot-${p.key}`;
 
         if (isNext) {
-          col.className = 'flex flex-col items-center justify-center py-2 sm:py-2.5 px-1 sm:px-2 rounded-2xl bg-gradient-to-b from-amber-500/20 via-amber-500/10 to-transparent border border-amber-400/50 shadow-md shadow-amber-950/30 transition ring-1 ring-amber-400/30';
+          col.className = 'flex flex-col items-center justify-center py-1.5 sm:py-2.5 px-0.5 sm:px-2 rounded-2xl bg-gradient-to-b from-amber-500/20 via-amber-500/10 to-transparent border border-amber-400/50 shadow-md shadow-amber-950/30 transition ring-1 ring-amber-400/30';
           col.innerHTML = `
-            <span class="text-xs font-bold text-amber-300 mb-1 flex items-center gap-1">
+            <span class="text-[11px] sm:text-xs font-bold text-amber-300 mb-0.5 sm:mb-1 flex items-center gap-0.5 sm:gap-1 whitespace-nowrap">
               <span>${p.name}</span>
               <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shadow-[0_0_6px_rgba(245,158,11,0.8)]"></span>
             </span>
-            <span class="text-sm sm:text-base font-bold text-amber-100 tabular-nums font-mono">${formatWidgetTime(p.time)}</span>
+            <span class="text-xs sm:text-base font-bold text-amber-100 tabular-nums font-mono">${formatWidgetTime(p.time)}</span>
           `;
         } else if (isPast) {
-          col.className = 'flex flex-col items-center justify-center py-2 sm:py-2.5 px-1 sm:px-2 rounded-2xl transition opacity-50 hover:opacity-75';
+          col.className = 'flex flex-col items-center justify-center py-1.5 sm:py-2.5 px-0.5 sm:px-2 rounded-2xl transition opacity-50 hover:opacity-75';
           col.innerHTML = `
-            <span class="text-xs text-slate-400 mb-1">${p.name}</span>
-            <span class="text-sm sm:text-base font-medium text-slate-300 tabular-nums font-mono">${formatWidgetTime(p.time)}</span>
+            <span class="text-[11px] sm:text-xs text-slate-400 mb-0.5 sm:mb-1 whitespace-nowrap">${p.name}</span>
+            <span class="text-xs sm:text-base font-medium text-slate-300 tabular-nums font-mono">${formatWidgetTime(p.time)}</span>
           `;
         } else {
-          col.className = 'flex flex-col items-center justify-center py-2 sm:py-2.5 px-1 sm:px-2 rounded-2xl transition hover:bg-amber-500/5';
+          col.className = 'flex flex-col items-center justify-center py-1.5 sm:py-2.5 px-0.5 sm:px-2 rounded-2xl transition hover:bg-amber-500/5';
           col.innerHTML = `
-            <span class="text-xs text-slate-400 mb-1">${p.name}</span>
-            <span class="text-sm sm:text-base font-medium text-slate-200 tabular-nums font-mono">${formatWidgetTime(p.time)}</span>
+            <span class="text-[11px] sm:text-xs text-slate-400 mb-0.5 sm:mb-1 whitespace-nowrap">${p.name}</span>
+            <span class="text-xs sm:text-base font-medium text-slate-200 tabular-nums font-mono">${formatWidgetTime(p.time)}</span>
           `;
         }
 
@@ -6938,6 +7001,25 @@
           headerQabasBtn.classList.remove('ring-2', 'ring-amber-400', 'shadow-md', 'shadow-amber-500/30', 'bg-amber-500/35');
         }
       }
+
+      // Highlight active tab in Mobile Bottom Navigation Bar
+      const azkarRoutes = ['sabah', 'masaa', 'after_prayer', 'my_duas', 'student', 'tasbeeh'];
+      let activeMobileKey = 'home';
+      if (route === 'home' || route === 'siraj') activeMobileKey = 'home';
+      else if (azkarRoutes.includes(route)) activeMobileKey = 'azkar';
+      else if (route === 'midmar' || route === 'workspace') activeMobileKey = 'midmar';
+      else if (route === 'masar_yawm' || route === 'yawm' || route === 'masar' || route === 'mutanaffas') activeMobileKey = 'masar_yawm';
+      else if (route === 'qabas') activeMobileKey = 'qabas';
+
+      document.querySelectorAll('.mobile-bottom-tab').forEach(tabEl => {
+        if (tabEl.dataset.mobileNav === activeMobileKey) {
+          tabEl.classList.remove('text-slate-400', 'font-medium');
+          tabEl.classList.add('text-amber-400', 'font-bold', 'bg-amber-500/15', 'border', 'border-amber-500/30');
+        } else {
+          tabEl.classList.remove('text-amber-400', 'font-bold', 'bg-amber-500/15', 'border', 'border-amber-500/30');
+          tabEl.classList.add('text-slate-400', 'font-medium');
+        }
+      });
 
       // Highlight active reader pill inside reader view
       document.querySelectorAll('.reader-nav-pill').forEach(pill => {
