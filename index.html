@@ -694,8 +694,22 @@
   <header class="sticky top-0 z-40 w-full glass-mishkat border-b border-lantern-500/15 dark:border-lantern-500/10 shadow-sm transition-all duration-300">
     <div class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-1.5 sm:gap-3">
       
-      <!-- Corner: Brand Candle Emblem & Title -->
+      <!-- Right: Slide-Out Menu Trigger & Brand Candle Emblem -->
       <div class="flex items-center gap-1.5 sm:gap-3 min-w-0 flex-shrink-0">
+        <!-- Main Menu Button (Opens Slide-Out Drawer) -->
+        <button 
+          id="openMenuBtn" 
+          onclick="openDrawer()" 
+          aria-label="فتح القائمة الرئيسية" 
+          title="القائمة والأقسام"
+          class="p-2 sm:p-2.5 rounded-2xl bg-amber-100/90 dark:bg-obsidian-800 text-amber-900 dark:text-amber-300 hover:bg-amber-200 dark:hover:bg-slate-700 border border-amber-300/50 dark:border-amber-500/25 shadow-sm transition flex items-center gap-1.5 cursor-pointer group mishkat-btn-motion flex-shrink-0"
+        >
+          <svg class="w-5 h-5 text-lantern-600 dark:text-amber-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <span class="text-xs font-bold hidden sm:inline">القائمة</span>
+        </button>
+
         <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-2 sm:gap-2.5 group cursor-pointer min-w-0" title="العودة لمواقيت الصلاة">
           <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-slate-900/90 dark:bg-obsidian-900 border border-amber-500/35 flex items-center justify-center shadow-md shadow-amber-500/15 flex-shrink-0 group-hover:scale-105 transition overflow-hidden p-0.5">
             <svg class="w-7 h-7 sm:w-8 sm:h-8 drop-shadow-[0_0_6px_rgba(244,220,78,0.45)]" viewBox="170 50 172 415" xmlns="http://www.w3.org/2000/svg">
@@ -898,14 +912,11 @@
   <!-- Drawer Backdrop Overlay -->
   <div id="drawerOverlay" onclick="closeDrawer()" class="fixed inset-0 w-screen h-[100dvh] z-[60] bg-black/65 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none" aria-hidden="true"></div>
 
-  <!-- Bottom-Sheet Full Menu (Triggered from the Bottom Bar) -->
-  <aside id="navigationDrawer" aria-label="قائمة مشكاتي السفلية" class="fixed inset-x-0 bottom-0 z-[70] w-full max-w-2xl mx-auto max-h-[82dvh] rounded-t-3xl bg-slate-950/98 dark:bg-[#0A0F1D]/98 backdrop-blur-2xl border-t border-amber-500/30 shadow-[0_-15px_50px_rgba(0,0,0,0.8)] flex flex-col transform transition-transform duration-300 ease-in-out translate-y-full select-none">
+  <!-- Slide-out Sidebar Menu (Original Place on the Right) -->
+  <aside id="navigationDrawer" aria-label="القائمة الجانبية" class="fixed top-0 right-0 z-[70] w-80 sm:w-84 max-w-[88vw] h-[100dvh] bg-white dark:bg-obsidian-900 border-l border-slate-200 dark:border-obsidian-800 shadow-2xl flex flex-col transform transition-transform duration-300 ease-in-out translate-x-full select-none">
     
-    <!-- Drag Handle Pill -->
-    <div class="w-12 h-1.5 bg-slate-700/80 rounded-full mx-auto mt-2.5 mb-1 flex-shrink-0"></div>
-
-    <!-- Menu Header -->
-    <div class="px-4 py-3 border-b border-amber-500/15 flex items-center justify-between bg-gradient-to-r from-amber-500/10 via-obsidian-950/40 to-transparent">
+    <!-- Drawer Header -->
+    <div class="p-4 border-b border-slate-200 dark:border-obsidian-800 flex items-center justify-between bg-gradient-to-l from-amber-500/10 via-transparent to-transparent">
       <div class="flex items-center gap-2.5">
         <div class="w-9 h-9 rounded-2xl bg-slate-900 border border-amber-500/35 flex items-center justify-center shadow-md flex-shrink-0 p-0.5">
           <svg class="w-7 h-7" viewBox="170 50 172 415" xmlns="http://www.w3.org/2000/svg">
@@ -923,12 +934,12 @@
           </svg>
         </div>
         <div>
-          <h2 class="text-base font-black text-slate-100">قائمة مِشكاتي الشاملة</h2>
-          <p id="drawerTagline" class="text-[11px] text-amber-300/80">رفيق الطالب الفلسطيني</p>
+          <h2 class="text-base font-black text-slate-800 dark:text-slate-100">قائمة مِشكاتي</h2>
+          <p id="drawerTagline" class="text-[11px] text-slate-500 dark:text-slate-400">رفيق الطالب الفلسطيني</p>
         </div>
       </div>
       <!-- Close button -->
-      <button onclick="closeDrawer()" aria-label="إغلاق القائمة" class="p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-obsidian-800 transition cursor-pointer mishkat-btn-motion">
+      <button onclick="closeDrawer()" aria-label="إغلاق القائمة" class="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-obsidian-800 transition cursor-pointer mishkat-btn-motion">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
@@ -1809,6 +1820,11 @@
         <button onclick="navigateTo('home')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-obsidian-800 dark:hover:bg-obsidian-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition shadow-sm cursor-pointer mishkat-btn-motion">
           <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           <span>رجوع إلى الرئيسية</span>
+        </button>
+
+        <button onclick="openDrawer()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-amber-100/80 dark:bg-obsidian-800 text-amber-900 dark:text-amber-300 border border-amber-300/40 text-xs font-bold transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <span>القائمة</span>
         </button>
 
       </div>
@@ -3531,7 +3547,7 @@
   </main>
 
   <!-- ================= 5. FOOTER ================= -->
-  <footer class="bg-white dark:bg-obsidian-900 border-t border-slate-200 dark:border-obsidian-800 py-5 pb-28 text-center text-xs text-slate-500 dark:text-slate-400 mt-6 sm:mt-10 transition-all duration-300">
+  <footer class="bg-white dark:bg-obsidian-900 border-t border-slate-200 dark:border-obsidian-800 py-5 text-center text-xs text-slate-500 dark:text-slate-400 mt-6 sm:mt-10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-center gap-2 font-bold text-slate-700 dark:text-slate-200 text-xs sm:text-sm flex-wrap">
         <span class="text-lantern-600 dark:text-lantern-400">مِشكاتي</span>
@@ -3542,82 +3558,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- ================= 5.5. FULL BOTTOM MENU BAR (REPLACES OLD BOTTOM BAR & TOP MENU) ================= -->
-  <nav id="mobileBottomNav" aria-label="شريط القائمة السفلية الشامل" class="fixed bottom-0 inset-x-0 z-40 w-full bg-slate-950/95 dark:bg-[#0A0F1D]/95 backdrop-blur-2xl border-t border-amber-500/25 shadow-[0_-8px_30px_rgba(0,0,0,0.75)] select-none" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
-    <div class="max-w-7xl mx-auto flex items-center gap-1.5 px-2 py-2">
-      <!-- Button to pop up the full detailed menu sheet from the bottom -->
-      <button
-        type="button"
-        onclick="openDrawer()"
-        aria-label="فتح القائمة الكاملة"
-        class="flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl bg-gradient-to-b from-amber-500/25 to-amber-600/15 text-amber-300 border border-amber-500/40 font-black transition-all active:scale-95 flex-shrink-0 cursor-pointer shadow-sm"
-      >
-        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <span class="text-[10px] leading-tight whitespace-nowrap">القائمة ▲</span>
-      </button>
-
-      <div class="h-8 w-[1px] bg-amber-500/20 flex-shrink-0 mx-0.5"></div>
-
-      <!-- Full Menu Items Directly in the Bottom Bar (Smooth Horizontal Scroll) -->
-      <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 flex-grow">
-        <a href="#home" onclick="navigateTo('home'); return false;" data-mobile-nav="home" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-amber-400 font-bold transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">🕌</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">الرئيسية</span>
-        </a>
-        <a href="#qabas" onclick="navigateTo('qabas'); return false;" data-mobile-nav="qabas" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">🖋️</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">قَبَس</span>
-        </a>
-        <a href="#sabah" onclick="navigateTo('sabah'); return false;" data-mobile-nav="sabah" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">☀️</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">أذكار الصباح</span>
-        </a>
-        <a href="#masaa" onclick="navigateTo('masaa'); return false;" data-mobile-nav="masaa" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">🌙</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">أذكار المساء</span>
-        </a>
-        <a href="#after_prayer" onclick="navigateTo('after_prayer'); return false;" data-mobile-nav="after_prayer" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">🤲</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">بعد الصلاة</span>
-        </a>
-        <a href="#midmar" onclick="navigateTo('midmar'); return false;" data-mobile-nav="midmar" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">🎯</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">مِضمار الإنجاز</span>
-        </a>
-        <a href="#masar_yawm" onclick="navigateTo('masar_yawm'); return false;" data-mobile-nav="masar_yawm" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">✅</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">مسار اليوم</span>
-        </a>
-        <a href="#masar" onclick="navigateTo('masar'); return false;" data-mobile-nav="masar" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">📅</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">مسار الشهر</span>
-        </a>
-        <a href="#mutanaffas" onclick="navigateTo('mutanaffas'); return false;" data-mobile-nav="mutanaffas" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">🪶</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">مُتنفَّس</span>
-        </a>
-        <a href="#student" onclick="navigateTo('student'); return false;" data-mobile-nav="student" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">🎓</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">أدعية المذاكرة</span>
-        </a>
-        <a href="#my_duas" onclick="navigateTo('my_duas'); return false;" data-mobile-nav="my_duas" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">✍️</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">أدعيتي الخاصة</span>
-        </a>
-        <a href="#tasbeeh" onclick="navigateTo('tasbeeh'); return false;" data-mobile-nav="tasbeeh" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">📿</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">المسبحة</span>
-        </a>
-        <a href="#siraj" onclick="navigateTo('siraj'); return false;" data-mobile-nav="siraj" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
-          <span class="text-base leading-none">💡</span>
-          <span class="text-[10px] leading-tight whitespace-nowrap">سِراج الذكي</span>
-        </a>
-      </div>
-    </div>
-  </nav>
 
   <!-- ================= OVERLAY: MIDMAR FULL-SCREEN FOCUS MODE (AT ROOT BODY LEVEL) ================= -->
   <div id="midmarZenOverlay" class="hidden fixed inset-0 w-screen h-[100dvh] z-[99999] bg-[#060913] flex flex-col justify-between p-4 sm:p-8 select-none overflow-y-auto overflow-x-hidden transition-all duration-300" style="position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100dvh;z-index:99999;background-color:#060913;" dir="rtl">
@@ -6915,7 +6855,7 @@
       const drawer = document.getElementById('navigationDrawer');
       const overlay = document.getElementById('drawerOverlay');
       if (drawer && overlay) {
-        drawer.classList.remove('translate-y-full', 'translate-x-full');
+        drawer.classList.remove('translate-x-full', 'translate-y-full');
         overlay.classList.remove('pointer-events-none', 'opacity-0');
         overlay.classList.add('opacity-100');
         document.body.classList.add('overflow-hidden');
@@ -6927,7 +6867,7 @@
       const drawer = document.getElementById('navigationDrawer');
       const overlay = document.getElementById('drawerOverlay');
       if (drawer && overlay) {
-        drawer.classList.add('translate-y-full');
+        drawer.classList.add('translate-x-full');
         overlay.classList.remove('opacity-100');
         overlay.classList.add('pointer-events-none', 'opacity-0');
         document.body.classList.remove('overflow-hidden');
@@ -14310,7 +14250,7 @@ ${query}${extraContext}
     if ('caches' in window) {
       caches.keys().then((keys) => {
         keys.forEach((key) => {
-          if (key !== 'mishkati-v14-candle') {
+          if (key !== 'mishkati-v15-clean') {
             caches.delete(key);
           }
         });
