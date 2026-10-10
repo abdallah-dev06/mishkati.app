@@ -1,5 +1,5 @@
 // Service Worker for "مِشكاتي" (Mishkati) PWA — Network-First Strategy
-const CACHE_NAME = 'mishkati-v16-landscape';
+const CACHE_NAME = 'mishkati-v17-no-install';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

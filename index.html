@@ -1220,22 +1220,6 @@
         </div>
       </a>
 
-      <!-- 9. Install Mobile App (Android & iOS) -->
-      <button type="button" onclick="closeDrawer(); openInstallAppModal()" class="w-full text-right flex items-center justify-between p-3 rounded-2xl text-xs font-bold transition bg-gradient-to-r from-emerald-500/15 via-teal-500/10 to-transparent text-slate-800 dark:text-slate-100 hover:bg-emerald-500/20 border border-emerald-500/35 shadow-xs cursor-pointer mishkat-card-motion mt-2">
-        <div class="flex items-center gap-3">
-          <div class="w-7 h-7 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center text-xs shadow-sm">
-            📲
-          </div>
-          <div>
-            <div class="font-semibold text-sm flex items-center gap-1.5 text-emerald-700 dark:text-emerald-300">
-              <span>تثبيت التطبيق على الهاتف</span>
-            </div>
-            <div class="text-[11px] text-slate-400 font-normal">أندرويد (Android) و آيفون (iOS)</div>
-          </div>
-        </div>
-        <span class="text-[10px] bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded-full font-bold">تطبيق</span>
-      </button>
-
     </nav>
 
     <!-- 7. Login / User Profile State (Inside Drawer Footer) -->
@@ -4367,84 +4351,6 @@
         </div>
       </form>
 
-    </div>
-  </div>
-
-  <!-- ================= MODAL: INSTALL MOBILE APP (ANDROID & APPLE iOS) ================= -->
-  <div id="installAppModal" onclick="if(event.target === this) closeInstallAppModal()" class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-md p-4 hidden animate-fadeIn">
-    <div class="relative bg-white dark:bg-obsidian-900 border border-slate-200 dark:border-obsidian-800 rounded-3xl max-w-md w-full p-6 text-right space-y-4 shadow-2xl">
-      <button type="button" onclick="closeInstallAppModal()" class="absolute left-4 top-4 p-1.5 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-
-      <div class="flex items-center gap-3 border-b border-slate-100 dark:border-obsidian-800 pb-3">
-        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center text-xl shadow-md">
-          📲
-        </div>
-        <div>
-          <h3 class="text-base font-black text-slate-800 dark:text-slate-100">تثبيت تطبيق مِشكاتي</h3>
-          <p class="text-xs text-slate-400">يعمل كتطبيق كامل بدون إنترنت على أندرويد وآيفون</p>
-        </div>
-      </div>
-
-      <!-- Platform Switcher Tabs -->
-      <div class="flex items-center p-1 bg-slate-100 dark:bg-obsidian-800 rounded-2xl text-xs font-bold">
-        <button type="button" id="installTabAndroid" onclick="switchInstallPlatform('android')" class="flex-1 py-2 rounded-xl text-center transition bg-white dark:bg-obsidian-900 text-emerald-600 dark:text-emerald-400 shadow-sm cursor-pointer">
-          🤖 أندرويد (Android)
-        </button>
-        <button type="button" id="installTabIOS" onclick="switchInstallPlatform('ios')" class="flex-1 py-2 rounded-xl text-center transition text-slate-500 dark:text-slate-400 cursor-pointer">
-          🍎 آيفون / آيباد (iOS)
-        </button>
-      </div>
-
-      <!-- Android Instructions & Native Prompt Button -->
-      <div id="installPanelAndroid" class="space-y-3 text-xs">
-        <button type="button" id="nativeAndroidInstallBtn" onclick="triggerNativePwaInstall()" class="hidden w-full py-3 px-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs shadow-lg flex items-center justify-center gap-2 transition cursor-pointer">
-          <span>📲</span>
-          <span>تثبيت مباشر بنقرة واحدة الآن</span>
-        </button>
-
-        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-obsidian-800/80 border border-slate-200 dark:border-obsidian-750 space-y-2.5 text-slate-700 dark:text-slate-200 leading-relaxed">
-          <div class="font-bold text-emerald-600 dark:text-emerald-400">خطوات التثبيت على هاتف أندرويد (Chrome):</div>
-          <div class="flex items-start gap-2">
-            <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-500 font-bold flex items-center justify-center flex-shrink-0">1</span>
-            <span>اضغط على قائمة المتصفح العلوية <strong>(⋮)</strong> في متصفح Chrome.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-500 font-bold flex items-center justify-center flex-shrink-0">2</span>
-            <span>اختر <strong>«تثبيت التطبيق» (Install App)</strong> أو <strong>«الإضافة إلى الشاشة الرئيسية»</strong>.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-500 font-bold flex items-center justify-center flex-shrink-0">3</span>
-            <span>سيظهر تطبيق <strong>مِشكاتي 🕯️</strong> بأيقونة مستقلة على شاشة هاتفك ويعمل بكامل الشاشة وحتى بدون إنترنت.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Apple iOS Instructions -->
-      <div id="installPanelIOS" class="hidden space-y-3 text-xs">
-        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-obsidian-800/80 border border-slate-200 dark:border-obsidian-750 space-y-2.5 text-slate-700 dark:text-slate-200 leading-relaxed">
-          <div class="font-bold text-amber-600 dark:text-amber-400">خطوات التثبيت على آيفون وآيباد (Safari):</div>
-          <div class="flex items-start gap-2">
-            <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-500 font-bold flex items-center justify-center flex-shrink-0">1</span>
-            <span>افتح الموقع في متصفح <strong>Safari</strong> ثم اضغط على زر <strong>المشاركة (Share ⬆️)</strong> في الشريط السفلي.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-500 font-bold flex items-center justify-center flex-shrink-0">2</span>
-            <span>مرّر للأسفل واختر <strong>«إضافة إلى الشاشة الرئيسية» (Add to Home Screen ➕)</strong>.</span>
-          </div>
-          <div class="flex items-start gap-2">
-            <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-500 font-bold flex items-center justify-center flex-shrink-0">3</span>
-            <span>اضغط <strong>«إضافة» (Add)</strong> في أعلى الشاشة ليظهر التطبيق مباشرة بين تطبيقاتك.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="pt-1 flex justify-end">
-        <button type="button" onclick="closeInstallAppModal()" class="px-5 py-2 rounded-xl bg-slate-100 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 font-bold text-xs hover:bg-slate-200 cursor-pointer">
-          حسناً
-        </button>
-      </div>
     </div>
   </div>
 
@@ -14276,61 +14182,10 @@ ${query}${extraContext}
       updateProgress();
     }
 
-    let deferredPwaPrompt = null;
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPwaPrompt = e;
-      const nativeBtn = document.getElementById('nativeAndroidInstallBtn');
-      if (nativeBtn) nativeBtn.classList.remove('hidden');
-    });
-
-    function openInstallAppModal() {
-      const modal = document.getElementById('installAppModal');
-      if (!modal) return;
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-      switchInstallPlatform(isIOS ? 'ios' : 'android');
-      modal.classList.remove('hidden');
-    }
-
-    function closeInstallAppModal() {
-      const modal = document.getElementById('installAppModal');
-      if (modal) modal.classList.add('hidden');
-    }
-
-    function switchInstallPlatform(platform) {
-      const tabAndroid = document.getElementById('installTabAndroid');
-      const tabIOS = document.getElementById('installTabIOS');
-      const panelAndroid = document.getElementById('installPanelAndroid');
-      const panelIOS = document.getElementById('installPanelIOS');
-
-      if (platform === 'ios') {
-        if (tabIOS) tabIOS.className = 'flex-1 py-2 rounded-xl text-center transition bg-white dark:bg-obsidian-900 text-amber-600 dark:text-amber-400 shadow-sm cursor-pointer';
-        if (tabAndroid) tabAndroid.className = 'flex-1 py-2 rounded-xl text-center transition text-slate-500 dark:text-slate-400 cursor-pointer';
-        if (panelIOS) panelIOS.classList.remove('hidden');
-        if (panelAndroid) panelAndroid.classList.add('hidden');
-      } else {
-        if (tabAndroid) tabAndroid.className = 'flex-1 py-2 rounded-xl text-center transition bg-white dark:bg-obsidian-900 text-emerald-600 dark:text-emerald-400 shadow-sm cursor-pointer';
-        if (tabIOS) tabIOS.className = 'flex-1 py-2 rounded-xl text-center transition text-slate-500 dark:text-slate-400 cursor-pointer';
-        if (panelAndroid) panelAndroid.classList.remove('hidden');
-        if (panelIOS) panelIOS.classList.add('hidden');
-      }
-    }
-
-    async function triggerNativePwaInstall() {
-      if (!deferredPwaPrompt) return;
-      deferredPwaPrompt.prompt();
-      const { outcome } = await deferredPwaPrompt.userChoice;
-      if (outcome === 'accepted') {
-        showToast('تم بدء تثبيت تطبيق مِشكاتي على هاتفك 📲', '📲');
-        closeInstallAppModal();
-      }
-      deferredPwaPrompt = null;
-    }
-
     if ('caches' in window) {
       caches.keys().then((keys) => {
         keys.forEach((key) => {
-          if (key !== 'mishkati-v16-landscape') {
+          if (key !== 'mishkati-v17-no-install') {
             caches.delete(key);
           }
         });
