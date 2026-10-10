@@ -2,16 +2,25 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>مِشكاتي | رفيق الطالب - مواقيت الصلاة والأذكار في فلسطين</title>
   <meta name="description" content="مِشكاتي: نور يومك وعون دراستك. مواقيت الصلاة في فلسطين وفق معايير وزارة الأوقاف والشؤون الدينية وبوابة فلسطين (زاوية الفجر 18°)، أذكار الصباح والمساء وبعد الصلاة، بنك أدعيتي الخاصة، وأدعية المذاكرة والامتحانات." />
-  <meta name="theme-color" content="#d97706" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Apple iOS & Android Native App Meta Tags -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="مِشكاتي" />
+  <meta name="application-name" content="مِشكاتي" />
+  <meta name="format-detection" content="telephone=no" />
 
   <!-- Web App Manifest -->
   <link rel="manifest" href="manifest.json" />
   
-  <!-- Glowing Lantern Favicon (SVG) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><defs><radialGradient id=%22g%22 cx=%2250%25%22 cy=%2250%25%22 r=%2250%25%22><stop offset=%220%25%22 stop-color=%22%23fbbf24%22/><stop offset=%2250%25%22 stop-color=%22%23d97706%22/><stop offset=%22100%25%22 stop-color=%22%2378350f%22/></radialGradient></defs><circle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%230f172a%22/><path d=%22M50 15 L62 32 L60 62 L50 78 L40 62 L38 32 Z%22 fill=%22url(%23g)%22/><circle cx=%2250%22 cy=%2248%22 r=%229%22 fill=%22%23ffffff%22 opacity=%220.95%22/></svg>" />
+  <!-- Glowing Lantern Favicon & Apple Touch Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><defs><radialGradient id=%22g%22 cx=%2250%25%22 cy=%2250%25%22 r=%2250%25%22><stop offset=%220%25%22 stop-color=%22%23fbbf24%22/><stop offset=%2250%25%22 stop-color=%22%23d97706%22/><stop offset=%22100%25%22 stop-color=%22%2378350f%22/></radialGradient></defs><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230f172a%22/><path d=%22M50 15 L62 32 L60 62 L50 78 L40 62 L38 32 Z%22 fill=%22url(%23g)%22/><circle cx=%2250%22 cy=%2248%22 r=%229%22 fill=%22%23ffffff%22 opacity=%220.95%22/></svg>" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><defs><radialGradient id=%22g%22 cx=%2250%25%22 cy=%2250%25%22 r=%2250%25%22><stop offset=%220%25%22 stop-color=%22%23fbbf24%22/><stop offset=%2250%25%22 stop-color=%22%23d97706%22/><stop offset=%22100%25%22 stop-color=%22%2378350f%22/></radialGradient></defs><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230f172a%22/><path d=%22M50 15 L62 32 L60 62 L50 78 L40 62 L38 32 Z%22 fill=%22url(%23g)%22/><circle cx=%2250%22 cy=%2248%22 r=%229%22 fill=%22%23ffffff%22 opacity=%220.95%22/></svg>" />
 
   <!-- Google Fonts: Tajawal, Cairo, Amiri, Scheherazade New, IBM Plex Sans Arabic -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1081,6 +1090,22 @@
         </div>
       </a>
 
+      <!-- 9. Install Mobile App (Android & iOS) -->
+      <button type="button" onclick="closeDrawer(); openInstallAppModal()" class="w-full text-right flex items-center justify-between p-3 rounded-2xl text-xs font-bold transition bg-gradient-to-r from-emerald-500/15 via-teal-500/10 to-transparent text-slate-800 dark:text-slate-100 hover:bg-emerald-500/20 border border-emerald-500/35 shadow-xs cursor-pointer mishkat-card-motion mt-2">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center text-xs shadow-sm">
+            📲
+          </div>
+          <div>
+            <div class="font-semibold text-sm flex items-center gap-1.5 text-emerald-700 dark:text-emerald-300">
+              <span>تثبيت التطبيق على الهاتف</span>
+            </div>
+            <div class="text-[11px] text-slate-400 font-normal">أندرويد (Android) و آيفون (iOS)</div>
+          </div>
+        </div>
+        <span class="text-[10px] bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded-full font-bold">تطبيق</span>
+      </button>
+
     </nav>
 
     <!-- 7. Login / User Profile State (Inside Drawer Footer) -->
@@ -1371,31 +1396,9 @@
                     <span class="text-[10px] bg-amber-500/20 text-amber-200 px-2 py-0.2 rounded-full font-mono">AI</span>
                   </div>
                   <p id="sirajWelcomeGreetingText" class="text-xs sm:text-sm text-slate-200 leading-relaxed">
-                    يا هلا بالبطل 🇵🇸! أنا سِراج، معك كأخ كبير ورفيق دراسة في مشكاتي. شو ما كان ببالك اليوم؛ تنظيم وقتك مع أوقات الصلاة، تلخيص درس معقد، حل مسألة صعبة خطوة بخطوة، أو نصيحة ترتب أولوياتك.. أنا معك وسندك. كيف بتحب نبدأ؟
-                  </p>
-                  <p class="text-[11px] text-amber-300/80 font-semibold pt-1">
-                    اختر أحد المقترحات أدناه للبدء السريع أو اطرح سؤالك في خانة المحادثة مباشرة!
+                    يا هلا بالبطل 🇵🇸! أنا سِراج، معك كأخ كبير ورفيق دراسة في مشكاتي. شو ما كان ببالك اليوم؛ تنظيم وقتك مع أوقات الصلاة، تلخيص درس معقد، حل مسألة صعبة خطوة بخطوة، أو نصيحة ترتب أولوياتك.. أنا معك وسندك. اكتب سؤالك أو أرفق ملفك في خانة المحادثة أدناه.
                   </p>
                 </div>
-              </div>
-            </div>
-
-            <!-- Direct Quick-Action Chips for Palestinian Students -->
-            <div class="relative z-10 px-3.5 sm:px-4 py-2.5 border-t border-amber-500/10 bg-slate-950/40">
-              <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5 text-xs">
-                <span class="text-[10px] font-bold text-slate-400 pl-1 flex-shrink-0">سريع:</span>
-                <button type="button" onclick="askSiraj('لخّص لي هذا المفهوم الدراسي بطريقة مبسطة مع نقاط رئيسية:')" class="flex-shrink-0 px-2.5 py-1 rounded-full bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/25 text-amber-300 text-[11px] font-medium transition cursor-pointer flex items-center gap-1 shadow-xs">
-                  <span>📚</span>
-                  <span>لخّص درس</span>
-                </button>
-                <button type="button" onclick="askSiraj('اشرح لي معنى ذكر أو دعاء وفضله الإيماني في السنة النبوية:')" class="flex-shrink-0 px-2.5 py-1 rounded-full bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/25 text-amber-300 text-[11px] font-medium transition cursor-pointer flex items-center gap-1 shadow-xs">
-                  <span>🤲</span>
-                  <span>معنى ذكر/دعاء</span>
-                </button>
-                <button type="button" onclick="askSiraj('رتّب لي جدول دراسي متناغم مع أوقات الصلاة اليوم في فلسطين:')" class="flex-shrink-0 px-2.5 py-1 rounded-full bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/25 text-amber-300 text-[11px] font-medium transition cursor-pointer flex items-center gap-1 shadow-xs">
-                  <span>⏱️</span>
-                  <span>جدول دراسي</span>
-                </button>
               </div>
             </div>
 
@@ -2141,7 +2144,7 @@
                     <input
                       type="text"
                       id="masarYawmTaskTimeInput"
-                      placeholder="مثال: 45د، ساعتان"
+                      placeholder="المدة المقدرة"
                       class="w-24 bg-slate-900 border border-slate-800 rounded-lg px-2 py-1 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-amber-500/40 text-center font-sans"
                     />
                   </div>
@@ -2324,7 +2327,7 @@
                     type="text"
                     id="midmarCustomGoalInput"
                     oninput="handleMidmarGoalInput(this.value)"
-                    placeholder="اكتب هدفك المحدد هنا... (مثال: دراسة الوحدة، تلخيص درس، إتمام 20 صفحة)"
+                    placeholder="اكتب هدف الجلسة هنا..."
                     class="w-full bg-slate-950/80 border border-amber-500/25 hover:border-amber-500/40 focus:border-amber-400 rounded-2xl px-4 py-2.5 pl-10 text-xs sm:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30 transition shadow-inner font-sans"
                   />
                   <div class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none">
@@ -3053,7 +3056,7 @@
                 type="text"
                 id="masarFormTitle"
                 required
-                placeholder="مثال: امتحان فيزياء نهائي، تسليم بحث التاريخ..."
+                placeholder="اكتب عنوان المحطة أو الموعد..."
                 class="w-full bg-slate-950 border border-amber-500/25 rounded-xl p-2.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
             </div>
@@ -3086,7 +3089,7 @@
               <input
                 type="text"
                 id="masarFormCategory"
-                placeholder="اكتب تصنيف المحطة (مثال: امتحان، واجب، مراجعة، مشروع، كويز...)"
+                placeholder="اكتب تصنيف المحطة..."
                 class="w-full bg-slate-950 border border-amber-500/25 rounded-xl p-2.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 font-sans text-xs"
               />
 
@@ -3180,8 +3183,8 @@
 
           <div class="space-y-3">
             <div class="p-3 rounded-2xl bg-slate-950/60 border border-slate-800 flex items-center justify-between text-xs">
-              <span class="text-slate-400">المادة المقيدة:</span>
-              <span id="midmarNotesSubjectBadge" class="font-bold text-amber-300">📐 رياضيات وتفاضل</span>
+              <span class="text-slate-400">هدف الجلسة:</span>
+              <span id="midmarNotesSubjectBadge" class="font-bold text-amber-300">🎯 جلسة تركيز</span>
             </div>
 
             <div>
@@ -3189,7 +3192,7 @@
               <textarea
                 id="midmarSessionNotesInput"
                 rows="3"
-                placeholder="مثال: حل 15 مسألة في التكامل بالتعويض + تلخيص قوانين الفصل الثالث..."
+                placeholder="دوّن ما أنجزته في هذه الجلسة..."
                 class="w-full bg-slate-950 border border-amber-500/25 rounded-2xl p-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 font-sans text-xs leading-relaxed"
               ></textarea>
             </div>
@@ -3585,11 +3588,11 @@
       <!-- 4. Empty State Fallback -->
       <div id="qabasEmptyState" class="hidden text-center py-16 px-4 space-y-4 rounded-3xl bg-white/50 dark:bg-obsidian-900/50 border border-dashed border-slate-300 dark:border-obsidian-800">
         <div class="w-16 h-16 mx-auto rounded-3xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-3xl">
-          🔍
+          🖋️
         </div>
         <div class="space-y-1">
-          <h3 class="text-base font-bold text-slate-800 dark:text-slate-100">لا توجد قَبَسَات مطابقة لهذا التصنيف</h3>
-          <p class="text-xs text-slate-400">جرّب البحث بكلمات أخرى أو اختر تصنيفاً مختلفاً، أو كُن أول من يُضيء هذا القسم بمشاركته!</p>
+          <h3 class="text-base font-bold text-slate-800 dark:text-slate-100">لا توجد قَبَسَات منشورة بعد في هذا القسم</h3>
+          <p class="text-xs text-slate-400">كُن أول من يُضيء ملتقى قَبَس ببيت شِعْر، اقتباس أدبي، أو خاطرة هادفة.</p>
         </div>
         <button onclick="handleOpenComposeQabas()" class="px-4 py-2 rounded-xl bg-lantern-600 text-white font-bold text-xs hover:bg-lantern-500 transition cursor-pointer">
           كتابة قَبَس جديد
@@ -3812,7 +3815,7 @@
           <input 
             type="url" 
             id="sirajLinkUrlInput" 
-            placeholder="https://example.com/article" 
+            placeholder="https://..." 
             class="w-full p-2.5 rounded-xl bg-slate-950 border border-slate-700 focus:border-amber-500 text-slate-100 placeholder-slate-500 text-left font-mono text-xs focus:outline-none focus:ring-1 focus:ring-amber-500"
             oninput="handleSirajLinkUrlInput(this.value)"
           />
@@ -3823,7 +3826,7 @@
           <input 
             type="text" 
             id="sirajLinkTitleInput" 
-            placeholder="مثال: مقال ويكيبيديا حول نظرية النسبية" 
+            placeholder="عنوان أو وصف الرابط (اختياري)..." 
             class="w-full p-2.5 rounded-xl bg-slate-950 border border-slate-700 focus:border-amber-500 text-slate-100 placeholder-slate-500 text-xs focus:outline-none focus:ring-1 focus:ring-amber-500"
           />
         </div>
@@ -3876,13 +3879,13 @@
 
       <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-3 text-xs">
         <div id="authNameField" class="space-y-1 hidden">
-          <label class="font-bold text-slate-700 dark:text-slate-300">الاسم الكريم / اللقب:</label>
-          <input type="text" id="authNameInput" placeholder="مثال: أحمد الفلسطيني" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-700 focus:outline-none focus:ring-2 focus:ring-lantern-500 text-slate-800 dark:text-slate-200" />
+          <label class="font-bold text-slate-700 dark:text-slate-300">الاسم الكامل / اللقب:</label>
+          <input type="text" id="authNameInput" placeholder="الاسم الكامل" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-700 focus:outline-none focus:ring-2 focus:ring-lantern-500 text-slate-800 dark:text-slate-200" />
         </div>
 
         <div class="space-y-1">
           <label class="font-bold text-slate-700 dark:text-slate-300">البريد الإلكتروني:</label>
-          <input type="email" id="authEmailInput" required placeholder="name@example.com" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-700 focus:outline-none focus:ring-2 focus:ring-lantern-500 text-slate-800 dark:text-slate-200 text-left font-mono" />
+          <input type="email" id="authEmailInput" required placeholder="البريد الإلكتروني" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-700 focus:outline-none focus:ring-2 focus:ring-lantern-500 text-slate-800 dark:text-slate-200 text-left font-mono" />
         </div>
 
         <div class="space-y-1">
@@ -3890,22 +3893,10 @@
           <input type="password" id="authPasswordInput" required placeholder="••••••••" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-700 focus:outline-none focus:ring-2 focus:ring-lantern-500 text-slate-800 dark:text-slate-200 text-left font-mono" />
         </div>
 
-        <button type="submit" id="authSubmitBtn" class="w-full py-2.5 rounded-xl bg-lantern-600 hover:bg-lantern-500 text-white font-bold transition text-xs shadow-md shadow-lantern-700/30">
+        <button type="submit" id="authSubmitBtn" class="w-full py-2.5 rounded-xl bg-lantern-600 hover:bg-lantern-500 text-white font-bold transition text-xs shadow-md shadow-lantern-700/30 cursor-pointer">
           دخول إلى مِشكاتي
         </button>
       </form>
-
-      <div class="space-y-2 pt-2 border-t border-slate-100 dark:border-obsidian-800">
-        <button onclick="handleGoogleLogin()" class="w-full py-2 px-3 rounded-xl border border-slate-200 dark:border-obsidian-700 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-obsidian-800 text-xs transition">
-          <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
-          <span>المتابعة باستخدام Google</span>
-        </button>
-
-        <button onclick="loginDemoStudent()" class="w-full py-2 px-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 font-bold border border-amber-200 dark:border-amber-900/40 text-xs flex items-center justify-center gap-1.5 transition">
-          <span>🎓</span>
-          <span>دخول تجريبي سريع كطالب فلسطيني</span>
-        </button>
-      </div>
 
     </div>
   </div>
@@ -3933,7 +3924,7 @@
 
         <div class="space-y-1">
           <label class="font-bold text-slate-700 dark:text-slate-300">عنوان أو مناسبة الدعاء:</label>
-          <input type="text" id="duaTitleInput" required placeholder="مثال: دعاء التوفيق في امتحان الثانوية العامة، دعاء لوالديّ..." class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-700 focus:outline-none focus:ring-2 focus:ring-lantern-500 text-slate-800 dark:text-slate-200" />
+          <input type="text" id="duaTitleInput" required placeholder="عنوان الدعاء أو مناسبته..." class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-700 focus:outline-none focus:ring-2 focus:ring-lantern-500 text-slate-800 dark:text-slate-200" />
         </div>
 
         <div class="space-y-1">
@@ -4081,7 +4072,7 @@
             <input
               type="text"
               id="qabasAuthorInput"
-              placeholder="مثال: المتنبي، الشافعي، بقلمي، محمود درويش..."
+              placeholder="اسم القائل أو الشاعر..."
               class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-obsidian-800 border-2 border-slate-200 dark:border-obsidian-750 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-800 dark:text-slate-200 font-bold text-xs"
             />
           </div>
@@ -4091,7 +4082,7 @@
             <input
               type="text"
               id="qabasSourceInput"
-              placeholder="مثال: ديوان المتنبي، صيد الخاطر..."
+              placeholder="اسم الكتاب أو المصدر (اختياري)..."
               class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-750 focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-800 dark:text-slate-200"
             />
           </div>
@@ -4179,6 +4170,84 @@
         </div>
       </form>
 
+    </div>
+  </div>
+
+  <!-- ================= MODAL: INSTALL MOBILE APP (ANDROID & APPLE iOS) ================= -->
+  <div id="installAppModal" onclick="if(event.target === this) closeInstallAppModal()" class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-md p-4 hidden animate-fadeIn">
+    <div class="relative bg-white dark:bg-obsidian-900 border border-slate-200 dark:border-obsidian-800 rounded-3xl max-w-md w-full p-6 text-right space-y-4 shadow-2xl">
+      <button type="button" onclick="closeInstallAppModal()" class="absolute left-4 top-4 p-1.5 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="flex items-center gap-3 border-b border-slate-100 dark:border-obsidian-800 pb-3">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center text-xl shadow-md">
+          📲
+        </div>
+        <div>
+          <h3 class="text-base font-black text-slate-800 dark:text-slate-100">تثبيت تطبيق مِشكاتي</h3>
+          <p class="text-xs text-slate-400">يعمل كتطبيق كامل بدون إنترنت على أندرويد وآيفون</p>
+        </div>
+      </div>
+
+      <!-- Platform Switcher Tabs -->
+      <div class="flex items-center p-1 bg-slate-100 dark:bg-obsidian-800 rounded-2xl text-xs font-bold">
+        <button type="button" id="installTabAndroid" onclick="switchInstallPlatform('android')" class="flex-1 py-2 rounded-xl text-center transition bg-white dark:bg-obsidian-900 text-emerald-600 dark:text-emerald-400 shadow-sm cursor-pointer">
+          🤖 أندرويد (Android)
+        </button>
+        <button type="button" id="installTabIOS" onclick="switchInstallPlatform('ios')" class="flex-1 py-2 rounded-xl text-center transition text-slate-500 dark:text-slate-400 cursor-pointer">
+          🍎 آيفون / آيباد (iOS)
+        </button>
+      </div>
+
+      <!-- Android Instructions & Native Prompt Button -->
+      <div id="installPanelAndroid" class="space-y-3 text-xs">
+        <button type="button" id="nativeAndroidInstallBtn" onclick="triggerNativePwaInstall()" class="hidden w-full py-3 px-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs shadow-lg flex items-center justify-center gap-2 transition cursor-pointer">
+          <span>📲</span>
+          <span>تثبيت مباشر بنقرة واحدة الآن</span>
+        </button>
+
+        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-obsidian-800/80 border border-slate-200 dark:border-obsidian-750 space-y-2.5 text-slate-700 dark:text-slate-200 leading-relaxed">
+          <div class="font-bold text-emerald-600 dark:text-emerald-400">خطوات التثبيت على هاتف أندرويد (Chrome):</div>
+          <div class="flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-500 font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span>اضغط على قائمة المتصفح العلوية <strong>(⋮)</strong> في متصفح Chrome.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-500 font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span>اختر <strong>«تثبيت التطبيق» (Install App)</strong> أو <strong>«الإضافة إلى الشاشة الرئيسية»</strong>.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-500 font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span>سيظهر تطبيق <strong>مِشكاتي 🕯️</strong> بأيقونة مستقلة على شاشة هاتفك ويعمل بكامل الشاشة وحتى بدون إنترنت.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apple iOS Instructions -->
+      <div id="installPanelIOS" class="hidden space-y-3 text-xs">
+        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-obsidian-800/80 border border-slate-200 dark:border-obsidian-750 space-y-2.5 text-slate-700 dark:text-slate-200 leading-relaxed">
+          <div class="font-bold text-amber-600 dark:text-amber-400">خطوات التثبيت على آيفون وآيباد (Safari):</div>
+          <div class="flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-500 font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span>افتح الموقع في متصفح <strong>Safari</strong> ثم اضغط على زر <strong>المشاركة (Share ⬆️)</strong> في الشريط السفلي.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-500 font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span>مرّر للأسفل واختر <strong>«إضافة إلى الشاشة الرئيسية» (Add to Home Screen ➕)</strong>.</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-500 font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span>اضغط <strong>«إضافة» (Add)</strong> في أعلى الشاشة ليظهر التطبيق مباشرة بين تطبيقاتك.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-1 flex justify-end">
+        <button type="button" onclick="closeInstallAppModal()" class="px-5 py-2 rounded-xl bg-slate-100 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 font-bold text-xs hover:bg-slate-200 cursor-pointer">
+          حسناً
+        </button>
+      </div>
     </div>
   </div>
 
@@ -5944,12 +6013,190 @@
     }
 
     /* ==========================================================================
-       8. AUTHENTICATION & USER PROFILE
+       8. NEON CLOUD DATABASE ENGINE & AUTHENTICATION
        ========================================================================== */
+    const NEON_HTTP_ENDPOINT = 'https://ep-aged-breeze-b4p02864-pooler.c-6.us-east-2.aws.neon.tech/sql';
+    const NEON_CONN_STR = 'postgresql://neondb_owner:npg_YR4PjFDfK2In@ep-aged-breeze-b4p02864-pooler.c-6.us-east-2.aws.neon.tech/neondb?sslmode=require';
+    let cloudSyncDebounceTimer = null;
+
+    async function neonQuery(sql, params = []) {
+      const response = await fetch(NEON_HTTP_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Neon-Connection-String': NEON_CONN_STR
+        },
+        body: JSON.stringify({ query: sql, params })
+      });
+      if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(errText || ('Database HTTP Error ' + response.status));
+      }
+      const data = await response.json();
+      return data.rows || [];
+    }
+
+    function formatCloudRelativeTime(isoDateStr) {
+      if (!isoDateStr) return 'حديثاً';
+      try {
+        const date = new Date(isoDateStr);
+        if (isNaN(date.getTime())) return String(isoDateStr);
+        const diffSec = Math.floor((Date.now() - date.getTime()) / 1000);
+        if (diffSec < 60) return 'الآن';
+        const diffMin = Math.floor(diffSec / 60);
+        if (diffMin < 60) return `منذ ${diffMin} د`;
+        const diffHr = Math.floor(diffMin / 60);
+        if (diffHr < 24) return `منذ ${diffHr} س`;
+        return date.toLocaleDateString('ar-PS', { month: 'short', day: 'numeric' });
+      } catch (e) {
+        return 'حديثاً';
+      }
+    }
+
+    function scheduleCloudUserDataSync() {
+      if (!appState.currentUser || !appState.currentUser.email) return;
+      if (cloudSyncDebounceTimer) clearTimeout(cloudSyncDebounceTimer);
+      cloudSyncDebounceTimer = setTimeout(() => {
+        syncUserDataToCloud(true);
+      }, 1200);
+    }
+
+    async function syncUserDataToCloud(silent = true) {
+      if (!appState.currentUser || !appState.currentUser.email) return;
+      try {
+        const email = appState.currentUser.email.toLowerCase();
+        const customDuas = appState.customDuas || [];
+        let masarEvents = [];
+        try {
+          masarEvents = JSON.parse(localStorage.getItem('mishkati_masar_events') || '[]');
+        } catch (e) {}
+
+        const masarYawmDump = {};
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k && (k.startsWith('mishkati_daily_tasks_') || k.startsWith('mishkati_daily_habits_'))) {
+            try {
+              masarYawmDump[k] = JSON.parse(localStorage.getItem(k));
+            } catch (e) {}
+          }
+        }
+
+        let midmarDump = {};
+        try {
+          midmarDump = {
+            streak: JSON.parse(localStorage.getItem('mishkati_streak_metrics') || '{}'),
+            tasbeehCount: parseInt(localStorage.getItem('mishkati_tasbeeh_count') || '0', 10)
+          };
+        } catch (e) {}
+
+        await neonQuery(
+          `INSERT INTO mishkati_user_data (user_email, custom_duas_json, masar_events_json, masar_yawm_json, midmar_json, updated_at)
+           VALUES ($1, $2::jsonb, $3::jsonb, $4::jsonb, $5::jsonb, NOW())
+           ON CONFLICT (user_email) DO UPDATE SET
+             custom_duas_json = EXCLUDED.custom_duas_json,
+             masar_events_json = EXCLUDED.masar_events_json,
+             masar_yawm_json = EXCLUDED.masar_yawm_json,
+             midmar_json = EXCLUDED.midmar_json,
+             updated_at = NOW()`,
+          [
+            email,
+            JSON.stringify(customDuas),
+            JSON.stringify(masarEvents),
+            JSON.stringify(masarYawmDump),
+            JSON.stringify(midmarDump)
+          ]
+        );
+        if (!silent) {
+          showToast('تمت مزامنة بياناتك وحفظها في السحابة بنجاح ☁️', '☁️');
+        }
+      } catch (err) {
+        console.warn('Cloud user data sync warning:', err);
+        if (!silent) {
+          showToast('تعذرت المزامنة السحابية حالياً، تم الحفظ محلياً', '⚠️');
+        }
+      }
+    }
+
+    async function pullUserDataFromCloud(email, silent = true) {
+      if (!email) return;
+      try {
+        const rows = await neonQuery(
+          `SELECT custom_duas_json, masar_events_json, masar_yawm_json, midmar_json FROM mishkati_user_data WHERE user_email = $1 LIMIT 1`,
+          [email.toLowerCase()]
+        );
+        if (rows.length === 0) {
+          await syncUserDataToCloud(true);
+          return;
+        }
+        const row = rows[0];
+
+        if (Array.isArray(row.custom_duas_json) && row.custom_duas_json.length > 0) {
+          appState.customDuas = row.custom_duas_json;
+          localStorage.setItem('mishkati_custom_duas', JSON.stringify(appState.customDuas));
+          updateDuasCountBadges();
+          renderMyDuasView();
+        }
+
+        if (Array.isArray(row.masar_events_json) && row.masar_events_json.length > 0) {
+          localStorage.setItem('mishkati_masar_events', JSON.stringify(row.masar_events_json));
+          if (typeof initMasarCalendar === 'function') initMasarCalendar();
+        }
+
+        if (row.masar_yawm_json && typeof row.masar_yawm_json === 'object') {
+          Object.keys(row.masar_yawm_json).forEach(k => {
+            if (k.startsWith('mishkati_daily_tasks_') || k.startsWith('mishkati_daily_habits_')) {
+              localStorage.setItem(k, JSON.stringify(row.masar_yawm_json[k]));
+            }
+          });
+          if (typeof loadMasarYawmDayData === 'function') {
+            loadMasarYawmDayData();
+            if (typeof renderMasarYawmHabits === 'function') renderMasarYawmHabits();
+            if (typeof renderMasarYawmTasks === 'function') renderMasarYawmTasks();
+            if (typeof renderHomeTasksWidget === 'function') renderHomeTasksWidget();
+            if (typeof updateMasarYawmGlobalProgress === 'function') updateMasarYawmGlobalProgress();
+          }
+        }
+
+        if (row.midmar_json && typeof row.midmar_json === 'object') {
+          if (row.midmar_json.streak && Object.keys(row.midmar_json.streak).length > 0) {
+            localStorage.setItem('mishkati_streak_metrics', JSON.stringify(row.midmar_json.streak));
+            if (typeof initMidmar === 'function') initMidmar();
+          }
+          if (typeof row.midmar_json.tasbeehCount === 'number' && row.midmar_json.tasbeehCount > (appState.tasbeehCount || 0)) {
+            appState.tasbeehCount = row.midmar_json.tasbeehCount;
+            localStorage.setItem('mishkati_tasbeeh_count', appState.tasbeehCount);
+          }
+        }
+
+        if (!silent) {
+          showToast('تم استرجاع ومزامنة بياناتك من السحابة ☁️', '☁️');
+        }
+      } catch (err) {
+        console.warn('Pull user data from cloud warning:', err);
+      }
+    }
+
     function initAuthState() {
       const savedUser = localStorage.getItem('mishkati_auth_user');
       if (savedUser) {
-        try { appState.currentUser = JSON.parse(savedUser); } catch(e) { appState.currentUser = null; }
+        try {
+          const parsed = JSON.parse(savedUser);
+          const isFakeDemo = parsed && (
+            parsed.id === 'demo_student' ||
+            (typeof parsed.id === 'string' && parsed.id.startsWith('google_')) ||
+            parsed.email === 'ahmad.quds@mishkati.ps' ||
+            parsed.email === 'palestine.student@gmail.com'
+          );
+          if (isFakeDemo) {
+            localStorage.removeItem('mishkati_auth_user');
+            appState.currentUser = null;
+          } else {
+            appState.currentUser = parsed;
+            pullUserDataFromCloud(parsed.email, true);
+          }
+        } catch(e) {
+          appState.currentUser = null;
+        }
       }
       renderAuthHeader();
       renderDrawerAuth();
@@ -5968,7 +6215,7 @@
               </div>
               <div>
                 <div class="text-xs font-bold text-slate-800 dark:text-slate-200">${isGirl ? 'وضع الزائرة الكريمة' : 'وضع الزائر الكريم'}</div>
-                <div class="text-[10px] text-slate-400">سجّل دخولك لحفظ أدعيتك الخاصة والمزامنة</div>
+                <div class="text-[10px] text-slate-400">سجّل دخولك لحفظ أدعيتك ومهامك سحابياً ☁️</div>
               </div>
             </div>
           </div>
@@ -5987,14 +6234,19 @@
               </div>
               <div class="min-w-0">
                 <div class="text-xs font-black text-slate-800 dark:text-slate-100 truncate">${appState.currentUser.name}</div>
-                <div class="text-[10px] text-slate-400 truncate font-mono">${appState.currentUser.email}</div>
+                <div class="text-[10px] text-emerald-600 dark:text-emerald-400 truncate font-bold flex items-center gap-1">
+                  <span>☁️ متزامن سحابياً</span>
+                </div>
               </div>
             </div>
             <span class="text-[9px] bg-amber-500/20 text-amber-800 dark:text-amber-300 font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">${isGirl ? 'طالبة 🇵🇸' : 'طالب 🇵🇸'}</span>
           </div>
-          <div class="grid grid-cols-2 gap-1.5 pt-1.5">
+          <div class="grid grid-cols-3 gap-1.5 pt-1.5">
             <button onclick="navigateTo('my_duas')" class="p-1.5 rounded-xl bg-white dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-700 text-slate-700 dark:text-slate-300 text-[11px] font-bold hover:bg-amber-50 dark:hover:bg-obsidian-700 transition flex items-center justify-center gap-1 cursor-pointer">
               <span>🤲 أدعيتي</span>
+            </button>
+            <button onclick="syncUserDataToCloud(false)" class="p-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/50 text-emerald-700 dark:text-emerald-300 text-[11px] font-bold hover:bg-emerald-100 transition flex items-center justify-center gap-1 cursor-pointer">
+              <span>☁️ مزامنة</span>
             </button>
             <button onclick="handleLogout()" class="p-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/50 text-rose-600 dark:text-rose-400 text-[11px] font-bold hover:bg-rose-100 transition flex items-center justify-center gap-1 cursor-pointer">
               <span>🚪 خروج</span>
@@ -6025,14 +6277,19 @@
               <span class="hidden md:inline max-w-[90px] truncate">${appState.currentUser.name}</span>
               <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="absolute left-0 mt-1 w-48 bg-white dark:bg-obsidian-900 rounded-2xl shadow-xl border border-slate-200 dark:border-obsidian-800 p-2 hidden group-hover:block animate-fadeIn z-50 text-right">
+            <div class="absolute left-0 mt-1 w-52 bg-white dark:bg-obsidian-900 rounded-2xl shadow-xl border border-slate-200 dark:border-obsidian-800 p-2 hidden group-hover:block animate-fadeIn z-50 text-right">
               <div class="px-2.5 py-1.5 border-b border-slate-100 dark:border-obsidian-800 mb-1">
                 <div class="font-bold text-slate-800 dark:text-slate-100 text-xs truncate">${appState.currentUser.name}</div>
                 <div class="text-[10px] text-slate-400 truncate font-mono">${appState.currentUser.email}</div>
+                <div class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold mt-0.5">☁️ متصل بقاعدة البيانات</div>
               </div>
               <button onclick="switchTab('my_duas')" class="w-full text-right px-2.5 py-1.5 rounded-xl hover:bg-amber-50 dark:hover:bg-obsidian-800 text-xs text-slate-700 dark:text-slate-200 flex items-center gap-2">
                 <span>🤲</span>
                 <span>أدعيتي الخاصة</span>
+              </button>
+              <button onclick="syncUserDataToCloud(false)" class="w-full text-right px-2.5 py-1.5 rounded-xl hover:bg-emerald-50 dark:hover:bg-obsidian-800 text-xs text-emerald-700 dark:text-emerald-300 flex items-center gap-2">
+                <span>☁️</span>
+                <span>مزامنة البيانات الآن</span>
               </button>
               <button onclick="handleLogout()" class="w-full text-right px-2.5 py-1.5 rounded-xl hover:bg-rose-50 dark:hover:bg-rose-950/40 text-xs text-rose-600 flex items-center gap-2">
                 <span>🚪</span>
@@ -6069,53 +6326,135 @@
         signupTab.className = 'flex-1 py-2 rounded-xl text-center transition bg-white dark:bg-obsidian-900 text-lantern-600 shadow-sm';
         loginTab.className = 'flex-1 py-2 rounded-xl text-center transition text-slate-500 dark:text-slate-400';
         nameField.classList.remove('hidden');
-        submitBtn.textContent = 'إنشاء حساب طالب جديد';
+        submitBtn.textContent = 'إنشاء حساب جديد';
       }
     }
 
-    function handleAuthSubmit(e) {
+    async function handleAuthSubmit(e) {
       e.preventDefault();
-      const email = document.getElementById('authEmailInput').value.trim();
-      const name = appState.authMode === 'signup' 
-        ? (document.getElementById('authNameInput').value.trim() || 'طالب مِشكاتي')
-        : email.split('@')[0];
+      const email = document.getElementById('authEmailInput').value.trim().toLowerCase();
+      const password = document.getElementById('authPasswordInput').value;
+      const submitBtn = document.getElementById('authSubmitBtn');
+      if (!email) return;
 
-      const userObj = { id: 'usr_' + Date.now(), name, email };
-      appState.currentUser = userObj;
-      localStorage.setItem('mishkati_auth_user', JSON.stringify(userObj));
+      const origBtnText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'جاري الاتصال بقاعدة البيانات... ☁️';
+      }
+
+      let userObj = null;
+      const badge = (appPersona === 'muthabira') ? 'طالبة 🇵🇸' : 'طالب 🇵🇸';
+
+      try {
+        if (appState.authMode === 'signup') {
+          const nameInput = document.getElementById('authNameInput').value.trim();
+          if (!nameInput) {
+            showToast('يرجى إدخال الاسم الكامل لإنشاء الحساب', '⚠️');
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origBtnText; }
+            return;
+          }
+
+          const existingRows = await neonQuery(
+            `SELECT id, name, email, password FROM mishkati_users WHERE email = $1 LIMIT 1`,
+            [email]
+          );
+
+          if (existingRows.length > 0) {
+            showToast('هذا البريد الإلكتروني مسجل مسبقاً، يرجى تسجيل الدخول', 'ℹ️');
+            setAuthMode('login');
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'دخول إلى مِشكاتي'; }
+            return;
+          }
+
+          const insertedRows = await neonQuery(
+            `INSERT INTO mishkati_users (name, email, password, persona, badge)
+             VALUES ($1, $2, $3, $4, $5)
+             RETURNING id, name, email`,
+            [nameInput, email, password, appPersona || 'muthabir', badge]
+          );
+
+          const row = insertedRows[0];
+          userObj = { id: 'usr_' + row.id, name: row.name, email: row.email };
+          appState.currentUser = userObj;
+          localStorage.setItem('mishkati_auth_user', JSON.stringify(userObj));
+          await syncUserDataToCloud(true);
+        } else {
+          const rows = await neonQuery(
+            `SELECT id, name, email, password FROM mishkati_users WHERE email = $1 LIMIT 1`,
+            [email]
+          );
+
+          if (rows.length === 0) {
+            showToast('لم يتم العثور على حساب بهذا البريد، أنشئ حساباً جديداً أولاً', '⚠️');
+            setAuthMode('signup');
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'إنشاء حساب جديد'; }
+            return;
+          }
+
+          const existing = rows[0];
+          if (existing.password && existing.password !== password) {
+            showToast('كلمة المرور غير صحيحة لهذا الحساب', '⚠️');
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origBtnText; }
+            return;
+          }
+
+          await neonQuery(`UPDATE mishkati_users SET last_login_at = NOW() WHERE email = $1`, [email]);
+          userObj = { id: 'usr_' + existing.id, name: existing.name, email: existing.email };
+          appState.currentUser = userObj;
+          localStorage.setItem('mishkati_auth_user', JSON.stringify(userObj));
+          await pullUserDataFromCloud(email, true);
+        }
+      } catch (cloudErr) {
+        console.warn('Cloud auth fallback to localStorage:', cloudErr);
+        let registeredUsers = {};
+        try {
+          registeredUsers = JSON.parse(localStorage.getItem('mishkati_registered_users') || '{}');
+        } catch (err) {
+          registeredUsers = {};
+        }
+
+        if (appState.authMode === 'signup') {
+          const nameInput = document.getElementById('authNameInput').value.trim();
+          if (!nameInput) {
+            showToast('يرجى إدخال الاسم الكامل لإنشاء الحساب', '⚠️');
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origBtnText; }
+            return;
+          }
+          userObj = { id: 'usr_' + Date.now(), name: nameInput, email };
+          registeredUsers[email] = { ...userObj, password };
+          localStorage.setItem('mishkati_registered_users', JSON.stringify(registeredUsers));
+        } else {
+          const existing = registeredUsers[email];
+          if (existing) {
+            if (existing.password && existing.password !== password) {
+              showToast('كلمة المرور غير صحيحة لهذا الحساب', '⚠️');
+              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origBtnText; }
+              return;
+            }
+            userObj = { id: existing.id, name: existing.name, email: existing.email };
+          } else {
+            showToast('تعذر الاتصال بقاعدة البيانات أو الحساب غير موجود', '⚠️');
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origBtnText; }
+            return;
+          }
+        }
+        appState.currentUser = userObj;
+        localStorage.setItem('mishkati_auth_user', JSON.stringify(userObj));
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = origBtnText;
+      }
+
       closeAuthModal();
       renderAuthHeader();
       renderDrawerAuth();
       renderMyDuasView();
       if (typeof renderQabasAuthBanner === 'function') renderQabasAuthBanner();
       if (typeof renderQabasFeed === 'function' && appState.currentTab === 'qabas') renderQabasFeed();
-      showToast(`أهلاً بك يا ${userObj.name} في مِشكاتي 🕯️`, '🕯️');
-    }
-
-    function handleGoogleLogin() {
-      const userObj = { id: 'google_' + Date.now(), name: 'طالب فلسطيني متميز', email: 'palestine.student@gmail.com', provider: 'google' };
-      appState.currentUser = userObj;
-      localStorage.setItem('mishkati_auth_user', JSON.stringify(userObj));
-      closeAuthModal();
-      renderAuthHeader();
-      renderDrawerAuth();
-      renderMyDuasView();
-      if (typeof renderQabasAuthBanner === 'function') renderQabasAuthBanner();
-      if (typeof renderQabasFeed === 'function' && appState.currentTab === 'qabas') renderQabasFeed();
-      showToast('تم تسجيل الدخول عبر Google بنجاح 🌐', '🌐');
-    }
-
-    function loginDemoStudent() {
-      const userObj = { id: 'demo_student', name: 'أحمد المقدسي', email: 'ahmad.quds@mishkati.ps' };
-      appState.currentUser = userObj;
-      localStorage.setItem('mishkati_auth_user', JSON.stringify(userObj));
-      closeAuthModal();
-      renderAuthHeader();
-      renderDrawerAuth();
-      renderMyDuasView();
-      if (typeof renderQabasAuthBanner === 'function') renderQabasAuthBanner();
-      if (typeof renderQabasFeed === 'function' && appState.currentTab === 'qabas') renderQabasFeed();
-      showToast('أهلاً بك يا أحمد المقدسي 🇵🇸', '🎓');
+      showToast(`أهلاً بك يا ${userObj.name} في مِشكاتي 🕯️ (متصل سحابياً ☁️)`, '🕯️');
     }
 
     function handleLogout() {
@@ -6146,6 +6485,7 @@
     function saveCustomDuas() {
       localStorage.setItem('mishkati_custom_duas', JSON.stringify(appState.customDuas));
       updateDuasCountBadges();
+      scheduleCloudUserDataSync();
     }
 
     function updateDuasCountBadges() {
@@ -6464,6 +6804,7 @@
       updateDrawerActiveState('qabas');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       renderQabasFeed();
+      syncQabasFromCloud(true);
       refreshAOS();
     }
 
@@ -6704,11 +7045,13 @@
     function saveMasarYawmTasks() {
       const key = `mishkati_daily_tasks_${masarYawmState.selectedDateStr}`;
       localStorage.setItem(key, JSON.stringify(masarYawmState.tasks));
+      scheduleCloudUserDataSync();
     }
 
     function saveMasarYawmHabits() {
       const key = `mishkati_daily_habits_${masarYawmState.selectedDateStr}`;
       localStorage.setItem(key, JSON.stringify(masarYawmState.habits));
+      scheduleCloudUserDataSync();
     }
 
     function renderMasarYawmHeader() {
@@ -7524,6 +7867,7 @@
     function saveMasarEventsToStorage() {
       try {
         localStorage.setItem(MASAR_STORAGE_KEY, JSON.stringify(masarState.events));
+        scheduleCloudUserDataSync();
       } catch (e) {
         console.error('Failed to save masar events:', e);
       }
@@ -12290,150 +12634,10 @@ ${query}${extraContext}
        13.5. QABAS (قَبَس) COMMUNITY LITERARY & QUOTE HUB CONTROLLER
        ملتقى الاقتباسات وأبيات الشعر والخواطر والتفاعل المجتمعي الرسمي
        ========================================================================== */
-    const DEFAULT_QABAS_POSTS = [
-      {
-        id: 'qabas_1',
-        category: 'poetry',
-        body: 'عَـلَى قَـدْرِ أَهـلِ العَـزمِ تَأتِي العَزائِمُ • وَتَـأتِي عَـلَى قَـدْرِ الكِـرامِ المَكَـارِمُ\nوَتَعْظُمُ فِي عَيْنِ الصَّغِيرِ صِغَارُهَا • وَتَصْغُرُ فِي عَيْنِ العَظِيمِ العَظَائِمُ',
-        author: 'أبو الطيب المتنبي',
-        source: 'ديوان المتنبي',
-        publisherName: 'أحمد المقدسي',
-        publisherEmail: 'ahmad.quds@mishkati.ps',
-        publisherBadge: 'طالب 🇵🇸',
-        likesCount: 54,
-        commentsCount: 3,
-        createdAt: 'منذ ساعتين',
-        comments: [
-          { id: 'c1_1', authorName: 'صهيب النابلسي', authorBadge: 'طالب 🇵🇸', text: 'بيت يشحذ الهمة في ليالي الامتحانات الطويلة!', time: 'منذ ساعة' },
-          { id: 'c1_2', authorName: 'مريم الغزاوية', authorBadge: 'طالبة 🇵🇸', text: 'صدق المتنبي، النفوس الكبيرة تتسع للمهام العظام.', time: 'منذ ٤٥ دقيقة' },
-          { id: 'c1_3', authorName: 'عمر الخليل', authorBadge: 'طالب 🇵🇸', text: 'بارك الله فيك على حسن الانتقاء يا أخي.', time: 'منذ ٣٠ دقيقة' }
-        ]
-      },
-      {
-        id: 'qabas_2',
-        category: 'quote',
-        body: 'القلب في سيره إلى الله عز وجل بمنزلة الطائر، فالمحبة رأسه، والخوف والرجاء جناحاه؛ فمتى سلم الرأس والجناحان فالطائر جيد الطيران، ومتى قُطع الرأس مات الطائر، ومتى فُقد الجناحان فهو كاسر يتعرض لكل صائد وكاسر.',
-        author: 'الإمام ابن قيم الجوزية',
-        source: 'مدارج السالكين بين منازل إياك نعبد وإياك نستعين',
-        publisherName: 'مريم الغزاوية',
-        publisherEmail: 'maryam.gaza@mishkati.ps',
-        publisherBadge: 'طالبة 🇵🇸',
-        likesCount: 68,
-        commentsCount: 2,
-        createdAt: 'منذ ٤ ساعات',
-        comments: [
-          { id: 'c2_1', authorName: 'سارة المقدسي', authorBadge: 'طالبة 🇵🇸', text: 'تشبيه عبقري يضبط بوصلة القلب بين الخوف والرجاء والرجوع إلى الله.', time: 'منذ ٣ ساعات' },
-          { id: 'c2_2', authorName: 'ياسين الجنيني', authorBadge: 'طالب 🇵🇸', text: 'رحم الله ابن القيم، كلام يكتب بماء الذهب.', time: 'منذ ساعتين' }
-        ]
-      },
-      {
-        id: 'qabas_3',
-        category: 'poetry',
-        body: 'مَوْطِنِي.. مَوْطِنِي\nالجَلالُ وَالجَمالُ وَالسَّناءُ وَالبَهاءُ • فِي رُباكْ.. فِي رُباكْ\nوَالحَياةُ وَالنَّجاةُ وَالهَناءُ وَالرَّجاءُ • فِي هَواكْ.. فِي هَواكْ\nهَلْ نَراكْ؟ هَلْ نَراكْ؟ • سالِماً مُنَعَّماً وَغانِماً مُكَرَّماً',
-        author: 'إبراهيم طوقان (شاعر فلسطين)',
-        source: 'ديوان إبراهيم طوقان - نابلس جبل النار',
-        publisherName: 'صهيب النابلسي',
-        publisherEmail: 'suhaib.nablus@mishkati.ps',
-        publisherBadge: 'طالب 🇵🇸',
-        likesCount: 92,
-        commentsCount: 4,
-        createdAt: 'منذ ٦ ساعات',
-        comments: [
-          { id: 'c3_1', authorName: 'أحمد المقدسي', authorBadge: 'طالب 🇵🇸', text: 'من نابلس الأبية إلى قدس الأقداس، تحيا فلسطين بأبنائها وطلابها.', time: 'منذ ٥ ساعات' },
-          { id: 'c3_2', authorName: 'حمزة التولكرمي', authorBadge: 'طالب 🇵🇸', text: 'كلمات تهز الوجدان وتجدد الانتماء لتراب هذا الوطن المبارك.', time: 'منذ ٤ ساعات' },
-          { id: 'c3_3', authorName: 'ليلى اليافية', authorBadge: 'طالبة 🇵🇸', text: 'سلمت يد الناقل وخلد الله ذكرى شاعرنا إبراهيم طوقان.', time: 'منذ ساعتين' },
-          { id: 'c3_4', authorName: 'مريم الغزاوية', authorBadge: 'طالبة 🇵🇸', text: 'سنراك سالماً منعماً بإذن الله وتوفيقه.', time: 'منذ ساعة' }
-        ]
-      },
-      {
-        id: 'qabas_4',
-        category: 'thought',
-        body: 'جلسة المكتب الهادئة في جوف الليل، وصفحات الكتاب المفتوحة، ورائحة الفجر التي تتسلل من النافذة.. هذا السعي المتواصل ليس مجرد دراسة، إنه صلاة أخرى بالأفعال، وحراسة لثغر الأمة بالعلم والوعي وصدق النية.',
-        author: 'طالب على طريق القدس',
-        source: 'خواطر السائرين في معارج العلم',
-        publisherName: 'عمر الخليل',
-        publisherEmail: 'omar.khalil@mishkati.ps',
-        publisherBadge: 'طالب 🇵🇸',
-        likesCount: 41,
-        commentsCount: 2,
-        createdAt: 'منذ ٨ ساعات',
-        comments: [
-          { id: 'c4_1', authorName: 'صهيب النابلسي', authorBadge: 'طالب 🇵🇸', text: 'وصف دقيق للمشاعر الصادقة في ليالي الجد والاجتهاد.', time: 'منذ ٦ ساعات' },
-          { id: 'c4_2', authorName: 'سارة المقدسي', authorBadge: 'طالبة 🇵🇸', text: 'الله ينفع بك وبكل طالب يسعى بنية طيبة.', time: 'منذ ٣ ساعات' }
-        ]
-      },
-      {
-        id: 'qabas_5',
-        category: 'wisdom',
-        body: 'اصْبِرْ عَلى مُرِّ الجَفَا مِنْ مُعَلِّمٍ • فإنَّ رُسُوبَ العِلْمِ في نَفَرَاتِهِ\nوَمَنْ لَمْ يَذُقْ مُرَّ التَّعَلُّمِ سَاعَةً • تَجَرَّعَ ذُلَّ الجَهْلِ طُولَ حَيَاتِهِ\nوَمَنْ فَاتَهُ التَّعْلِيمُ وَقْتَ شَبَابِهِ • فَكَبِّرْ عَلَيْهِ أَرْبَعاً لِوَفَاتِهِ',
-        author: 'الإمام محمد بن إدريس الشافعي',
-        source: 'ديوان الإمام الشافعي',
-        publisherName: 'سارة المقدسي',
-        publisherEmail: 'sara.quds@mishkati.ps',
-        publisherBadge: 'طالبة 🇵🇸',
-        likesCount: 77,
-        commentsCount: 3,
-        createdAt: 'منذ يوم',
-        comments: [
-          { id: 'c5_1', authorName: 'أحمد المقدسي', authorBadge: 'طالب 🇵🇸', text: 'حكمة بليغة لكل طالب علم في مواجهة المشاق والصعوبات.', time: 'منذ ٢٠ ساعة' },
-          { id: 'c5_2', authorName: 'عمر الخليل', authorBadge: 'طالب 🇵🇸', text: 'العلم يحتاج إلى صبر وتواضع حتى يُجنى ثمره.', time: 'منذ ١٨ ساعة' },
-          { id: 'c5_3', authorName: 'ياسين الجنيني', authorBadge: 'طالب 🇵🇸', text: 'رحم الله الإمام الشافعي صاحب البيان الباهر.', time: 'منذ ١٢ ساعة' }
-        ]
-      },
-      {
-        id: 'qabas_6',
-        category: 'quote',
-        body: 'إذا لم تَزِدْ على الحياة شيئاً، كنتَ أنتَ زائداً عليها؛ وإن لم تكن غايتك في هذه الدنيا أن تترك أثراً يُنبت خيراً ويُشعل شمعة في ظلمات الناس، فما عشتَ إلا كما يعيش الظل الزائل.',
-        author: 'مصطفى صادق الرافعي',
-        source: 'وحي القلم',
-        publisherName: 'ياسين الجنيني',
-        publisherEmail: 'yaseen.jenin@mishkati.ps',
-        publisherBadge: 'طالب 🇵🇸',
-        likesCount: 59,
-        commentsCount: 1,
-        createdAt: 'منذ يوم',
-        comments: [
-          { id: 'c6_1', authorName: 'مريم الغزاوية', authorBadge: 'طالبة 🇵🇸', text: 'الرافعي دائماً يوقظ في النفس معاني العزة والمسؤولية الإنسانية.', time: 'منذ ١٥ ساعة' }
-        ]
-      },
-      {
-        id: 'qabas_7',
-        category: 'poetry',
-        body: 'على هذه الأرض ما يستحق الحياة:\nتردد إبريل، رائحة الخبز في الفجر،\nتعويذة امرأة للرجال، كتابات إسكيلوس،\nأول الحب، عشب على حجر، أمهات تقفن على خيط ناي،\nوخوف الغزاة من الذكريات.\nعلى هذه الأرض سيدةُ الأرض: كانت تُسمّى فلسطين، صارتْ تُسمّى فلسطين.',
-        author: 'محمود درويش',
-        source: 'ديوان محمود درويش - على هذه الأرض',
-        publisherName: 'ليلى اليافية',
-        publisherEmail: 'laila.jaffa@mishkati.ps',
-        publisherBadge: 'طالبة 🇵🇸',
-        likesCount: 88,
-        commentsCount: 5,
-        createdAt: 'منذ يومين',
-        comments: [
-          { id: 'c7_1', authorName: 'صهيب النابلسي', authorBadge: 'طالب 🇵🇸', text: '«كانت تسمى فلسطين.. صارت تسمى فلسطين» باقية في قلوبنا إلى الأبد.', time: 'منذ يوم' },
-          { id: 'c7_2', authorName: 'أحمد المقدسي', authorBadge: 'طالب 🇵🇸', text: 'قصيدة تنبض بالحياة والخلود الفلسطيني.', time: 'منذ يوم' },
-          { id: 'c7_3', authorName: 'حمزة التولكرمي', authorBadge: 'طالب 🇵🇸', text: 'رحم الله درويش، لسان القضية وصوت الأرض.', time: 'منذ يوم' },
-          { id: 'c7_4', authorName: 'عمر الخليل', authorBadge: 'طالب 🇵🇸', text: 'فخر واعتزاز بكل حرف كتبه.', time: 'منذ ٢٠ ساعة' },
-          { id: 'c7_5', authorName: 'سارة المقدسي', authorBadge: 'طالبة 🇵🇸', text: 'أجمل ما يُقرأ ويبعث على التشبث بالأمل.', time: 'منذ ١٨ ساعة' }
-        ]
-      },
-      {
-        id: 'qabas_8',
-        category: 'wisdom',
-        body: 'يا طالب العلم، لا تمشِ في طلب الفضائل مشي المقيد، ولا تنم نوم الغافل؛ فإن الزمان أنفاس تُعد، وأيام تفنى، وما مضى لا يعود، وغنيمة العمر ما قُيّد به العلم والعمل الصالح الذي يُنير قبر صاحبه ويرفع شأنه عند خالقه.',
-        author: 'الإمام ابن الجوزي',
-        source: 'صيد الخاطر',
-        publisherName: 'حمزة التولكرمي',
-        publisherEmail: 'hamza.tulkarm@mishkati.ps',
-        publisherBadge: 'طالب 🇵🇸',
-        likesCount: 46,
-        commentsCount: 2,
-        createdAt: 'منذ يومين',
-        comments: [
-          { id: 'c8_1', authorName: 'سارة المقدسي', authorBadge: 'طالبة 🇵🇸', text: 'صيد الخاطر كنز لكل من أراد تنظيم وقته ومحاسبة نفسه.', time: 'منذ يوم' },
-          { id: 'c8_2', authorName: 'ياسين الجنيني', authorBadge: 'طالب 🇵🇸', text: 'الأنفاس معدودة.. تذكرة غالية نحتاجها يومياً.', time: 'منذ يوم' }
-        ]
-      }
-    ];
+    const DEFAULT_QABAS_POSTS = [];
+    const QABAS_POSTS_STORAGE_KEY = 'mishkati_qabas_posts_clean';
+    const QABAS_LIKES_STORAGE_KEY = 'mishkati_qabas_likes_clean';
+    const QABAS_SAVED_STORAGE_KEY = 'mishkati_qabas_saved_clean';
 
     const qabasState = {
       category: 'all',
@@ -12459,36 +12663,24 @@ ${query}${extraContext}
     }
 
     function getQabasPosts() {
-      const stored = localStorage.getItem('mishkati_qabas_posts');
+      const stored = localStorage.getItem(QABAS_POSTS_STORAGE_KEY);
       if (stored) {
         try {
           const parsed = JSON.parse(stored);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            let updated = false;
-            parsed.forEach(p => {
-              if (!p.author || p.author.trim() === '') {
-                const def = DEFAULT_QABAS_POSTS.find(d => d.id === p.id);
-                p.author = def ? def.author : (p.publisherName || 'مجهول');
-                updated = true;
-              }
-            });
-            if (updated) {
-              localStorage.setItem('mishkati_qabas_posts', JSON.stringify(parsed));
-            }
+          if (Array.isArray(parsed)) {
             return parsed;
           }
         } catch(e) {}
       }
-      localStorage.setItem('mishkati_qabas_posts', JSON.stringify(DEFAULT_QABAS_POSTS));
-      return [...DEFAULT_QABAS_POSTS];
+      return [];
     }
 
     function saveQabasPosts(posts) {
-      localStorage.setItem('mishkati_qabas_posts', JSON.stringify(posts));
+      localStorage.setItem(QABAS_POSTS_STORAGE_KEY, JSON.stringify(posts));
     }
 
     function getQabasUserLikes() {
-      const stored = localStorage.getItem('mishkati_qabas_likes');
+      const stored = localStorage.getItem(QABAS_LIKES_STORAGE_KEY);
       if (stored) {
         try { return JSON.parse(stored); } catch(e) {}
       }
@@ -12496,11 +12688,11 @@ ${query}${extraContext}
     }
 
     function saveQabasUserLikes(likes) {
-      localStorage.setItem('mishkati_qabas_likes', JSON.stringify(likes));
+      localStorage.setItem(QABAS_LIKES_STORAGE_KEY, JSON.stringify(likes));
     }
 
     function getQabasUserSaved() {
-      const stored = localStorage.getItem('mishkati_qabas_saved');
+      const stored = localStorage.getItem(QABAS_SAVED_STORAGE_KEY);
       if (stored) {
         try { return JSON.parse(stored); } catch(e) {}
       }
@@ -12508,7 +12700,7 @@ ${query}${extraContext}
     }
 
     function saveQabasUserSaved(saved) {
-      localStorage.setItem('mishkati_qabas_saved', JSON.stringify(saved));
+      localStorage.setItem(QABAS_SAVED_STORAGE_KEY, JSON.stringify(saved));
     }
 
     /* ==========================================================================
@@ -12634,13 +12826,75 @@ ${query}${extraContext}
       return cleaned;
     }
 
+    let qabasCloudRefreshTimer = null;
+
+    async function syncQabasFromCloud(silent = true) {
+      try {
+        const rows = await neonQuery(
+          `SELECT id, category, body, author, source, media_json, publisher_name, publisher_email, publisher_badge, likes_count, comments_json, created_at
+           FROM mishkati_qabas_posts
+           ORDER BY created_at DESC
+           LIMIT 100`
+        );
+
+        const cloudPosts = rows.map(row => {
+          const commentsArr = Array.isArray(row.comments_json) ? row.comments_json : [];
+          return {
+            id: row.id,
+            category: row.category || 'quote',
+            body: row.body || '',
+            author: row.author || 'غير محدد',
+            source: row.source || '',
+            media: row.media_json || null,
+            publisherName: row.publisher_name || 'طالب مِشكاتي',
+            publisherEmail: row.publisher_email || '',
+            publisherBadge: row.publisher_badge || 'طالب 🇵🇸',
+            likesCount: typeof row.likes_count === 'number' ? row.likes_count : parseInt(row.likes_count || '0', 10),
+            commentsCount: commentsArr.length,
+            comments: commentsArr,
+            createdAt: formatCloudRelativeTime(row.created_at)
+          };
+        });
+
+        saveQabasPosts(cloudPosts);
+        runQabasAutoModeration();
+        updateQabasCounts();
+        renderQabasFeed();
+        if (!silent) {
+          showToast('تم تحديث ملتقى قَبَس من قاعدة البيانات السحابية ☁️', '☁️');
+        }
+      } catch (err) {
+        console.warn('Qabas cloud sync warning:', err);
+        if (!silent) {
+          showToast('تعذر الاتصال بالسحابة حالياً، يتم عرض المنشورات المحفوظة', '⚠️');
+        }
+      }
+    }
+
     function initQabas() {
-      if (!localStorage.getItem('mishkati_qabas_posts')) {
-        saveQabasPosts(DEFAULT_QABAS_POSTS);
+      // Purge all legacy Qabas storage keys so all previous mock posts are completely removed
+      localStorage.removeItem('mishkati_qabas_posts');
+      localStorage.removeItem('mishkati_qabas_likes');
+      localStorage.removeItem('mishkati_qabas_saved');
+
+      if (!localStorage.getItem(QABAS_POSTS_STORAGE_KEY)) {
+        saveQabasPosts([]);
       }
       runQabasAutoModeration();
       renderQabasAuthBanner();
       updateQabasCounts();
+      renderQabasFeed();
+
+      // Fetch live shared posts from Neon PostgreSQL
+      syncQabasFromCloud(true);
+
+      if (qabasCloudRefreshTimer) clearInterval(qabasCloudRefreshTimer);
+      qabasCloudRefreshTimer = setInterval(() => {
+        const qabasSec = document.getElementById('qabasView');
+        if (qabasSec && !qabasSec.classList.contains('hidden')) {
+          syncQabasFromCloud(true);
+        }
+      }, 25000);
     }
 
     function renderQabasAuthBanner() {
@@ -12655,13 +12909,18 @@ ${query}${extraContext}
               🔒
             </div>
             <div>
-              <div class="font-bold text-amber-200">أنت الآن في وضع التصفح والاطلاع</div>
-              <div class="text-[11px] text-slate-300">للتفاعل بالإعجاب، كتابة التعليقات، أو نشر قَبَس خاص بك؛ يُشترط تسجيل الدخول بحساب رسمي.</div>
+              <div class="font-bold text-amber-200">أنت الآن في وضع التصفح والاطلاع (متصل بقاعدة البيانات السحابية ☁️)</div>
+              <div class="text-[11px] text-slate-300">للتفاعل بالإعجاب، كتابة التعليقات، أو نشر قَبَس يظهر لجميع الطلاب؛ يُشترط تسجيل الدخول بحساب رسمي.</div>
             </div>
           </div>
-          <button type="button" onclick="openAuthModal('login')" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition shadow-md whitespace-nowrap cursor-pointer mishkat-btn-motion">
-            تسجيل الدخول الرسمي
-          </button>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="syncQabasFromCloud(false)" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 font-bold text-xs transition border border-amber-500/30 cursor-pointer">
+              🔄 تحديث
+            </button>
+            <button type="button" onclick="openAuthModal('login')" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition shadow-md whitespace-nowrap cursor-pointer mishkat-btn-motion">
+              تسجيل الدخول الرسمي
+            </button>
+          </div>
         `;
       } else {
         banner.className = 'relative z-10 mt-5 pt-4 border-t border-emerald-500/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs bg-emerald-950/30 p-3.5 rounded-2xl border border-emerald-500/30';
@@ -12671,11 +12930,14 @@ ${query}${extraContext}
               ✅
             </div>
             <div class="min-w-0">
-              <div class="font-bold text-emerald-200 truncate">حساب رسمي نشط وموثّق: ${escapeQabasText(appState.currentUser.name)}</div>
-              <div class="text-[11px] text-slate-300">يمكنك الآن نشر الاقتباسات، التفاعل بالإعجاب، وتبادل التعليقات الأدبية الهادفة.</div>
+              <div class="font-bold text-emerald-200 truncate">حساب رسمي نشط وموثّق سحابياً: ${escapeQabasText(appState.currentUser.name)}</div>
+              <div class="text-[11px] text-slate-300">منشوراتك وتعليقاتك تُحفظ مباشرة في قاعدة البيانات وتظهر لجميع الطلاب ☁️</div>
             </div>
           </div>
           <div class="flex items-center gap-2 flex-shrink-0">
+            <button type="button" onclick="syncQabasFromCloud(false)" class="px-2.5 py-1 rounded-full bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-200 text-[10px] font-bold border border-emerald-500/30 cursor-pointer transition">
+              🔄 تحديث المنشورات
+            </button>
             <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full font-bold border border-emerald-500/30 whitespace-nowrap">عضوية مِشكاتي الرسمية 🇵🇸</span>
           </div>
         `;
@@ -12940,7 +13202,7 @@ ${query}${extraContext}
                 </button>
               </div>
 
-              <!-- Copy & Share -->
+              <!-- Copy, Share & Delete -->
               <div class="flex items-center gap-1">
                 <button
                   type="button"
@@ -12958,6 +13220,14 @@ ${query}${extraContext}
                 >
                   🔗
                 </button>
+                <button
+                  type="button"
+                  onclick="handleDeleteQabasPost('${post.id}')"
+                  title="حذف المنشور"
+                  class="p-2 rounded-xl bg-slate-100 dark:bg-obsidian-800 text-slate-500 dark:text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 transition cursor-pointer"
+                >
+                  🗑️
+                </button>
               </div>
             </div>
 
@@ -12967,6 +13237,23 @@ ${query}${extraContext}
           </article>
         `;
       }).join('');
+    }
+
+    async function handleDeleteQabasPost(id) {
+      const posts = getQabasPosts().filter(p => p.id !== id);
+      saveQabasPosts(posts);
+      const userLikes = getQabasUserLikes().filter(item => item !== id);
+      saveQabasUserLikes(userLikes);
+      const userSaved = getQabasUserSaved().filter(item => item !== id);
+      saveQabasUserSaved(userSaved);
+      updateQabasCounts();
+      renderQabasFeed();
+      showToast('تم حذف المنشور من قَبَس 🗑️', '🗑️');
+      try {
+        await neonQuery(`DELETE FROM mishkati_qabas_posts WHERE id = $1`, [id]);
+      } catch (err) {
+        console.warn('Cloud delete Qabas post warning:', err);
+      }
     }
 
     function renderCommentsSectionHtml(post) {
@@ -13049,7 +13336,7 @@ ${query}${extraContext}
       `;
     }
 
-    function handleToggleQabasLike(id) {
+    async function handleToggleQabasLike(id) {
       if (!appState.currentUser) {
         showToast('الإعجاب بالقَبَس يتطلب تسجيلاً بحساب رسمي', '🔒');
         openAuthModal('login');
@@ -13074,6 +13361,14 @@ ${query}${extraContext}
       saveQabasPosts(posts);
       updateQabasCounts();
       renderQabasFeed();
+      try {
+        await neonQuery(
+          `UPDATE mishkati_qabas_posts SET likes_count = $1 WHERE id = $2`,
+          [post.likesCount, id]
+        );
+      } catch (err) {
+        console.warn('Cloud toggle like warning:', err);
+      }
     }
 
     function toggleQabasComments(id) {
@@ -13085,7 +13380,7 @@ ${query}${extraContext}
       renderQabasFeed();
     }
 
-    function handleAddQabasComment(id, event) {
+    async function handleAddQabasComment(id, event) {
       if (event) event.preventDefault();
       if (!appState.currentUser) {
         showToast('المشاركة بالتعليق تتطلب تسجيلاً بحساب رسمي', '🔒');
@@ -13124,9 +13419,17 @@ ${query}${extraContext}
       saveQabasPosts(posts);
       inputEl.value = '';
       appState.audio.playTap();
-      showToast('تم نشر تعليقك المبارك 💬', '💬');
+      showToast('تم نشر تعليقك المبارك سحابياً 💬', '💬');
       updateQabasCounts();
       renderQabasFeed();
+      try {
+        await neonQuery(
+          `UPDATE mishkati_qabas_posts SET comments_json = $1::jsonb WHERE id = $2`,
+          [JSON.stringify(post.comments), id]
+        );
+      } catch (err) {
+        console.warn('Cloud add comment warning:', err);
+      }
     }
 
     function handleToggleQabasSave(id) {
@@ -13208,7 +13511,7 @@ ${query}${extraContext}
       renderQabasMediaPreview();
     }
 
-    function handleSaveNewQabas(event) {
+    async function handleSaveNewQabas(event) {
       if (event) event.preventDefault();
       if (!appState.currentUser) {
         showToast('نشر قَبَس جديد يتطلب تسجيلاً بحساب رسمي', '🔒');
@@ -13265,10 +13568,31 @@ ${query}${extraContext}
       
       closeQabasComposeModal();
       appState.audio.playCompletion();
-      showToast('تم نشر قَبَسك المبارك في الملتقى بنجاح 🖋️', '🖋️');
+      showToast('تم نشر قَبَسك المبارك في الملتقى السحابي بنجاح 🖋️☁️', '🖋️');
       updateQabasCounts();
       setQabasCategory('all');
       renderQabasFeed();
+
+      try {
+        await neonQuery(
+          `INSERT INTO mishkati_qabas_posts
+           (id, category, body, author, source, media_json, publisher_name, publisher_email, publisher_badge, likes_count, comments_json)
+           VALUES ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, 0, '[]'::jsonb)`,
+          [
+            newPost.id,
+            newPost.category,
+            newPost.body,
+            newPost.author,
+            newPost.source,
+            newPost.media ? JSON.stringify(newPost.media) : null,
+            newPost.publisherName,
+            newPost.publisherEmail || '',
+            newPost.publisherBadge
+          ]
+        );
+      } catch (err) {
+        console.warn('Cloud insert Qabas post warning:', err);
+      }
     }
 
     function initAzkarState() {
@@ -13480,9 +13804,72 @@ ${query}${extraContext}
       updateProgress();
     }
 
+    let deferredPwaPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPwaPrompt = e;
+      const nativeBtn = document.getElementById('nativeAndroidInstallBtn');
+      if (nativeBtn) nativeBtn.classList.remove('hidden');
+    });
+
+    function openInstallAppModal() {
+      const modal = document.getElementById('installAppModal');
+      if (!modal) return;
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      switchInstallPlatform(isIOS ? 'ios' : 'android');
+      modal.classList.remove('hidden');
+    }
+
+    function closeInstallAppModal() {
+      const modal = document.getElementById('installAppModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function switchInstallPlatform(platform) {
+      const tabAndroid = document.getElementById('installTabAndroid');
+      const tabIOS = document.getElementById('installTabIOS');
+      const panelAndroid = document.getElementById('installPanelAndroid');
+      const panelIOS = document.getElementById('installPanelIOS');
+
+      if (platform === 'ios') {
+        if (tabIOS) tabIOS.className = 'flex-1 py-2 rounded-xl text-center transition bg-white dark:bg-obsidian-900 text-amber-600 dark:text-amber-400 shadow-sm cursor-pointer';
+        if (tabAndroid) tabAndroid.className = 'flex-1 py-2 rounded-xl text-center transition text-slate-500 dark:text-slate-400 cursor-pointer';
+        if (panelIOS) panelIOS.classList.remove('hidden');
+        if (panelAndroid) panelAndroid.classList.add('hidden');
+      } else {
+        if (tabAndroid) tabAndroid.className = 'flex-1 py-2 rounded-xl text-center transition bg-white dark:bg-obsidian-900 text-emerald-600 dark:text-emerald-400 shadow-sm cursor-pointer';
+        if (tabIOS) tabIOS.className = 'flex-1 py-2 rounded-xl text-center transition text-slate-500 dark:text-slate-400 cursor-pointer';
+        if (panelAndroid) panelAndroid.classList.remove('hidden');
+        if (panelIOS) panelIOS.classList.add('hidden');
+      }
+    }
+
+    async function triggerNativePwaInstall() {
+      if (!deferredPwaPrompt) return;
+      deferredPwaPrompt.prompt();
+      const { outcome } = await deferredPwaPrompt.userChoice;
+      if (outcome === 'accepted') {
+        showToast('تم بدء تثبيت تطبيق مِشكاتي على هاتفك 📲', '📲');
+        closeInstallAppModal();
+      }
+      deferredPwaPrompt = null;
+    }
+
+    if ('caches' in window) {
+      caches.keys().then((keys) => {
+        keys.forEach((key) => {
+          if (key !== 'mishkati-v10-live') {
+            caches.delete(key);
+          }
+        });
+      });
+    }
+
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').catch(() => {});
+        navigator.serviceWorker.register('sw.js').then((reg) => {
+          reg.update();
+        }).catch(() => {});
       });
     }
   </script>
