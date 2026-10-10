@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Clean Flat Vector Candle (Exact match to user reference) -->
+  <g transform="translate(0, 6)">
+    <!-- 1. Flame Layers -->
+    <!-- Outer Yellow Flame -->
+    <path d="M256 64 C230 108, 218 148, 232 178 C238 190, 247 196, 256 196 C265 196, 274 190, 280 178 C294 148, 282 108, 256 64 Z" fill="#F4DC4E"/>
+    <!-- Middle Soft Yellow Flame -->
+    <path d="M256 96 C238 128, 230 156, 240 178 C245 188, 250 193, 256 193 C262 193, 267 188, 272 178 C282 156, 274 128, 256 96 Z" fill="#F8E98E"/>
+    <!-- Inner Pale Cream Flame -->
+    <path d="M256 136 C246 156, 242 172, 248 185 C250 190, 253 193, 256 193 C259 193, 262 190, 264 185 C270 172, 266 156, 256 136 Z" fill="#FCF5C7"/>
+    <!-- Innermost Red-Orange Core -->
+    <path d="M256 164 C251 174, 249 183, 252 190 C253 193, 255 194, 256 194 C257 194, 259 193, 260 190 C263 183, 261 174, 256 164 Z" fill="#D84A32"/>
+
+    <!-- 2. Candle Cylinder Body -->
+    <!-- Main Golden Honey Cylinder -->
+    <path d="M214 212 L214 434 C214 442, 233 448, 256 448 C279 448, 298 442, 298 434 L298 212 Z" fill="#ECC363"/>
+    <!-- Vertical Darker Ochre Shadow Stripe on Right Side -->
+    <path d="M272 212 L272 447 C283 446, 291 443, 294 439 L294 212 Z" fill="#CCA147"/>
+    <!-- Thin Light Rightmost Edge -->
+    <path d="M293 212 L293 440 C296 438, 298 436, 298 434 L298 212 Z" fill="#F4D47C"/>
+    <!-- Subtle Cylinder Outline -->
+    <path d="M214 212 L214 434 C214 442, 233 448, 256 448 C279 448, 298 442, 298 434 L298 212" fill="none" stroke="#CFA449" stroke-width="1.5"/>
+
+    <!-- 3. Vertical Cream Highlight & Dot on Left Side of Cylinder -->
+    <path d="M237 242 C234 265, 233 295, 236 318 C237 325, 240 325, 241 318 C244 295, 243 265, 240 242 C239 238, 238 238, 237 242 Z" fill="#F9E7A7"/>
+    <ellipse cx="238.5" cy="340" rx="5.5" ry="9" fill="#F9E7A7"/>
+
+    <!-- 4. Melted Wax Top Cap & Drips -->
+    <path d="M208 206
+             C208 197, 229 193, 256 193
+             C283 193, 304 197, 304 206
+             C304 214, 305 228, 306 242
+             C307 254, 310 264, 304 267
+             C299 269, 296 261, 296 248
+             C296 232, 294 220, 286 220
+             C281 220, 281 232, 283 245
+             C285 256, 281 264, 274 263
+             C267 262, 266 252, 267 236
+             C268 224, 265 219, 254 220
+             C241 221, 232 220, 225 220
+             C221 220, 222 246, 223 264
+             C224 277, 218 286, 211 284
+             C204 282, 202 271, 205 258
+             C208 245, 206 232, 207 219
+             Z" fill="#F5E193" stroke="#D5B552" stroke-width="1.5" stroke-linejoin="round"/>
+
+    <!-- Top Wax Basin Inner Pool -->
+    <ellipse cx="256" cy="204" rx="34" ry="5.5" fill="#D5AB4E"/>
+    <ellipse cx="258" cy="205" rx="26" ry="3.8" fill="#E6C166"/>
+
+    <!-- Highlights on Wax Drips -->
+    <path d="M213 226 C211 242, 212 258, 210 272" stroke="#FCF2C2" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M274 224 C273 236, 274 246, 275 254" stroke="#FCF2C2" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+    <!-- 5. Brown Candle Wick -->
+    <path d="M256 188 C256 194, 255 201, 255 206" stroke="#5C2E14" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

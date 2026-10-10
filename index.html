@@ -18,9 +18,9 @@
   <!-- Web App Manifest -->
   <link rel="manifest" href="manifest.json" />
   
-  <!-- Glowing Lantern Favicon & Apple Touch Icon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><defs><radialGradient id=%22g%22 cx=%2250%25%22 cy=%2250%25%22 r=%2250%25%22><stop offset=%220%25%22 stop-color=%22%23fbbf24%22/><stop offset=%2250%25%22 stop-color=%22%23d97706%22/><stop offset=%22100%25%22 stop-color=%22%2378350f%22/></radialGradient></defs><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230f172a%22/><path d=%22M50 15 L62 32 L60 62 L50 78 L40 62 L38 32 Z%22 fill=%22url(%23g)%22/><circle cx=%2250%22 cy=%2248%22 r=%229%22 fill=%22%23ffffff%22 opacity=%220.95%22/></svg>" />
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><defs><radialGradient id=%22g%22 cx=%2250%25%22 cy=%2250%25%22 r=%2250%25%22><stop offset=%220%25%22 stop-color=%22%23fbbf24%22/><stop offset=%2250%25%22 stop-color=%22%23d97706%22/><stop offset=%22100%25%22 stop-color=%22%2378350f%22/></radialGradient></defs><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230f172a%22/><path d=%22M50 15 L62 32 L60 62 L50 78 L40 62 L38 32 Z%22 fill=%22url(%23g)%22/><circle cx=%2250%22 cy=%2248%22 r=%229%22 fill=%22%23ffffff%22 opacity=%220.95%22/></svg>" />
+  <!-- Candle Favicon & Apple Touch Icon -->
+  <link rel="icon" type="image/svg+xml" href="icon-candle.svg" />
+  <link rel="apple-touch-icon" href="icon-candle.svg" />
 
   <!-- Google Fonts: Tajawal, Cairo, Amiri, Scheherazade New, IBM Plex Sans Arabic -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -694,18 +694,24 @@
   <header class="sticky top-0 z-40 w-full glass-mishkat border-b border-lantern-500/15 dark:border-lantern-500/10 shadow-sm transition-all duration-300">
     <div class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-1.5 sm:gap-3">
       
-      <!-- Corner: Hamburger Menu Button (Drawer Trigger) & Minimalist Brand Badge -->
+      <!-- Corner: Brand Candle Emblem & Title -->
       <div class="flex items-center gap-1.5 sm:gap-3 min-w-0 flex-shrink-0">
-        <button id="openMenuBtn" onclick="openDrawer()" aria-label="فتح القائمة الجانبية" title="فتح القائمة" class="p-2 sm:px-3 sm:py-2 rounded-xl bg-amber-100/90 dark:bg-obsidian-800 text-amber-950 dark:text-amber-200 hover:bg-amber-200 dark:hover:bg-obsidian-700 border border-amber-300/40 dark:border-obsidian-700 flex items-center gap-1.5 text-xs font-bold transition shadow-sm cursor-pointer mishkat-btn-motion flex-shrink-0">
-          <svg class="w-5 h-5 text-lantern-600 dark:text-lantern-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-          <span class="hidden sm:inline">القائمة</span>
-        </button>
-
-        <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-1.5 sm:gap-2 group cursor-pointer min-w-0" title="العودة لمواقيت الصلاة">
-          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-br from-lantern-500 via-amber-600 to-lantern-800 flex items-center justify-center shadow-md shadow-lantern-600/30 text-white flex-shrink-0 group-hover:scale-105 transition">
-            <span class="text-xs sm:text-sm">🕯️</span>
+        <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-2 sm:gap-2.5 group cursor-pointer min-w-0" title="العودة لمواقيت الصلاة">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-slate-900/90 dark:bg-obsidian-900 border border-amber-500/35 flex items-center justify-center shadow-md shadow-amber-500/15 flex-shrink-0 group-hover:scale-105 transition overflow-hidden p-0.5">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 drop-shadow-[0_0_6px_rgba(244,220,78,0.45)]" viewBox="170 50 172 415" xmlns="http://www.w3.org/2000/svg">
+              <path d="M256 64 C230 108, 218 148, 232 178 C238 190, 247 196, 256 196 C265 196, 274 190, 280 178 C294 148, 282 108, 256 64 Z" fill="#F4DC4E"/>
+              <path d="M256 96 C238 128, 230 156, 240 178 C245 188, 250 193, 256 193 C262 193, 267 188, 272 178 C282 156, 274 128, 256 96 Z" fill="#F8E98E"/>
+              <path d="M256 136 C246 156, 242 172, 248 185 C250 190, 253 193, 256 193 C259 193, 262 190, 264 185 C270 172, 266 156, 256 136 Z" fill="#FCF5C7"/>
+              <path d="M256 164 C251 174, 249 183, 252 190 C253 193, 255 194, 256 194 C257 194, 259 193, 260 190 C263 183, 261 174, 256 164 Z" fill="#D84A32"/>
+              <path d="M214 212 L214 434 C214 442, 233 448, 256 448 C279 448, 298 442, 298 434 L298 212 Z" fill="#ECC363"/>
+              <path d="M272 212 L272 447 C283 446, 291 443, 294 439 L294 212 Z" fill="#CCA147"/>
+              <path d="M293 212 L293 440 C296 438, 298 436, 298 434 L298 212 Z" fill="#F4D47C"/>
+              <path d="M237 242 C234 265, 233 295, 236 318 C237 325, 240 325, 241 318 C244 295, 243 265, 240 242 C239 238, 238 238, 237 242 Z" fill="#F9E7A7"/>
+              <ellipse cx="238.5" cy="340" rx="5.5" ry="9" fill="#F9E7A7"/>
+              <path d="M208 206 C208 197, 229 193, 256 193 C283 193,304 197,304 206 C304 214,305 228,306 242 C307 254,310 264,304 267 C299 269,296 261,296 248 C296 232,294 220,286 220 C281 220,281 232,283 245 C285 256,281 264,274 263 C267 262,266 252,267 236 C268 224,265 219,254 220 C241 221,232 220,225 220 C221 220,222 246,223 264 C224 277,218 286,211 284 C204 282,202 271,205 258 C208 245,206 232,207 219 Z" fill="#F5E193" stroke="#D5B552" stroke-width="2" stroke-linejoin="round"/>
+              <ellipse cx="256" cy="204" rx="34" ry="5.5" fill="#D5AB4E"/>
+              <path d="M256 188 C256 194, 255 201, 255 206" stroke="#5C2E14" stroke-width="5" stroke-linecap="round" fill="none"/>
+            </svg>
           </div>
 
           <div class="min-w-0">
@@ -713,7 +719,7 @@
               <span class="text-base sm:text-xl font-black bg-gradient-to-l from-amber-700 via-lantern-600 to-amber-500 dark:from-amber-400 dark:via-lantern-300 dark:to-yellow-200 bg-clip-text text-transparent whitespace-nowrap">
                 مِشكاتي
               </span>
-              <span id="headerCityBadge" class="hidden sm:inline-flex text-[10px] font-bold bg-amber-500/15 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/25 items-center gap-1 shadow-inner whitespace-nowrap">
+              <span id="headerCityBadge" class="inline-flex text-[10px] font-bold bg-amber-500/15 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/25 items-center gap-1 shadow-inner whitespace-nowrap">
                 <span>🇵🇸</span>
                 <span id="headerCityName">نابلس</span>
               </span>
@@ -764,34 +770,10 @@
         </a>
       </div>
 
-      <!-- Left: Auth Status, Persona Switcher, Audio Toggle & Dark/Light Theme -->
-      <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+      <!-- Left: Auth Status, Audio Toggle & Dark/Light Theme -->
+      <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
         <!-- Auth Header Container -->
         <div id="authHeaderContainer" class="flex-shrink-0"></div>
-
-        <!-- Persona Switcher Capsule (مُثابِر / مُثابِرة) -->
-        <div id="personaToggleCapsule" class="relative inline-flex items-center p-0.5 rounded-full bg-slate-900/80 dark:bg-obsidian-900 border border-slate-800 dark:border-obsidian-750 shadow-inner select-none flex-shrink-0">
-          <button
-            id="personaBtnMuthabir"
-            type="button"
-            onclick="setPersonaMode('muthabir')"
-            title="نمط مُثابِر • السمة الكهرمانية الذهبية والخطاب العام"
-            class="persona-btn active relative z-10 flex items-center gap-1 px-1.5 sm:px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-amber-300 mishkat-btn-motion whitespace-nowrap"
-          >
-            <span class="text-[11px] sm:text-xs">🧭</span>
-            <span class="font-serif text-[10px] sm:text-xs">مُثابِر</span>
-          </button>
-          <button
-            id="personaBtnMuthabira"
-            type="button"
-            onclick="setPersonaMode('muthabira')"
-            title="نمط مُثابِرة • سمة الذهب الوردي المخملي والخطاب المؤنث الكريم"
-            class="persona-btn relative z-10 flex items-center gap-1 px-1.5 sm:px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-slate-400 hover:text-pink-300 mishkat-btn-motion whitespace-nowrap"
-          >
-            <span class="text-[11px] sm:text-xs">🌸</span>
-            <span class="font-serif text-[10px] sm:text-xs">مُثابِرة</span>
-          </button>
-        </div>
 
         <!-- Audio Toggle -->
         <button id="soundToggleBtn" title="تفعيل / كتم الأصوات" aria-label="تبديل الصوت" class="p-1.5 sm:p-2 rounded-xl bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300 hover:bg-amber-100 dark:hover:bg-slate-700 focus:outline-none cursor-pointer mishkat-btn-motion flex-shrink-0">
@@ -916,17 +898,32 @@
   <!-- Drawer Backdrop Overlay -->
   <div id="drawerOverlay" onclick="closeDrawer()" class="fixed inset-0 w-screen h-[100dvh] z-[60] bg-black/65 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none" aria-hidden="true"></div>
 
-  <!-- Slide-out Navigation Drawer -->
-  <aside id="navigationDrawer" aria-label="القائمة الجانبية للأذكار ومساحة مثابر" class="fixed top-0 bottom-0 right-0 z-[70] w-[85vw] max-w-[320px] sm:max-w-sm h-[100dvh] bg-slate-950/98 dark:bg-[#0A0F1D]/98 backdrop-blur-2xl border-l border-amber-500/20 shadow-2xl flex flex-col transform transition-transform duration-300 ease-in-out translate-x-full select-none">
+  <!-- Bottom-Sheet Full Menu (Triggered from the Bottom Bar) -->
+  <aside id="navigationDrawer" aria-label="قائمة مشكاتي السفلية" class="fixed inset-x-0 bottom-0 z-[70] w-full max-w-2xl mx-auto max-h-[82dvh] rounded-t-3xl bg-slate-950/98 dark:bg-[#0A0F1D]/98 backdrop-blur-2xl border-t border-amber-500/30 shadow-[0_-15px_50px_rgba(0,0,0,0.8)] flex flex-col transform transition-transform duration-300 ease-in-out translate-y-full select-none">
     
-    <!-- Drawer Header -->
-    <div class="p-4 sm:p-5 border-b border-amber-500/15 flex items-center justify-between bg-gradient-to-r from-amber-500/10 via-obsidian-950/40 to-transparent">
+    <!-- Drag Handle Pill -->
+    <div class="w-12 h-1.5 bg-slate-700/80 rounded-full mx-auto mt-2.5 mb-1 flex-shrink-0"></div>
+
+    <!-- Menu Header -->
+    <div class="px-4 py-3 border-b border-amber-500/15 flex items-center justify-between bg-gradient-to-r from-amber-500/10 via-obsidian-950/40 to-transparent">
       <div class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-lantern-500 to-amber-700 text-white flex items-center justify-center text-lg shadow-md shadow-lantern-600/30 flex-shrink-0">
-          🕯️
+        <div class="w-9 h-9 rounded-2xl bg-slate-900 border border-amber-500/35 flex items-center justify-center shadow-md flex-shrink-0 p-0.5">
+          <svg class="w-7 h-7" viewBox="170 50 172 415" xmlns="http://www.w3.org/2000/svg">
+            <path d="M256 64 C230 108, 218 148, 232 178 C238 190, 247 196, 256 196 C265 196, 274 190, 280 178 C294 148, 282 108, 256 64 Z" fill="#F4DC4E"/>
+            <path d="M256 96 C238 128, 230 156, 240 178 C245 188, 250 193, 256 193 C262 193, 267 188, 272 178 C282 156, 274 128, 256 96 Z" fill="#F8E98E"/>
+            <path d="M256 136 C246 156, 242 172, 248 185 C250 190, 253 193, 256 193 C259 193, 262 190, 264 185 C270 172, 266 156, 256 136 Z" fill="#FCF5C7"/>
+            <path d="M256 164 C251 174, 249 183, 252 190 C253 193, 255 194, 256 194 C257 194, 259 193, 260 190 C263 183, 261 174, 256 164 Z" fill="#D84A32"/>
+            <path d="M214 212 L214 434 C214 442, 233 448, 256 448 C279 448, 298 442, 298 434 L298 212 Z" fill="#ECC363"/>
+            <path d="M272 212 L272 447 C283 446, 291 443, 294 439 L294 212 Z" fill="#CCA147"/>
+            <path d="M237 242 C234 265, 233 295, 236 318 C237 325, 240 325, 241 318 C244 295, 243 265, 240 242 C239 238, 238 238, 237 242 Z" fill="#F9E7A7"/>
+            <ellipse cx="238.5" cy="340" rx="5.5" ry="9" fill="#F9E7A7"/>
+            <path d="M208 206 C208 197, 229 193, 256 193 C283 193,304 197,304 206 C304 214,305 228,306 242 C307 254,310 264,304 267 C299 269,296 261,296 248 C296 232,294 220,286 220 C281 220,281 232,283 245 C285 256,281 264,274 263 C267 262,266 252,267 236 C268 224,265 219,254 220 C241 221,232 220,225 220 C221 220,222 246,223 264 C224 277,218 286,211 284 C204 282,202 271,205 258 C208 245,206 232,207 219 Z" fill="#F5E193" stroke="#D5B552" stroke-width="2" stroke-linejoin="round"/>
+            <ellipse cx="256" cy="204" rx="34" ry="5.5" fill="#D5AB4E"/>
+            <path d="M256 188 C256 194, 255 201, 255 206" stroke="#5C2E14" stroke-width="5" stroke-linecap="round" fill="none"/>
+          </svg>
         </div>
         <div>
-          <h2 class="text-base font-black text-slate-100">قائمة مِشكاتي</h2>
+          <h2 class="text-base font-black text-slate-100">قائمة مِشكاتي الشاملة</h2>
           <p id="drawerTagline" class="text-[11px] text-amber-300/80">رفيق الطالب الفلسطيني</p>
         </div>
       </div>
@@ -1402,11 +1399,20 @@
                 </div>
               </div>
 
-              <!-- Header Actions: Key Settings / Maximize / Clear -->
-              <div class="flex items-center gap-1 flex-shrink-0">
-                <button onclick="openSirajSettingsModal()" class="text-[11px] font-bold text-amber-200 bg-amber-500/10 hover:bg-amber-500/20 px-2 sm:px-2.5 py-1 rounded-xl border border-amber-500/25 transition flex items-center gap-1 cursor-pointer" title="تهيئة مفتاح Google Gemini المجاني">
-                  <span>🔑</span>
-                  <span id="sirajKeyStatusLabel" class="hidden sm:inline">تهيئة</span>
+              <!-- Header Actions: History / New Chat / Maximize / Clear -->
+              <div class="flex items-center gap-1.5 flex-shrink-0">
+                <button onclick="startNewSirajChat()" class="text-[11px] font-bold text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 px-2.5 py-1.5 rounded-xl border border-emerald-500/30 transition flex items-center gap-1 cursor-pointer shadow-sm" title="بدء محادثة جديدة">
+                  <span>➕</span>
+                  <span class="hidden sm:inline">محادثة جديدة</span>
+                </button>
+                <button id="sirajHistoryToggleBtn" onclick="toggleSirajHistoryPanel()" class="text-[11px] font-bold text-amber-200 bg-amber-500/15 hover:bg-amber-500/25 px-2.5 py-1.5 rounded-xl border border-amber-500/30 transition flex items-center gap-1.5 cursor-pointer shadow-sm" title="سجل المحادثات السابقة">
+                  <span>📜</span>
+                  <span>السجل</span>
+                  <span id="sirajHistoryCountBadge" class="px-1.5 py-0.2 rounded-full bg-amber-500/30 text-amber-100 text-[10px] font-mono">0</span>
+                </button>
+                <button onclick="openSirajSettingsModal()" class="text-slate-400 hover:text-amber-300 p-1.5 rounded-xl hover:bg-slate-800/60 border border-transparent hover:border-amber-500/20 transition flex items-center justify-center cursor-pointer" title="إعدادات متقدمة (اختياري)">
+                  <span id="sirajKeyStatusLabel" class="hidden">جاهز تلقائياً</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </button>
                 <button id="toggleSirajExpandBtn" onclick="toggleSirajChatExpand()" class="text-slate-400 hover:text-amber-300 p-1.5 rounded-xl hover:bg-slate-800/60 border border-transparent hover:border-amber-500/20 transition flex items-center justify-center cursor-pointer" title="توسيع نافذة المحادثة (Maximize)">
                   <svg id="sirajExpandIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1414,9 +1420,30 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7M21 9V3m0 0h-6M3 15v6m0 0h6"/>
                   </svg>
                 </button>
-                <button onclick="clearSirajChat()" class="text-slate-400 hover:text-rose-400 p-1.5 rounded-xl hover:bg-slate-800/60 border border-transparent hover:border-rose-500/20 transition flex items-center justify-center cursor-pointer" title="تفريغ المحادثة">
+                <button onclick="clearSirajChat()" class="text-slate-400 hover:text-rose-400 p-1.5 rounded-xl hover:bg-slate-800/60 border border-transparent hover:border-rose-500/20 transition flex items-center justify-center cursor-pointer" title="مسح المحادثة الحالية">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                 </button>
+              </div>
+            </div>
+
+            <!-- Collapsible Conversation History Drawer inside Siraj Hub -->
+            <div id="sirajHistoryPanel" class="hidden relative z-20 bg-slate-900/95 border-b border-amber-500/25 p-3.5 sm:p-4 max-h-72 overflow-y-auto animate-fadeIn">
+              <div class="flex items-center justify-between mb-2.5 pb-2 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm">📜</span>
+                  <h4 class="text-xs font-black text-amber-300">سجل محادثات سِراج المحفوظة</h4>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="clearAllSirajHistory()" class="text-[10px] font-bold text-rose-400 hover:text-rose-300 px-2 py-0.5 rounded-lg bg-rose-500/10 border border-rose-500/20 transition cursor-pointer">
+                    حذف كل السجل
+                  </button>
+                  <button type="button" onclick="toggleSirajHistoryPanel()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+                    ✕
+                  </button>
+                </div>
+              </div>
+              <div id="sirajHistoryList" class="space-y-1.5">
+                <!-- Populated dynamically via JS -->
               </div>
             </div>
 
@@ -1782,12 +1809,6 @@
         <button onclick="navigateTo('home')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-obsidian-800 dark:hover:bg-obsidian-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition shadow-sm cursor-pointer mishkat-btn-motion">
           <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           <span>رجوع إلى الرئيسية</span>
-        </button>
-
-        <!-- Menu Button to access other sections -->
-        <button onclick="openDrawer()" aria-label="فتح القائمة لتغيير القسم" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-obsidian-800 border border-slate-200/80 dark:border-obsidian-700 transition cursor-pointer mishkat-btn-motion">
-          <svg class="w-4 h-4 text-lantern-600 dark:text-lantern-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          <span>القائمة</span>
         </button>
 
       </div>
@@ -2342,11 +2363,11 @@
                 <button
                   type="button"
                   onclick="toggleMidmarZen()"
-                  class="px-3 py-1.5 rounded-xl bg-slate-950/70 hover:bg-slate-800 text-slate-300 hover:text-amber-300 border border-amber-500/30 hover:border-amber-400 transition cursor-pointer shadow-sm flex items-center gap-1.5 active:scale-95"
+                  class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500/25 via-lantern-500/20 to-amber-600/25 hover:from-amber-500/40 hover:to-amber-600/40 text-amber-200 border border-amber-400/50 hover:border-amber-300 transition cursor-pointer shadow-md shadow-amber-950/40 flex items-center gap-1.5 active:scale-95"
                   title="وضع التركيز وملء الشاشة (اضغط F)"
                 >
-                  <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
-                  <span class="text-xs font-bold text-amber-300">وضع التركيز (ملء الشاشة)</span>
+                  <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                  <span class="text-xs font-black text-amber-300">وضع التركيز (فل شاشة)</span>
                 </button>
               </div>
 
@@ -2426,15 +2447,25 @@
               </div>
 
               <!-- Main Timer Action Controls -->
-              <div class="flex items-center justify-center gap-3 flex-wrap">
+              <div class="flex items-center justify-center gap-2.5 sm:gap-3 flex-wrap">
                 <button
                   type="button"
                   id="midmarToggleBtn"
                   onclick="toggleMidmarTimer()"
-                  class="px-8 py-3 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm shadow-xl shadow-amber-950/50 transition cursor-pointer flex items-center gap-2 active:scale-95"
+                  class="px-7 sm:px-8 py-3 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm shadow-xl shadow-amber-950/50 transition cursor-pointer flex items-center gap-2 active:scale-95"
                 >
                   <span id="midmarToggleIcon">▶️</span>
                   <span id="midmarToggleLabel">بدء التركيز</span>
+                </button>
+
+                <button
+                  type="button"
+                  onclick="toggleMidmarZen()"
+                  title="فتح وضع التركيز بملء الشاشة الكاملة"
+                  class="px-4 py-3 rounded-2xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/40 text-xs font-black transition cursor-pointer flex items-center gap-1.5 active:scale-95 shadow-md"
+                >
+                  <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                  <span>وضع التركيز (فل شاشة)</span>
                 </button>
 
                 <button
@@ -3323,147 +3354,6 @@
           </div>
         </div>
       </div>
-
-      <!-- ================= OVERLAY: ZEN DISTRACTION-FREE VIEW ================= -->
-      <div id="midmarZenOverlay" class="hidden fixed inset-0 w-screen h-screen z-[99999] bg-[#060913] flex flex-col justify-between p-6 sm:p-8 select-none overflow-hidden transition-all duration-300" style="position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;z-index:99999;background-color:#060913;" dir="rtl">
-        <!-- Ambient Multi-Layer Radial Glow -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] sm:w-[720px] h-[540px] sm:h-[720px] bg-gradient-to-tr from-amber-500/10 via-emerald-500/5 to-amber-600/10 rounded-full blur-[140px] pointer-events-none animate-pulse"></div>
-
-        <!-- 1. FLOATING TOP HUD (Balanced: Right, Center, Left) -->
-        <div id="midmarZenTopHud" class="relative z-20 w-full flex items-center justify-between gap-4 transition-opacity duration-700 opacity-100 flex-wrap sm:flex-nowrap">
-          <!-- Right Side: Palestinian Clock & Status -->
-          <div class="flex items-center gap-2.5">
-            <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-slate-900/80 border border-amber-500/25 backdrop-blur-md shadow-lg text-slate-100">
-              <span class="text-sm">🇵🇸</span>
-              <span id="midmarZenJerusalemClock" class="text-xs font-mono font-bold text-amber-300 tracking-wider">القدس الشريف</span>
-            </div>
-            <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-slate-900/70 border border-amber-500/20 backdrop-blur-md text-xs text-slate-200">
-              <span id="midmarZenStatusDot" class="w-2 h-2 rounded-full bg-amber-400"></span>
-              <span id="midmarZenStatusLabel" class="font-serif font-semibold">جلسة تركيز متصلة</span>
-            </div>
-          </div>
-
-          <!-- Center: Active Subject & Goal Badge -->
-          <div id="midmarZenSubjectBadge" class="order-3 sm:order-2 mx-auto sm:mx-0 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-amber-500/30 backdrop-blur-md text-xs sm:text-sm font-bold text-amber-300 shadow-xl shadow-black/40 font-serif">
-            <span>🎯 جلسة تركيز ومذاكرة</span>
-            <span class="text-slate-500">|</span>
-            <span class="text-emerald-400 font-normal">جلسة تركيز عميق</span>
-          </div>
-
-          <!-- Left Side: Audio Ambience Toggles & Exit Zen Button -->
-          <div class="order-2 sm:order-3 flex items-center gap-2">
-            <!-- Ambience Switcher -->
-            <div class="hidden sm:flex items-center gap-1 bg-slate-900/80 p-1 rounded-2xl border border-amber-500/20 backdrop-blur-md text-xs">
-              <button type="button" id="midmarSoundBtn_none_zen" onclick="switchMidmarSound('none')" class="px-2.5 py-1 rounded-xl text-xs font-bold text-amber-300 bg-amber-500/20 border border-amber-500/30 transition cursor-pointer">🔕 صامت</button>
-              <button type="button" id="midmarSoundBtn_rain_zen" onclick="switchMidmarSound('rain')" class="px-2.5 py-1 rounded-xl text-xs font-bold text-slate-400 hover:text-slate-200 transition cursor-pointer">🌧️ مطر</button>
-              <button type="button" id="midmarSoundBtn_night_zen" onclick="switchMidmarSound('night')" class="px-2.5 py-1 rounded-xl text-xs font-bold text-slate-400 hover:text-slate-200 transition cursor-pointer">🌙 سكون</button>
-              <button type="button" id="midmarSoundBtn_breeze_zen" onclick="switchMidmarSound('breeze')" class="px-2.5 py-1 rounded-xl text-xs font-bold text-slate-400 hover:text-slate-200 transition cursor-pointer">🍃 نسيم</button>
-            </div>
-
-            <!-- Exit Zen Mode Button -->
-            <button
-              type="button"
-              onclick="toggleMidmarZen()"
-              class="px-4 py-2 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white border border-amber-500/30 hover:border-amber-400 backdrop-blur-md text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow-lg active:scale-95"
-              title="الخروج من وضع التركيز (Esc أو F)"
-            >
-              <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 14h6m0 0v6m0-6L3 21m17-7h-6m0 0v6m0-6l7 7M14 4h6m0 0v6m0-6L13 11M10 4H4m0 0v6m0-6l7 7"/></svg>
-              <span>إنهاء وضع التركيز</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 2. ENLARGED FOCAL CENTER DISPLAY -->
-        <div class="relative z-10 my-auto flex flex-col items-center justify-center text-center px-4">
-          <!-- Giant Circular Progress Ring Framing Monospace Digits with Ambient Glow -->
-          <div class="relative w-[260px] h-[260px] sm:w-[420px] sm:h-[420px] lg:w-[480px] lg:h-[480px] xl:w-[520px] xl:h-[520px] flex items-center justify-center">
-            <!-- Ambient Radial Glow Backdrop directly behind ring -->
-            <div class="absolute inset-0 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);"></div>
-
-            <svg class="w-full h-full transform -rotate-90 filter drop-shadow-[0_0_35px_rgba(245,158,11,0.25)]" viewBox="0 0 280 280">
-              <circle
-                cx="140"
-                cy="140"
-                r="122"
-                stroke="currentColor"
-                stroke-width="5"
-                class="text-slate-800/40 fill-transparent"
-              />
-              <circle
-                id="midmarZenProgressCircle"
-                cx="140"
-                cy="140"
-                r="122"
-                stroke="url(#midmarZenGrad)"
-                stroke-width="7"
-                stroke-dasharray="766.55"
-                stroke-dashoffset="0"
-                stroke-linecap="round"
-                class="fill-transparent transition-all duration-300"
-              />
-              <defs>
-                <linearGradient id="midmarZenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#f59e0b" />
-                  <stop offset="60%" stop-color="#fbbf24" />
-                  <stop offset="100%" stop-color="#10b981" />
-                </linearGradient>
-              </defs>
-            </svg>
-
-            <!-- Inner Digits & Descriptor -->
-            <div class="absolute inset-0 flex flex-col items-center justify-center space-y-2 select-none">
-              <div id="midmarZenClockDisplay" class="font-mono text-5xl sm:text-8xl md:text-9xl font-bold text-amber-400 tracking-wider tabular-nums drop-shadow-[0_4px_30px_rgba(245,158,11,0.45)]">
-                25:00
-              </div>
-              <span id="midmarZenModeLabel" class="text-xs sm:text-base text-slate-300 font-sans tracking-wide">
-                طريقة 25 د
-              </span>
-            </div>
-          </div>
-
-          <!-- Play / Pause / Reset Controls (Beneath Digits) -->
-          <div id="midmarZenBottomHud" class="mt-8 flex items-center justify-center gap-3.5 transition-opacity duration-700 opacity-100 flex-wrap">
-            <button
-              type="button"
-              id="midmarZenToggleBtn"
-              onclick="toggleMidmarTimer()"
-              class="px-8 sm:px-10 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm sm:text-base transition cursor-pointer flex items-center gap-2.5 active:scale-95 shadow-xl shadow-amber-950/60"
-            >
-              <span id="midmarZenToggleIcon">▶️</span>
-              <span id="midmarZenToggleLabel">بدء التركيز</span>
-            </button>
-            <button
-              type="button"
-              onclick="resetMidmarTimer()"
-              title="إعادة ضبط المؤقت"
-              class="p-3.5 rounded-2xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-slate-100 border border-slate-700 transition cursor-pointer"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-            </button>
-            <button
-              type="button"
-              onclick="completeMidmarEarly(); if(midmarState.isZen) toggleMidmarZen();"
-              class="px-5 py-3.5 rounded-2xl bg-slate-900/80 hover:bg-emerald-950/50 text-slate-200 hover:text-emerald-300 border border-slate-700 hover:border-emerald-500/40 text-xs sm:text-sm font-bold transition flex items-center gap-2 cursor-pointer active:scale-95"
-            >
-              <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-              <span>إنهاء وحفظ</span>
-            </button>
-          </div>
-
-          <!-- Keyboard Shortcuts Hint Bar (High-Contrast Slate) -->
-          <div id="midmarZenKeyHint" class="mt-5 text-xs text-slate-300 font-mono tracking-wide transition-opacity duration-700 opacity-90">
-            [Space] إيقاف/تشغيل • [F] ملء الشاشة • [Esc] خروج
-          </div>
-        </div>
-
-        <!-- 3. SPIRITUAL & MOTIVATIONAL AMBIENT FOOTER -->
-        <div class="relative z-20 w-full flex flex-col items-center justify-center text-center max-w-2xl mx-auto min-h-[48px]">
-          <p id="midmarZenQuoteText" class="text-xs sm:text-sm font-serif text-slate-400 leading-relaxed tracking-wide select-none transition-opacity duration-500">
-            «وَأَنْ لَيْسَ لِلْإِنْسَانِ إِلَّا مَا سَعَىٰ * وَأَنَّ سَعْيَهُ سَوْفَ يُرَىٰ»
-          </p>
-        </div>
-      </div>
-
     </div>
 
     <!-- ==========================================================================
@@ -3641,10 +3531,10 @@
   </main>
 
   <!-- ================= 5. FOOTER ================= -->
-  <footer class="bg-white dark:bg-obsidian-900 border-t border-slate-200 dark:border-obsidian-800 py-5 pb-24 sm:pb-6 text-center text-xs text-slate-500 dark:text-slate-400 mt-6 sm:mt-10 transition-all duration-300">
+  <footer class="bg-white dark:bg-obsidian-900 border-t border-slate-200 dark:border-obsidian-800 py-5 pb-28 text-center text-xs text-slate-500 dark:text-slate-400 mt-6 sm:mt-10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-center gap-2 font-bold text-slate-700 dark:text-slate-200 text-xs sm:text-sm flex-wrap">
-        <span class="text-lantern-600 dark:text-lantern-400">🕯️ مِشكاتي</span>
+        <span class="text-lantern-600 dark:text-lantern-400">مِشكاتي</span>
         <span>•</span>
         <span>نور يومك وعون دراستك</span>
         <span>•</span>
@@ -3653,31 +3543,225 @@
     </div>
   </footer>
 
-  <!-- ================= 5.5. NATIVE MOBILE BOTTOM NAVIGATION BAR (ANDROID & iOS) ================= -->
-  <nav id="mobileBottomNav" aria-label="شريط التنقل السفلي للهاتف" class="sm:hidden fixed bottom-0 inset-x-0 z-40 w-full bg-slate-950/95 dark:bg-[#0A0F1D]/95 backdrop-blur-2xl border-t border-amber-500/20 shadow-[0_-8px_30px_rgba(0,0,0,0.6)] select-none" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
-    <div class="grid grid-cols-5 items-center h-16 px-1">
-      <a href="#home" onclick="navigateTo('home'); return false;" data-mobile-nav="home" class="mobile-bottom-tab flex flex-col items-center justify-center gap-1 py-1.5 rounded-2xl text-amber-400 font-bold transition-all active:scale-95">
-        <span class="text-lg leading-none">🕌</span>
-        <span class="text-[10px] leading-tight">الرئيسية</span>
-      </a>
-      <a href="#sabah" onclick="navigateTo('sabah'); return false;" data-mobile-nav="azkar" class="mobile-bottom-tab flex flex-col items-center justify-center gap-1 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95">
-        <span class="text-lg leading-none">📿</span>
-        <span class="text-[10px] leading-tight">الأذكار</span>
-      </a>
-      <a href="#midmar" onclick="navigateTo('midmar'); return false;" data-mobile-nav="midmar" class="mobile-bottom-tab flex flex-col items-center justify-center gap-1 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95">
-        <span class="text-lg leading-none">🎯</span>
-        <span class="text-[10px] leading-tight">مِضمار</span>
-      </a>
-      <a href="#masar_yawm" onclick="navigateTo('masar_yawm'); return false;" data-mobile-nav="masar_yawm" class="mobile-bottom-tab flex flex-col items-center justify-center gap-1 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95">
-        <span class="text-lg leading-none">✅</span>
-        <span class="text-[10px] leading-tight">مسار اليوم</span>
-      </a>
-      <a href="#qabas" onclick="navigateTo('qabas'); return false;" data-mobile-nav="qabas" class="mobile-bottom-tab flex flex-col items-center justify-center gap-1 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95">
-        <span class="text-lg leading-none">🖋️</span>
-        <span class="text-[10px] leading-tight">قَبَس</span>
-      </a>
+  <!-- ================= 5.5. FULL BOTTOM MENU BAR (REPLACES OLD BOTTOM BAR & TOP MENU) ================= -->
+  <nav id="mobileBottomNav" aria-label="شريط القائمة السفلية الشامل" class="fixed bottom-0 inset-x-0 z-40 w-full bg-slate-950/95 dark:bg-[#0A0F1D]/95 backdrop-blur-2xl border-t border-amber-500/25 shadow-[0_-8px_30px_rgba(0,0,0,0.75)] select-none" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
+    <div class="max-w-7xl mx-auto flex items-center gap-1.5 px-2 py-2">
+      <!-- Button to pop up the full detailed menu sheet from the bottom -->
+      <button
+        type="button"
+        onclick="openDrawer()"
+        aria-label="فتح القائمة الكاملة"
+        class="flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl bg-gradient-to-b from-amber-500/25 to-amber-600/15 text-amber-300 border border-amber-500/40 font-black transition-all active:scale-95 flex-shrink-0 cursor-pointer shadow-sm"
+      >
+        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <span class="text-[10px] leading-tight whitespace-nowrap">القائمة ▲</span>
+      </button>
+
+      <div class="h-8 w-[1px] bg-amber-500/20 flex-shrink-0 mx-0.5"></div>
+
+      <!-- Full Menu Items Directly in the Bottom Bar (Smooth Horizontal Scroll) -->
+      <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 flex-grow">
+        <a href="#home" onclick="navigateTo('home'); return false;" data-mobile-nav="home" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-amber-400 font-bold transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">🕌</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">الرئيسية</span>
+        </a>
+        <a href="#qabas" onclick="navigateTo('qabas'); return false;" data-mobile-nav="qabas" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">🖋️</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">قَبَس</span>
+        </a>
+        <a href="#sabah" onclick="navigateTo('sabah'); return false;" data-mobile-nav="sabah" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">☀️</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">أذكار الصباح</span>
+        </a>
+        <a href="#masaa" onclick="navigateTo('masaa'); return false;" data-mobile-nav="masaa" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">🌙</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">أذكار المساء</span>
+        </a>
+        <a href="#after_prayer" onclick="navigateTo('after_prayer'); return false;" data-mobile-nav="after_prayer" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">🤲</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">بعد الصلاة</span>
+        </a>
+        <a href="#midmar" onclick="navigateTo('midmar'); return false;" data-mobile-nav="midmar" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">🎯</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">مِضمار الإنجاز</span>
+        </a>
+        <a href="#masar_yawm" onclick="navigateTo('masar_yawm'); return false;" data-mobile-nav="masar_yawm" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">✅</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">مسار اليوم</span>
+        </a>
+        <a href="#masar" onclick="navigateTo('masar'); return false;" data-mobile-nav="masar" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">📅</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">مسار الشهر</span>
+        </a>
+        <a href="#mutanaffas" onclick="navigateTo('mutanaffas'); return false;" data-mobile-nav="mutanaffas" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">🪶</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">مُتنفَّس</span>
+        </a>
+        <a href="#student" onclick="navigateTo('student'); return false;" data-mobile-nav="student" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">🎓</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">أدعية المذاكرة</span>
+        </a>
+        <a href="#my_duas" onclick="navigateTo('my_duas'); return false;" data-mobile-nav="my_duas" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">✍️</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">أدعيتي الخاصة</span>
+        </a>
+        <a href="#tasbeeh" onclick="navigateTo('tasbeeh'); return false;" data-mobile-nav="tasbeeh" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">📿</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">المسبحة</span>
+        </a>
+        <a href="#siraj" onclick="navigateTo('siraj'); return false;" data-mobile-nav="siraj" class="mobile-bottom-tab flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-2xl text-slate-400 hover:text-amber-300 font-medium transition-all active:scale-95 flex-shrink-0">
+          <span class="text-base leading-none">💡</span>
+          <span class="text-[10px] leading-tight whitespace-nowrap">سِراج الذكي</span>
+        </a>
+      </div>
     </div>
   </nav>
+
+  <!-- ================= OVERLAY: MIDMAR FULL-SCREEN FOCUS MODE (AT ROOT BODY LEVEL) ================= -->
+  <div id="midmarZenOverlay" class="hidden fixed inset-0 w-screen h-[100dvh] z-[99999] bg-[#060913] flex flex-col justify-between p-4 sm:p-8 select-none overflow-y-auto overflow-x-hidden transition-all duration-300" style="position:fixed;top:0;left:0;right:0;bottom:0;width:100vw;height:100dvh;z-index:99999;background-color:#060913;" dir="rtl">
+    <!-- Ambient Multi-Layer Radial Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[680px] h-[340px] sm:h-[680px] bg-gradient-to-tr from-amber-500/10 via-emerald-500/5 to-amber-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
+
+    <!-- 1. FLOATING TOP HUD -->
+    <div id="midmarZenTopHud" class="relative z-20 w-full flex flex-col sm:flex-row items-center justify-between gap-3 transition-opacity duration-700 opacity-100">
+      <div class="w-full sm:w-auto flex items-center justify-between sm:justify-start gap-2.5">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-slate-900/80 border border-amber-500/25 backdrop-blur-md shadow-lg text-slate-100">
+          <span class="text-sm">🇵🇸</span>
+          <span id="midmarZenJerusalemClock" class="text-xs font-mono font-bold text-amber-300 tracking-wider">القدس الشريف</span>
+        </div>
+        <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-slate-900/70 border border-amber-500/20 backdrop-blur-md text-xs text-slate-200">
+          <span id="midmarZenStatusDot" class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span id="midmarZenStatusLabel" class="font-serif font-semibold">جلسة تركيز متصلة</span>
+        </div>
+
+        <!-- Mobile Exit Zen Button -->
+        <button
+          type="button"
+          onclick="toggleMidmarZen()"
+          class="sm:hidden px-3.5 py-1.5 rounded-2xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-200 border border-rose-500/40 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer active:scale-95"
+        >
+          <span>خروج ✕</span>
+        </button>
+      </div>
+
+      <!-- Center: Timer Mode Switcher Directly Inside Full-Screen Focus Mode -->
+      <div class="flex items-center justify-center gap-1 p-1 rounded-2xl bg-slate-900/90 border border-amber-500/25 backdrop-blur-md flex-wrap">
+        <button type="button" id="midmarZenModeBtn_pomodoro25" onclick="switchMidmarMode('pomodoro25')" class="px-2.5 py-1 rounded-xl text-[11px] font-bold transition cursor-pointer bg-amber-500 text-slate-950 shadow-sm">25 دقيقة</button>
+        <button type="button" id="midmarZenModeBtn_pomodoro50" onclick="switchMidmarMode('pomodoro50')" class="px-2.5 py-1 rounded-xl text-[11px] font-bold transition cursor-pointer text-slate-300 hover:text-white">50 دقيقة</button>
+        <button type="button" id="midmarZenModeBtn_custom" onclick="switchMidmarMode('custom')" class="px-2.5 py-1 rounded-xl text-[11px] font-bold transition cursor-pointer text-slate-300 hover:text-white">40 دقيقة</button>
+        <button type="button" id="midmarZenModeBtn_flow" onclick="switchMidmarMode('flow')" class="px-2.5 py-1 rounded-xl text-[11px] font-bold transition cursor-pointer text-slate-300 hover:text-white">السيل المفتوح 🌊</button>
+      </div>
+
+      <!-- Left Side: Audio Ambience Toggles & Exit Zen Button -->
+      <div class="flex items-center gap-2">
+        <div class="flex items-center gap-1 bg-slate-900/80 p-1 rounded-2xl border border-amber-500/20 backdrop-blur-md text-xs">
+          <button type="button" id="midmarSoundBtn_none_zen" onclick="switchMidmarSound('none')" class="px-2 py-1 rounded-xl text-[11px] font-bold text-amber-300 bg-amber-500/20 border border-amber-500/30 transition cursor-pointer">🔕 صامت</button>
+          <button type="button" id="midmarSoundBtn_rain_zen" onclick="switchMidmarSound('rain')" class="px-2 py-1 rounded-xl text-[11px] font-bold text-slate-400 hover:text-slate-200 transition cursor-pointer">🌧️ مطر</button>
+          <button type="button" id="midmarSoundBtn_night_zen" onclick="switchMidmarSound('night')" class="px-2 py-1 rounded-xl text-[11px] font-bold text-slate-400 hover:text-slate-200 transition cursor-pointer">🌙 سكون</button>
+          <button type="button" id="midmarSoundBtn_breeze_zen" onclick="switchMidmarSound('breeze')" class="px-2 py-1 rounded-xl text-[11px] font-bold text-slate-400 hover:text-slate-200 transition cursor-pointer">🍃 نسيم</button>
+        </div>
+
+        <button
+          type="button"
+          onclick="toggleMidmarZen()"
+          class="hidden sm:flex px-4 py-2 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white border border-amber-500/30 hover:border-amber-400 backdrop-blur-md text-xs font-bold transition items-center gap-1.5 cursor-pointer shadow-lg active:scale-95"
+          title="الخروج من وضع التركيز (Esc أو F)"
+        >
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 14h6m0 0v6m0-6L3 21m17-7h-6m0 0v6m0-6l7 7M14 4h6m0 0v6m0-6L13 11M10 4H4m0 0v6m0-6l7 7"/></svg>
+          <span>إنهاء وضع التركيز</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 2. ENLARGED FOCAL CENTER DISPLAY -->
+    <div class="relative z-10 my-auto flex flex-col items-center justify-center text-center px-2 py-2">
+      <div id="midmarZenSubjectBadge" class="mb-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-amber-500/30 backdrop-blur-md text-xs sm:text-sm font-bold text-amber-300 shadow-xl shadow-black/40 font-serif">
+        <span>🎯 جلسة تركيز ومذاكرة</span>
+        <span class="text-slate-500">|</span>
+        <span class="text-emerald-400 font-normal">وضع ملء الشاشة</span>
+      </div>
+
+      <!-- Giant Circular Progress Ring -->
+      <div class="relative w-[250px] h-[250px] sm:w-[380px] sm:h-[380px] lg:w-[440px] lg:h-[440px] flex items-center justify-center">
+        <div class="absolute inset-0 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(245, 158, 11, 0.14) 0%, transparent 70%);"></div>
+
+        <svg class="w-full h-full transform -rotate-90 filter drop-shadow-[0_0_35px_rgba(245,158,11,0.25)]" viewBox="0 0 280 280">
+          <circle cx="140" cy="140" r="122" stroke="currentColor" stroke-width="6" class="text-slate-800/50 fill-transparent" />
+          <circle
+            id="midmarZenProgressCircle"
+            cx="140"
+            cy="140"
+            r="122"
+            stroke="url(#midmarZenGrad)"
+            stroke-width="8"
+            stroke-dasharray="766.55"
+            stroke-dashoffset="0"
+            stroke-linecap="round"
+            class="fill-transparent transition-all duration-300"
+          />
+          <defs>
+            <linearGradient id="midmarZenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f59e0b" />
+              <stop offset="60%" stop-color="#fbbf24" />
+              <stop offset="100%" stop-color="#10b981" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <!-- Inner Digits & Descriptor -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center space-y-2 select-none">
+          <div id="midmarZenClockDisplay" class="font-mono text-5xl sm:text-7xl md:text-8xl font-bold text-amber-400 tracking-wider tabular-nums drop-shadow-[0_4px_30px_rgba(245,158,11,0.45)]">
+            25:00
+          </div>
+          <span id="midmarZenModeLabel" class="text-xs sm:text-base text-slate-300 font-sans tracking-wide">
+            طريقة 25 د
+          </span>
+        </div>
+      </div>
+
+      <!-- Play / Pause / Reset Controls (Beneath Digits) -->
+      <div id="midmarZenBottomHud" class="mt-6 flex items-center justify-center gap-3 transition-opacity duration-700 opacity-100 flex-wrap">
+        <button
+          type="button"
+          id="midmarZenToggleBtn"
+          onclick="toggleMidmarTimer()"
+          class="px-8 sm:px-10 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm sm:text-base transition cursor-pointer flex items-center gap-2.5 active:scale-95 shadow-xl shadow-amber-950/60"
+        >
+          <span id="midmarZenToggleIcon">▶️</span>
+          <span id="midmarZenToggleLabel">بدء التركيز</span>
+        </button>
+        <button
+          type="button"
+          onclick="resetMidmarTimer()"
+          title="إعادة ضبط المؤقت"
+          class="p-3.5 rounded-2xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-slate-100 border border-slate-700 transition cursor-pointer"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        </button>
+        <button
+          type="button"
+          onclick="completeMidmarEarly(); if(midmarState.isZen) toggleMidmarZen();"
+          class="px-5 py-3.5 rounded-2xl bg-slate-900/80 hover:bg-emerald-950/50 text-slate-200 hover:text-emerald-300 border border-slate-700 hover:border-emerald-500/40 text-xs sm:text-sm font-bold transition flex items-center gap-2 cursor-pointer active:scale-95"
+        >
+          <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+          <span>إنهاء وحفظ</span>
+        </button>
+      </div>
+
+      <div id="midmarZenKeyHint" class="mt-4 text-[11px] text-slate-400 font-mono tracking-wide transition-opacity duration-700 opacity-90">
+        [Space] إيقاف/تشغيل • [F] ملء الشاشة • [Esc] خروج
+      </div>
+    </div>
+
+    <!-- 3. SPIRITUAL & MOTIVATIONAL AMBIENT FOOTER -->
+    <div class="relative z-20 w-full flex flex-col items-center justify-center text-center max-w-2xl mx-auto min-h-[36px]">
+      <p id="midmarZenQuoteText" class="text-xs sm:text-sm font-serif text-slate-400 leading-relaxed tracking-wide select-none transition-opacity duration-500">
+        «وَأَنْ لَيْسَ لِلْإِنْسَانِ إِلَّا مَا سَعَىٰ * وَأَنَّ سَعْيَهُ سَوْفَ يُرَىٰ»
+      </p>
+    </div>
+  </div>
 
   <!-- ================= MODAL: SIRAJ AI SETTINGS & API KEY ================= -->
   <div id="sirajSettingsModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/65 backdrop-blur-sm p-4 hidden">
@@ -3923,9 +4007,19 @@
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
 
-      <div class="text-center space-y-1">
-        <div class="w-12 h-12 mx-auto rounded-2xl bg-gradient-to-br from-lantern-500 to-amber-700 text-white flex items-center justify-center text-2xl shadow-md shadow-lantern-600/30">
-          🕯️
+      <div class="text-center space-y-1.5">
+        <div class="w-12 h-12 mx-auto rounded-2xl bg-[#1C1410] border border-amber-500/30 flex items-center justify-center shadow-md shadow-amber-900/20 overflow-hidden p-1">
+          <svg class="w-9 h-9" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M256 44 C222 104 196 154 196 194 C196 227 223 250 256 250 C289 250 316 227 316 194 C316 154 290 104 256 44 Z" fill="#F4DC4E"/>
+            <path d="M256 68 C230 116 210 156 210 190 C210 218 231 238 256 238 C281 238 302 218 302 190 C302 156 282 116 256 68 Z" fill="#F8E98E"/>
+            <path d="M256 96 C237 132 222 163 222 190 C222 212 237 228 256 228 C275 228 290 212 290 190 C290 163 275 132 256 96 Z" fill="#FCF5C7"/>
+            <path d="M256 142 C243 166 235 186 235 204 C235 219 244 230 256 230 C268 230 277 219 277 204 C277 186 269 166 256 142 Z" fill="#D84A32"/>
+            <rect x="249" y="226" width="14" height="32" rx="6" fill="#5C2E14"/>
+            <rect x="172" y="252" width="168" height="216" rx="18" fill="#ECC363"/>
+            <path d="M312 252 H322 C332 252 340 260 340 270 V450 C340 460 332 468 322 468 H312 V252 Z" fill="#CCA147"/>
+            <rect x="190" y="252" width="22" height="216" fill="#F9E7A7" opacity="0.65"/>
+            <path d="M166 262 C166 251 175 244 186 244 H326 C337 244 346 251 346 262 V276 C346 285 339 292 330 292 C322 292 316 286 316 296 V344 C316 353 309 360 300 360 C291 360 284 353 284 344 V302 C284 294 278 288 270 288 C262 288 256 294 256 302 V318 C256 326 249 333 241 333 C233 333 226 326 226 318 V292 C226 285 220 280 214 280 C207 280 202 286 202 294 V328 C202 336 195 343 187 343 C179 343 172 336 172 328 V288 C168 285 166 281 166 276 V262 Z" fill="#F5E193"/>
+          </svg>
         </div>
         <h3 class="text-lg font-black text-slate-800 dark:text-slate-100">حساب مِشكاتي</h3>
         <p class="text-xs text-slate-500 dark:text-slate-400">سجّل دخولك لحفظ أدعيتك الخاصة وتتبع إنجازك الدراسي والروحي</p>
@@ -3941,9 +4035,29 @@
       </div>
 
       <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-3 text-xs">
-        <div id="authNameField" class="space-y-1 hidden">
-          <label class="font-bold text-slate-700 dark:text-slate-300">الاسم الكامل / اللقب:</label>
-          <input type="text" id="authNameInput" placeholder="الاسم الكامل" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-700 focus:outline-none focus:ring-2 focus:ring-lantern-500 text-slate-800 dark:text-slate-200" />
+        <div id="authNameField" class="space-y-3 hidden">
+          <div class="space-y-1">
+            <label class="font-bold text-slate-700 dark:text-slate-300">الاسم الكامل / اللقب:</label>
+            <input type="text" id="authNameInput" placeholder="الاسم الكامل" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-700 focus:outline-none focus:ring-2 focus:ring-lantern-500 text-slate-800 dark:text-slate-200" />
+          </div>
+
+          <!-- Persona Selection at Signup -->
+          <div class="space-y-1.5">
+            <label class="font-bold text-slate-700 dark:text-slate-300 block">اختر نمط الحساب (لتخصيص الخطاب والمظهر):</label>
+            <input type="hidden" id="authPersonaInput" value="muthabir" />
+            <div class="grid grid-cols-2 gap-2.5">
+              <button type="button" id="authPersonaBtnMuthabir" onclick="selectSignupPersona('muthabir')" class="flex flex-col items-center justify-center gap-1 p-3 rounded-2xl border-2 border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-300 font-black transition cursor-pointer shadow-sm">
+                <span class="text-xl">🧭</span>
+                <span class="text-xs">مُثابِر (طالب)</span>
+                <span class="text-[10px] font-medium opacity-75">خطاب مذكر</span>
+              </button>
+              <button type="button" id="authPersonaBtnMuthabira" onclick="selectSignupPersona('muthabira')" class="flex flex-col items-center justify-center gap-1 p-3 rounded-2xl border-2 border-slate-200 dark:border-obsidian-700 bg-slate-50 dark:bg-obsidian-800 text-slate-600 dark:text-slate-400 font-bold transition cursor-pointer hover:border-rose-400/50">
+                <span class="text-xl">🌸</span>
+                <span class="text-xs">مُثابِرة (طالبة)</span>
+                <span class="text-[10px] font-medium opacity-75">خطاب مؤنث</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <div class="space-y-1">
@@ -6255,6 +6369,9 @@
             appState.currentUser = null;
           } else {
             appState.currentUser = parsed;
+            if (parsed.persona && (parsed.persona === 'muthabir' || parsed.persona === 'muthabira')) {
+              if (typeof setPersonaMode === 'function') setPersonaMode(parsed.persona, false);
+            }
             pullUserDataFromCloud(parsed.email, true);
           }
         } catch(e) {
@@ -6263,6 +6380,42 @@
       }
       renderAuthHeader();
       renderDrawerAuth();
+    }
+
+    function selectSignupPersona(persona) {
+      const input = document.getElementById('authPersonaInput');
+      if (input) input.value = persona;
+      const btnMale = document.getElementById('authPersonaBtnMuthabir');
+      const btnFemale = document.getElementById('authPersonaBtnMuthabira');
+      if (btnMale && btnFemale) {
+        if (persona === 'muthabira') {
+          btnFemale.className = 'flex flex-col items-center justify-center gap-1 p-3 rounded-2xl border-2 border-rose-500 bg-rose-500/15 text-rose-700 dark:text-rose-300 font-black transition cursor-pointer shadow-sm';
+          btnMale.className = 'flex flex-col items-center justify-center gap-1 p-3 rounded-2xl border-2 border-slate-200 dark:border-obsidian-700 bg-slate-50 dark:bg-obsidian-800 text-slate-600 dark:text-slate-400 font-bold transition cursor-pointer hover:border-amber-400/50';
+        } else {
+          btnMale.className = 'flex flex-col items-center justify-center gap-1 p-3 rounded-2xl border-2 border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-300 font-black transition cursor-pointer shadow-sm';
+          btnFemale.className = 'flex flex-col items-center justify-center gap-1 p-3 rounded-2xl border-2 border-slate-200 dark:border-obsidian-700 bg-slate-50 dark:bg-obsidian-800 text-slate-600 dark:text-slate-400 font-bold transition cursor-pointer hover:border-rose-400/50';
+        }
+      }
+    }
+
+    async function toggleAccountPersona() {
+      const nextPersona = (appPersona === 'muthabira') ? 'muthabir' : 'muthabira';
+      setPersonaMode(nextPersona, true);
+      if (appState.currentUser) {
+        appState.currentUser.persona = nextPersona;
+        localStorage.setItem('mishkati_auth_user', JSON.stringify(appState.currentUser));
+        renderAuthHeader();
+        renderDrawerAuth();
+        try {
+          const badge = (nextPersona === 'muthabira') ? 'طالبة 🇵🇸' : 'طالب 🇵🇸';
+          await neonQuery(
+            `UPDATE mishkati_users SET persona = $1, badge = $2 WHERE email = $3`,
+            [nextPersona, badge, appState.currentUser.email.toLowerCase()]
+          );
+        } catch (err) {
+          console.warn('Persona cloud update fallback:', err);
+        }
+      }
     }
 
     function renderDrawerAuth() {
@@ -6278,11 +6431,11 @@
               </div>
               <div>
                 <div class="text-xs font-bold text-slate-800 dark:text-slate-200">${isGirl ? 'وضع الزائرة الكريمة' : 'وضع الزائر الكريم'}</div>
-                <div class="text-[10px] text-slate-400">سجّل دخولك لحفظ أدعيتك ومهامك سحابياً ☁️</div>
+                <div class="text-[10px] text-slate-400">أنشئ حسابك لاختيار نمطك وحفظ إنجازك سحابياً ☁️</div>
               </div>
             </div>
           </div>
-          <button onclick="closeDrawer(); openAuthModal('login')" class="w-full mt-2 py-2 px-3 rounded-xl bg-gradient-to-r from-lantern-600 to-amber-600 hover:from-lantern-500 hover:to-amber-500 text-white text-xs font-bold shadow-md shadow-lantern-700/20 flex items-center justify-center gap-2 transition cursor-pointer">
+          <button onclick="closeDrawer(); openAuthModal('signup')" class="w-full mt-2 py-2 px-3 rounded-xl bg-gradient-to-r from-lantern-600 to-amber-600 hover:from-lantern-500 hover:to-amber-500 text-white text-xs font-bold shadow-md shadow-lantern-700/20 flex items-center justify-center gap-2 transition cursor-pointer">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
             <span>تسجيل الدخول / إنشاء حساب</span>
           </button>
@@ -6302,7 +6455,9 @@
                 </div>
               </div>
             </div>
-            <span class="text-[9px] bg-amber-500/20 text-amber-800 dark:text-amber-300 font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap">${isGirl ? 'طالبة 🇵🇸' : 'طالب 🇵🇸'}</span>
+            <button onclick="toggleAccountPersona()" class="text-[10px] bg-amber-500/20 hover:bg-amber-500/30 text-amber-800 dark:text-amber-300 font-bold px-2 py-1 rounded-full whitespace-nowrap cursor-pointer transition" title="تغيير نمط الحساب">
+              ${isGirl ? '🌸 مُثابِرة 🇵🇸' : '🧭 مُثابِر 🇵🇸'}
+            </button>
           </div>
           <div class="grid grid-cols-3 gap-1.5 pt-1.5">
             <button onclick="navigateTo('my_duas')" class="p-1.5 rounded-xl bg-white dark:bg-obsidian-800 border border-slate-200 dark:border-obsidian-700 text-slate-700 dark:text-slate-300 text-[11px] font-bold hover:bg-amber-50 dark:hover:bg-obsidian-700 transition flex items-center justify-center gap-1 cursor-pointer">
@@ -6322,11 +6477,12 @@
     function renderAuthHeader() {
       const container = document.getElementById('authHeaderContainer');
       if (!container) return;
+      const isGirl = (appPersona === 'muthabira');
       if (!appState.currentUser) {
         container.innerHTML = `
-          <button onclick="openAuthModal('login')" class="text-xs font-bold px-3 py-1.5 rounded-xl bg-gradient-to-r from-lantern-600 to-amber-600 hover:from-lantern-500 hover:to-amber-500 text-white shadow-sm flex items-center gap-1.5 transition">
+          <button onclick="openAuthModal('login')" class="text-xs font-bold px-3 py-1.5 rounded-xl bg-gradient-to-r from-lantern-600 to-amber-600 hover:from-lantern-500 hover:to-amber-500 text-white shadow-sm flex items-center gap-1.5 transition cursor-pointer">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-            <span class="hidden sm:inline">تسجيل الدخول</span>
+            <span class="hidden sm:inline">حسابي</span>
           </button>
         `;
       } else {
@@ -6340,12 +6496,16 @@
               <span class="hidden md:inline max-w-[90px] truncate">${appState.currentUser.name}</span>
               <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="absolute left-0 mt-1 w-52 bg-white dark:bg-obsidian-900 rounded-2xl shadow-xl border border-slate-200 dark:border-obsidian-800 p-2 hidden group-hover:block animate-fadeIn z-50 text-right">
+            <div class="absolute left-0 mt-1 w-56 bg-white dark:bg-obsidian-900 rounded-2xl shadow-xl border border-slate-200 dark:border-obsidian-800 p-2 hidden group-hover:block animate-fadeIn z-50 text-right">
               <div class="px-2.5 py-1.5 border-b border-slate-100 dark:border-obsidian-800 mb-1">
                 <div class="font-bold text-slate-800 dark:text-slate-100 text-xs truncate">${appState.currentUser.name}</div>
                 <div class="text-[10px] text-slate-400 truncate font-mono">${appState.currentUser.email}</div>
-                <div class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold mt-0.5">☁️ متصل بقاعدة البيانات</div>
+                <div class="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold mt-0.5">☁️ النمط: ${isGirl ? '🌸 مُثابِرة' : '🧭 مُثابِر'}</div>
               </div>
+              <button onclick="toggleAccountPersona()" class="w-full text-right px-2.5 py-1.5 rounded-xl hover:bg-amber-50 dark:hover:bg-obsidian-800 text-xs text-amber-700 dark:text-amber-300 font-bold flex items-center justify-between">
+                <span>${isGirl ? '🌸 نمط مُثابِرة' : '🧭 نمط مُثابِر'}</span>
+                <span class="text-[10px] underline opacity-75">تبديل</span>
+              </button>
               <button onclick="switchTab('my_duas')" class="w-full text-right px-2.5 py-1.5 rounded-xl hover:bg-amber-50 dark:hover:bg-obsidian-800 text-xs text-slate-700 dark:text-slate-200 flex items-center gap-2">
                 <span>🤲</span>
                 <span>أدعيتي الخاصة</span>
@@ -6390,6 +6550,7 @@
         loginTab.className = 'flex-1 py-2 rounded-xl text-center transition text-slate-500 dark:text-slate-400';
         nameField.classList.remove('hidden');
         submitBtn.textContent = 'إنشاء حساب جديد';
+        selectSignupPersona(appPersona || 'muthabir');
       }
     }
 
@@ -6398,6 +6559,8 @@
       const email = document.getElementById('authEmailInput').value.trim().toLowerCase();
       const password = document.getElementById('authPasswordInput').value;
       const submitBtn = document.getElementById('authSubmitBtn');
+      const personaInputEl = document.getElementById('authPersonaInput');
+      const chosenPersona = (personaInputEl && personaInputEl.value === 'muthabira') ? 'muthabira' : 'muthabir';
       if (!email) return;
 
       const origBtnText = submitBtn ? submitBtn.textContent : '';
@@ -6407,7 +6570,7 @@
       }
 
       let userObj = null;
-      const badge = (appPersona === 'muthabira') ? 'طالبة 🇵🇸' : 'طالب 🇵🇸';
+      const badge = (chosenPersona === 'muthabira') ? 'طالبة 🇵🇸' : 'طالب 🇵🇸';
 
       try {
         if (appState.authMode === 'signup') {
@@ -6419,7 +6582,7 @@
           }
 
           const existingRows = await neonQuery(
-            `SELECT id, name, email, password FROM mishkati_users WHERE email = $1 LIMIT 1`,
+            `SELECT id, name, email, password, persona FROM mishkati_users WHERE email = $1 LIMIT 1`,
             [email]
           );
 
@@ -6433,18 +6596,20 @@
           const insertedRows = await neonQuery(
             `INSERT INTO mishkati_users (name, email, password, persona, badge)
              VALUES ($1, $2, $3, $4, $5)
-             RETURNING id, name, email`,
-            [nameInput, email, password, appPersona || 'muthabir', badge]
+             RETURNING id, name, email, persona`,
+            [nameInput, email, password, chosenPersona, badge]
           );
 
           const row = insertedRows[0];
-          userObj = { id: 'usr_' + row.id, name: row.name, email: row.email };
+          const activePersona = row.persona || chosenPersona;
+          setPersonaMode(activePersona, false);
+          userObj = { id: 'usr_' + row.id, name: row.name, email: row.email, persona: activePersona };
           appState.currentUser = userObj;
           localStorage.setItem('mishkati_auth_user', JSON.stringify(userObj));
           await syncUserDataToCloud(true);
         } else {
           const rows = await neonQuery(
-            `SELECT id, name, email, password FROM mishkati_users WHERE email = $1 LIMIT 1`,
+            `SELECT id, name, email, password, persona FROM mishkati_users WHERE email = $1 LIMIT 1`,
             [email]
           );
 
@@ -6463,7 +6628,9 @@
           }
 
           await neonQuery(`UPDATE mishkati_users SET last_login_at = NOW() WHERE email = $1`, [email]);
-          userObj = { id: 'usr_' + existing.id, name: existing.name, email: existing.email };
+          const activePersona = (existing.persona === 'muthabira' || existing.persona === 'muthabir') ? existing.persona : (appPersona || 'muthabir');
+          setPersonaMode(activePersona, false);
+          userObj = { id: 'usr_' + existing.id, name: existing.name, email: existing.email, persona: activePersona };
           appState.currentUser = userObj;
           localStorage.setItem('mishkati_auth_user', JSON.stringify(userObj));
           await pullUserDataFromCloud(email, true);
@@ -6484,7 +6651,8 @@
             if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origBtnText; }
             return;
           }
-          userObj = { id: 'usr_' + Date.now(), name: nameInput, email };
+          setPersonaMode(chosenPersona, false);
+          userObj = { id: 'usr_' + Date.now(), name: nameInput, email, persona: chosenPersona };
           registeredUsers[email] = { ...userObj, password };
           localStorage.setItem('mishkati_registered_users', JSON.stringify(registeredUsers));
         } else {
@@ -6495,7 +6663,9 @@
               if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origBtnText; }
               return;
             }
-            userObj = { id: existing.id, name: existing.name, email: existing.email };
+            const activePersona = existing.persona || appPersona || 'muthabir';
+            setPersonaMode(activePersona, false);
+            userObj = { id: existing.id, name: existing.name, email: existing.email, persona: activePersona };
           } else {
             showToast('تعذر الاتصال بقاعدة البيانات أو الحساب غير موجود', '⚠️');
             if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origBtnText; }
@@ -6517,7 +6687,8 @@
       renderMyDuasView();
       if (typeof renderQabasAuthBanner === 'function') renderQabasAuthBanner();
       if (typeof renderQabasFeed === 'function' && appState.currentTab === 'qabas') renderQabasFeed();
-      showToast(`أهلاً بك يا ${userObj.name} في مِشكاتي 🕯️ (متصل سحابياً ☁️)`, '🕯️');
+      const welcomeTitle = (userObj.persona === 'muthabira') ? 'أيتها المُثابِرة 🌸' : 'أيها المُثابِر 🧭';
+      showToast(`أهلاً بك يا ${userObj.name} (${welcomeTitle}) في مِشكاتي`, '🕯️');
     }
 
     function handleLogout() {
@@ -6744,7 +6915,7 @@
       const drawer = document.getElementById('navigationDrawer');
       const overlay = document.getElementById('drawerOverlay');
       if (drawer && overlay) {
-        drawer.classList.remove('translate-x-full');
+        drawer.classList.remove('translate-y-full', 'translate-x-full');
         overlay.classList.remove('pointer-events-none', 'opacity-0');
         overlay.classList.add('opacity-100');
         document.body.classList.add('overflow-hidden');
@@ -6756,7 +6927,7 @@
       const drawer = document.getElementById('navigationDrawer');
       const overlay = document.getElementById('drawerOverlay');
       if (drawer && overlay) {
-        drawer.classList.add('translate-x-full');
+        drawer.classList.add('translate-y-full');
         overlay.classList.remove('opacity-100');
         overlay.classList.add('pointer-events-none', 'opacity-0');
         document.body.classList.remove('overflow-hidden');
@@ -7002,22 +7173,21 @@
         }
       }
 
-      // Highlight active tab in Mobile Bottom Navigation Bar
-      const azkarRoutes = ['sabah', 'masaa', 'after_prayer', 'my_duas', 'student', 'tasbeeh'];
-      let activeMobileKey = 'home';
-      if (route === 'home' || route === 'siraj') activeMobileKey = 'home';
-      else if (azkarRoutes.includes(route)) activeMobileKey = 'azkar';
-      else if (route === 'midmar' || route === 'workspace') activeMobileKey = 'midmar';
-      else if (route === 'masar_yawm' || route === 'yawm' || route === 'masar' || route === 'mutanaffas') activeMobileKey = 'masar_yawm';
-      else if (route === 'qabas') activeMobileKey = 'qabas';
+      // Highlight active item in Full Bottom Menu Bar
+      let activeMobileKey = route || 'home';
+      if (route === 'workspace') activeMobileKey = 'midmar';
+      else if (route === 'yawm') activeMobileKey = 'masar_yawm';
 
       document.querySelectorAll('.mobile-bottom-tab').forEach(tabEl => {
         if (tabEl.dataset.mobileNav === activeMobileKey) {
-          tabEl.classList.remove('text-slate-400', 'font-medium');
-          tabEl.classList.add('text-amber-400', 'font-bold', 'bg-amber-500/15', 'border', 'border-amber-500/30');
+          tabEl.classList.remove('text-slate-300', 'text-slate-400', 'font-medium', 'bg-slate-900/80', 'border-slate-800/80');
+          tabEl.classList.add('text-amber-300', 'font-black', 'bg-amber-500/20', 'border', 'border-amber-500/40', 'shadow-sm');
+          try {
+            tabEl.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          } catch (e) {}
         } else {
-          tabEl.classList.remove('text-amber-400', 'font-bold', 'bg-amber-500/15', 'border', 'border-amber-500/30');
-          tabEl.classList.add('text-slate-400', 'font-medium');
+          tabEl.classList.remove('text-amber-300', 'text-amber-400', 'font-black', 'font-bold', 'bg-amber-500/20', 'bg-amber-500/15', 'border-amber-500/40', 'border-amber-500/30', 'shadow-sm');
+          tabEl.classList.add('text-slate-300', 'font-bold', 'bg-slate-900/80', 'border', 'border-slate-800/80');
         }
       });
 
@@ -9208,14 +9378,23 @@
         midmarState.secondsRemaining = 0;
       }
 
-      // Update tabs styling
+      // Update tabs styling (both main Midmar card & full-screen Zen overlay)
       ['pomodoro25', 'pomodoro50', 'custom', 'flow'].forEach(m => {
         const btn = document.getElementById(`midmarModeBtn_${m}`);
-        if (!btn) return;
-        if (m === mode) {
-          btn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer bg-amber-500 text-slate-950 shadow-sm';
-        } else {
-          btn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer text-slate-400 hover:text-slate-200';
+        if (btn) {
+          if (m === mode) {
+            btn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer bg-amber-500 text-slate-950 shadow-sm';
+          } else {
+            btn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer text-slate-400 hover:text-slate-200';
+          }
+        }
+        const zenBtn = document.getElementById(`midmarZenModeBtn_${m}`);
+        if (zenBtn) {
+          if (m === mode) {
+            zenBtn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer bg-amber-500 text-slate-950 shadow-sm';
+          } else {
+            zenBtn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer text-slate-400 hover:text-white';
+          }
         }
       });
 
@@ -10209,26 +10388,251 @@
       }
     }
 
-    function clearSirajChat() {
+    /* ==========================================================================
+       10.4.9. SIRAJ CONVERSATION HISTORY (سجل محادثات سِراج)
+       ========================================================================== */
+    let sirajSessions = [];
+    let currentSirajSessionId = null;
+
+    function initSirajHistory() {
+      try {
+        const raw = localStorage.getItem('mishkati_siraj_sessions');
+        sirajSessions = raw ? JSON.parse(raw) : [];
+        if (!Array.isArray(sirajSessions)) sirajSessions = [];
+      } catch (e) {
+        sirajSessions = [];
+      }
+      updateSirajHistoryBadge();
+      renderSirajHistoryList();
+    }
+
+    function saveSirajSessionsToStorage() {
+      try {
+        // Keep up to 40 recent sessions to avoid storage bloat
+        if (sirajSessions.length > 40) {
+          sirajSessions = sirajSessions.slice(0, 40);
+        }
+        localStorage.setItem('mishkati_siraj_sessions', JSON.stringify(sirajSessions));
+      } catch (e) {
+        console.warn('Could not save Siraj sessions:', e);
+      }
+      updateSirajHistoryBadge();
+      renderSirajHistoryList();
+    }
+
+    function updateSirajHistoryBadge() {
+      const badge = document.getElementById('sirajHistoryCountBadge');
+      if (badge) {
+        badge.textContent = String(sirajSessions.length);
+      }
+    }
+
+    function toggleSirajHistoryPanel() {
+      const panel = document.getElementById('sirajHistoryPanel');
+      if (!panel) return;
+      const isHidden = panel.classList.contains('hidden');
+      if (isHidden) {
+        renderSirajHistoryList();
+        panel.classList.remove('hidden');
+      } else {
+        panel.classList.add('hidden');
+      }
+    }
+
+    function appendMessageToSirajSession(role, text, attachments = []) {
+      const now = Date.now();
+      const timeStr = new Date().toLocaleTimeString('ar-PS', { hour: '2-digit', minute: '2-digit' });
+      const attMeta = (attachments || []).map(a => ({
+        type: a.type,
+        name: a.name || a.title || a.domain || 'مرفق'
+      }));
+
+      if (!currentSirajSessionId) {
+        currentSirajSessionId = 'siraj_sess_' + now;
+        const cleanTitle = (text || 'محادثة مع سِراج').replace(/\s+/g, ' ').trim().slice(0, 48);
+        sirajSessions.unshift({
+          id: currentSirajSessionId,
+          title: cleanTitle || 'محادثة جديدة',
+          createdAt: now,
+          updatedAt: now,
+          messages: []
+        });
+      }
+
+      const sess = sirajSessions.find(s => s.id === currentSirajSessionId);
+      if (sess) {
+        sess.updatedAt = now;
+        sess.messages.push({
+          role,
+          text,
+          time: timeStr,
+          attachments: attMeta
+        });
+        // Move active session to top
+        sirajSessions = [sess, ...sirajSessions.filter(s => s.id !== currentSirajSessionId)];
+        saveSirajSessionsToStorage();
+      }
+    }
+
+    function getCurrentSirajSessionMessages() {
+      if (!currentSirajSessionId) return [];
+      const sess = sirajSessions.find(s => s.id === currentSirajSessionId);
+      return sess && Array.isArray(sess.messages) ? sess.messages : [];
+    }
+
+    function renderSirajHistoryList() {
+      const listEl = document.getElementById('sirajHistoryList');
+      if (!listEl) return;
+
+      if (sirajSessions.length === 0) {
+        listEl.innerHTML = `
+          <div class="text-center py-6 text-slate-400 text-xs">
+            لا توجد محادثات محفوظة في السجل بعد. ابدأ بسؤال سِراج وستُحفظ محادثاتك تلقائياً هنا 📜
+          </div>
+        `;
+        return;
+      }
+
+      listEl.innerHTML = sirajSessions.map(sess => {
+        const isCurrent = sess.id === currentSirajSessionId;
+        const dateStr = new Date(sess.updatedAt || sess.createdAt).toLocaleDateString('ar-PS', {
+          month: 'short',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        const msgCount = Array.isArray(sess.messages) ? sess.messages.length : 0;
+        return `
+          <div onclick="loadSirajSession('${sess.id}')" class="flex items-center justify-between gap-2 p-2.5 rounded-2xl border transition cursor-pointer ${
+            isCurrent
+              ? 'bg-amber-500/20 border-amber-500/40 text-amber-200'
+              : 'bg-slate-950/70 hover:bg-slate-800/80 border-slate-800 text-slate-200'
+          }">
+            <div class="flex items-center gap-2.5 min-w-0 flex-1">
+              <span class="w-7 h-7 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-xs flex-shrink-0">💬</span>
+              <div class="min-w-0 flex-1 text-right">
+                <div class="text-xs font-bold truncate">${escapeHtml(sess.title || 'محادثة مع سِراج')}</div>
+                <div class="text-[10px] text-slate-400 flex items-center gap-2 mt-0.5">
+                  <span>${dateStr}</span>
+                  <span>•</span>
+                  <span>${msgCount} رسائل</span>
+                </div>
+              </div>
+            </div>
+            <button type="button" onclick="deleteSirajSession('${sess.id}', event)" class="p-1.5 rounded-xl text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition flex-shrink-0" title="حذف المحادثة">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function loadSirajSession(sessionId) {
+      const sess = sirajSessions.find(s => s.id === sessionId);
+      if (!sess) return;
+      currentSirajSessionId = sess.id;
       const container = document.getElementById('sirajMessagesContainer');
       if (!container) return;
+
+      container.innerHTML = '';
+      (sess.messages || []).forEach(msg => {
+        if (msg.role === 'user') {
+          const userBubble = document.createElement('div');
+          userBubble.className = 'flex items-start justify-end gap-3 text-left';
+          userBubble.innerHTML = `
+            <div class="bg-lantern-600 text-white p-3.5 sm:p-4 rounded-3xl rounded-tl-none text-xs sm:text-sm max-w-2xl shadow-md text-right leading-relaxed">
+              <div>${escapeHtml(msg.text)}</div>
+            </div>
+            <div class="w-8 h-8 rounded-xl bg-slate-200 dark:bg-obsidian-800 text-slate-700 dark:text-slate-300 flex items-center justify-center text-xs font-bold flex-shrink-0">
+              👤
+            </div>
+          `;
+          container.appendChild(userBubble);
+        } else {
+          const sirajBubble = document.createElement('div');
+          sirajBubble.className = 'flex items-start gap-3 text-right';
+          sirajBubble.innerHTML = `
+            <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-lantern-700 text-white flex items-center justify-center text-sm font-bold flex-shrink-0 shadow-sm">
+              💡
+            </div>
+            <div class="space-y-2 max-w-2xl bg-amber-50/80 dark:bg-obsidian-800/80 p-4 sm:p-5 rounded-3xl rounded-tr-none border border-amber-200/50 dark:border-obsidian-700 text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed shadow-xs w-full">
+              <div class="font-bold text-amber-900 dark:text-amber-300 flex items-center justify-between text-xs pb-1.5 border-b border-amber-200/40 dark:border-obsidian-750">
+                <div class="flex items-center gap-2">
+                  <span>سِراج</span>
+                  <span class="text-[9px] bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 px-2 py-0.2 rounded-full font-mono font-bold">سجل محفوظ</span>
+                </div>
+                <span class="text-[10px] text-slate-400 font-normal">${escapeHtml(msg.time || '')}</span>
+              </div>
+              <div class="siraj-content-box space-y-2">${renderSirajMarkdown(msg.text)}</div>
+            </div>
+          `;
+          container.appendChild(sirajBubble);
+        }
+      });
+
+      const panel = document.getElementById('sirajHistoryPanel');
+      if (panel) panel.classList.add('hidden');
+      renderSirajHistoryList();
+      container.scrollTop = container.scrollHeight;
+      showToast('تم استرجاع المحادثة من السجل 📜', '📜');
+    }
+
+    function deleteSirajSession(sessionId, event) {
+      if (event) event.stopPropagation();
+      sirajSessions = sirajSessions.filter(s => s.id !== sessionId);
+      if (currentSirajSessionId === sessionId) {
+        currentSirajSessionId = null;
+      }
+      saveSirajSessionsToStorage();
+      showToast('تم حذف المحادثة من السجل', '🗑️');
+    }
+
+    function clearAllSirajHistory() {
+      if (!confirm('هل تود حذف جميع المحادثات المحفوظة في سجل سِراج؟')) return;
+      sirajSessions = [];
+      currentSirajSessionId = null;
+      saveSirajSessionsToStorage();
+      showToast('تم مسح سجل المحادثات بالكامل', '🧹');
+    }
+
+    function startNewSirajChat() {
+      currentSirajSessionId = null;
+      const panel = document.getElementById('sirajHistoryPanel');
+      if (panel) panel.classList.add('hidden');
+      resetSirajChatBoxToWelcome();
+      renderSirajHistoryList();
+      showToast('تم بدء محادثة جديدة مع سِراج 💡', '💡');
+    }
+
+    function resetSirajChatBoxToWelcome() {
+      const container = document.getElementById('sirajMessagesContainer');
+      if (!container) return;
+      const isGirl = (appPersona === 'muthabira');
       container.innerHTML = `
         <div class="flex items-start gap-2.5 text-right">
-          <div class="w-7 h-7 rounded-xl bg-gradient-to-br from-amber-500 to-lantern-700 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 shadow-sm">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500 to-lantern-700 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 shadow-sm">
             💡
           </div>
-          <div class="space-y-1 max-w-full bg-slate-800/90 p-3 rounded-2xl rounded-tr-none border border-amber-500/20 text-xs text-slate-200 leading-relaxed shadow-sm">
-            <div class="font-bold text-amber-300 flex items-center gap-1.5 text-[11px]">
-              <span>سِراج رفيقك</span>
-              <span class="text-[9px] bg-amber-500/20 text-amber-200 px-1.5 py-0.2 rounded-full font-mono">AI</span>
+          <div class="space-y-1.5 max-w-full bg-slate-800/90 p-3.5 sm:p-4 rounded-2xl rounded-tr-none border border-amber-500/20 text-xs sm:text-sm text-slate-200 leading-relaxed shadow-sm">
+            <div class="font-bold text-amber-300 flex items-center gap-1.5 text-xs">
+              <span>${isGirl ? 'سِراج (أخوكِ ورفيق دراستكِ)' : 'سِراج (أخوك ورفيق دربك)'}</span>
+              <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.2 rounded-full font-mono">متصل تلقائياً</span>
             </div>
-            <p class="text-xs text-slate-200">
-              السلام عليكم يا بطل 🇵🇸! اسألني عن تلخيص الدروس، تنظيم وقت الدراسة مع الأذان، أو حل وشرح أي مسألة.
+            <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+              ${isGirl
+                ? 'يا هلا بالمُثابِرة 🇵🇸! أنا سِراج، جاهز فوراً لمساعدتكِ في شرح الدروس، حل المسائل خطوة بخطوة، وتنظيم وقتكِ مع الصلاة. اكتبي سؤالكِ مباشرة!'
+                : 'يا هلا بالبطل 🇵🇸! أنا سِراج، جاهز فوراً لمساعدتك في شرح الدروس، حل المسائل خطوة بخطوة، وتنظيم وقتك مع الصلاة. اكتب سؤالك مباشرة!'}
             </p>
           </div>
         </div>
       `;
-      showToast('تمت استعادة المحادثة الابتدائية لسراج', '🧹');
+    }
+
+    function clearSirajChat() {
+      currentSirajSessionId = null;
+      resetSirajChatBoxToWelcome();
+      renderSirajHistoryList();
+      showToast('تم تفريغ نافذة المحادثة الحالية', '🧹');
     }
 
     /* ==========================================================================
@@ -10928,6 +11332,10 @@
       container.appendChild(userBubble);
       container.scrollTop = container.scrollHeight;
 
+      // Save user message to Siraj conversation history
+      const priorMessages = getCurrentSirajSessionMessages().slice(-8);
+      appendMessageToSirajSession('user', query, currentAttachments);
+
       // Typing indicator
       const typingId = 'typing_' + Date.now();
       const typingBubble = document.createElement('div');
@@ -10938,7 +11346,7 @@
           💡
         </div>
         <div class="bg-amber-50 dark:bg-obsidian-800 p-3.5 rounded-2xl text-xs text-slate-500 dark:text-slate-400 flex items-center gap-2 border border-amber-200/40 dark:border-obsidian-700">
-          <span>سِراج يستحضر الإجابة بدقة وموثوقية</span>
+          <span>سِراج يفكّر ويستحضر الإجابة...</span>
           <span class="inline-flex gap-1">
             <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-bounce"></span>
             <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-bounce [animation-delay:0.2s]"></span>
@@ -10961,15 +11369,14 @@
           <div class="font-bold text-amber-900 dark:text-amber-300 flex items-center justify-between text-xs pb-1.5 border-b border-amber-200/40 dark:border-obsidian-750">
             <div class="flex items-center gap-2">
               <span>سِراج</span>
-              <span id="sirajBadge_${messageId}" class="text-[9px] bg-amber-500/20 px-2 py-0.2 rounded-full font-mono text-amber-800 dark:text-amber-300 font-bold">Gemini 1.5 Pro</span>
+              <span id="sirajBadge_${messageId}" class="text-[9px] bg-emerald-500/20 px-2 py-0.2 rounded-full font-mono text-emerald-800 dark:text-emerald-300 font-bold">متصل تلقائياً</span>
             </div>
-            <span class="text-[10px] text-slate-400 font-normal">دقيق وموثوق</span>
+            <span class="text-[10px] text-slate-400 font-normal">محفوظ في السجل 📜</span>
           </div>
           <div id="${messageId}" class="siraj-content-box space-y-2"></div>
         </div>
       `;
 
-      // Check for user-provided client API Key first
       const clientKey = localStorage.getItem('mishkati_gemini_key');
       const selectedModel = localStorage.getItem('mishkati_gemini_model') || 'auto';
 
@@ -10978,23 +11385,15 @@
         if (ind) ind.remove();
       };
 
-      // 1. DIRECT BROWSER-TO-GEMINI API CALL (If user configured their API Key)
+      // 1. Optional Custom Gemini Key (if user provided one)
       if (clientKey) {
-        container.appendChild(sirajBubble);
-        const contentBox = document.getElementById(messageId);
-        const badge = sirajBubble.querySelector(`#sirajBadge_${messageId}`);
-
         try {
           const result = await callDirectGeminiApi(query, clientKey, selectedModel, currentAttachments);
           const generatedText = typeof result === 'object' ? result.text : result;
-          const activeModel = (typeof result === 'object' && result.modelName) ? result.modelName : selectedModel;
           removeTyping();
-
-          if (badge) {
-            badge.textContent = `${activeModel.replace('gemini-', '')} (حي ومباشر)`;
-            badge.className = 'text-[9px] bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 px-2 py-0.2 rounded-full font-mono font-bold';
-          }
-
+          container.appendChild(sirajBubble);
+          const contentBox = document.getElementById(messageId);
+          appendMessageToSirajSession('assistant', generatedText);
           if (contentBox) {
             typewriterRender(generatedText, contentBox, () => {
               if (appState.audio.soundEnabled) appState.audio.playCompletion();
@@ -11002,193 +11401,163 @@
           }
           return;
         } catch (clientErr) {
-          removeTyping();
-          console.error('Direct Gemini Call Failed:', clientErr);
-
-          if (badge) {
-            badge.textContent = 'خطأ في الاتصال';
-            badge.className = 'text-[9px] bg-rose-500/20 text-rose-800 dark:text-rose-300 px-2 py-0.2 rounded-full font-bold';
-          }
-
-          const rawMsg = clientErr.message || '';
-          let explanation = '';
-          let solutionHtml = '';
-
-          if (rawMsg.includes('Failed to fetch') || clientErr.name === 'TypeError') {
-            if (window.location.protocol === 'file:') {
-              explanation = 'أنت تفتح التطبيق كملف مباشر من سطح المكتب (file:///)، والمتصفحات تمنع طلبات الذكاء الاصطناعي بسبب سياسة أمان المتصفح (CORS).';
-              solutionHtml = `
-                <div class="p-3 bg-amber-100/70 dark:bg-obsidian-900 rounded-xl border border-amber-300 dark:border-amber-800 text-slate-800 dark:text-slate-200 space-y-2 text-[11px]">
-                  <div class="font-bold text-amber-900 dark:text-amber-300 text-xs">🚀 الحل السهل والسريع في خطوة واحدة:</div>
-                  <p>لقد أنشأنا لك ملفاً باسم <strong>«تشغيل_مشكاتي.bat»</strong> داخل مجلد المشروع على سطح المكتب.</p>
-                  <p class="font-semibold text-emerald-800 dark:text-emerald-300">
-                    اضغط نقرتين (Double-click) على ملف <strong>«تشغيل_مشكاتي.bat»</strong> وسيفتح الموقع فوراً على الرابط المحلي الآمن (http://localhost:8000) وسيعمل الذكاء الاصطناعي بنجاح وبدون أي أخطاء!
-                  </p>
-                </div>
-              `;
-            } else {
-              explanation = 'تعذر الاتصال بخوادم Google Gemini، يرجى التأكد من اتصال الإنترنت أو التأكد من عدم حجب النطاق عبر مانع إعلانات.';
-            }
-          } else if (rawMsg.includes('API_KEY_INVALID') || rawMsg.includes('API key not valid') || rawMsg.includes('400')) {
-            explanation = 'مفتاح Google Gemini غير صالح أو غير مكتمل. يرجى التأكد من نسخه بدقة من Google AI Studio (يبدأ بـ AIzaSy...).';
-          } else if (rawMsg.includes('location') || rawMsg.includes('Location')) {
-            explanation = 'خوادم Google تتطلب تفعيل اتصال VPN أو تجربة طراز Gemini 1.5 Flash.';
-          } else {
-            explanation = 'حدث خطأ أثناء معالجة الطلب عبر Google: ' + rawMsg;
-          }
-
-          if (contentBox) {
-            contentBox.innerHTML = `
-              <div class="p-4 bg-rose-50 dark:bg-rose-950/40 rounded-2xl border border-rose-300 dark:border-rose-800 text-xs text-rose-900 dark:text-rose-200 space-y-3">
-                <div class="font-bold flex items-center gap-1.5 text-sm text-rose-800 dark:text-rose-300">
-                  <span>⚠️</span>
-                  <span>تنبيه خطأ في محرك الذكاء الاصطناعي:</span>
-                </div>
-                
-                <div class="p-2.5 rounded-xl bg-white/80 dark:bg-obsidian-900 font-mono text-[11px] text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-900">
-                  ${escapeHtml(rawMsg || 'Failed to fetch')}
-                </div>
-
-                <div class="text-[11px] text-slate-700 dark:text-slate-200 leading-relaxed">
-                  <strong>السبب:</strong> ${explanation}
-                </div>
-
-                ${solutionHtml}
-
-                <div class="pt-1 flex flex-wrap items-center gap-2">
-                  <button onclick="openSirajSettingsModal()" class="px-3.5 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-bold text-xs transition shadow-xs cursor-pointer">
-                    إعادة إدخال المفتاح ⚙️
-                  </button>
-                  <button onclick="handleClearSirajKey()" class="px-3.5 py-1.5 bg-slate-200 dark:bg-obsidian-800 hover:bg-slate-300 text-slate-700 dark:text-slate-300 rounded-xl font-bold text-xs transition cursor-pointer">
-                    مسح المفتاح والبدء من جديد
-                  </button>
-                </div>
-              </div>
-            `;
-          }
-          return;
+          console.warn('Custom Gemini key failed, falling back seamlessly to built-in Siraj AI:', clientErr);
         }
       }
 
-      // 2. TRY SERVER BACKEND ROUTE (/api/chat) IF HOSTED
-      if (window.location.protocol.startsWith('http')) {
-        try {
-          const groundingContext = {
-            town: appState.selectedTown ? appState.selectedTown.name : 'فلسطين',
-            date: new Date().toLocaleDateString('ar-PS'),
-            prayerTimes: appState.todayPrayerTimes || null
-          };
-
-          const response = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: query, context: groundingContext })
+      // 2. Built-In Zero-Config Siraj AI Engine (Works 100% automatically out-of-the-box)
+      try {
+        const builtInAnswer = await callBuiltInSirajAi(query, currentAttachments, priorMessages);
+        removeTyping();
+        if (!container.contains(sirajBubble)) container.appendChild(sirajBubble);
+        const contentBox = document.getElementById(messageId);
+        appendMessageToSirajSession('assistant', builtInAnswer);
+        if (contentBox) {
+          typewriterRender(builtInAnswer, contentBox, () => {
+            if (appState.audio.soundEnabled) appState.audio.playCompletion();
           });
+        }
+        return;
+      } catch (builtInErr) {
+        console.warn('Built-in cloud AI fallback:', builtInErr);
+        removeTyping();
+        if (!container.contains(sirajBubble)) container.appendChild(sirajBubble);
+        const contentBox = document.getElementById(messageId);
+        const fallbackHtml = generateSirajResponse(query);
+        const plainFallback = fallbackHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+        appendMessageToSirajSession('assistant', plainFallback);
+        if (contentBox) {
+          contentBox.innerHTML = fallbackHtml;
+        }
+        container.scrollTop = container.scrollHeight;
+      }
+    }
 
-          if (response.ok && response.body) {
-            if (!container.contains(sirajBubble)) container.appendChild(sirajBubble);
-            removeTyping();
-            const contentBox = document.getElementById(messageId);
-            const reader = response.body.getReader();
-            const decoder = new TextDecoder();
-            let fullAccumulated = '';
+    async function callBuiltInSirajAi(query, attachedItems = [], priorMessages = []) {
+      const townName = appState.selectedTown ? appState.selectedTown.name : 'فلسطين';
+      const currentDate = new Date().toLocaleDateString('ar-PS');
+      const isGirl = (appPersona === 'muthabira');
 
-            while (true) {
-              const { done, value } = await reader.read();
-              if (done) break;
-              const chunk = decoder.decode(value, { stream: true });
-              fullAccumulated += chunk;
-              if (contentBox) {
-                contentBox.innerHTML = renderSirajMarkdown(fullAccumulated);
-                container.scrollTop = container.scrollHeight;
+      const genderInstruction = isGirl
+        ? `المستخدمة هي طالبة ومُثابِرة كريمة في فلسطين. خاطبها بصيغة المؤنث الودية حصراً (يا بطلة، يا أختي، كيفكِ، شدي حيلكِ، دراستكِ).`
+        : `المستخدم هو طالب ومُثابِر كريم في فلسطين. خاطبه بصيغة المذكر الودية (يا بطل، يا أخي، يا غالي، شد حيلك، دراستك).`;
+
+      let extraContext = '';
+      if (attachedItems && attachedItems.length > 0) {
+        const textDocs = attachedItems.filter(a => a.type === 'document' && a.textContent);
+        if (textDocs.length > 0) {
+          extraContext += '\n\n=== نصوص المستندات المرفقة ===\n';
+          textDocs.forEach(d => {
+            extraContext += `\n[مستند: ${d.name}]:\n${d.textContent.slice(0, 6000)}\n`;
+          });
+        }
+        const links = attachedItems.filter(a => a.type === 'link');
+        if (links.length > 0) {
+          extraContext += '\n\n=== روابط المراجع المرفقة ===\n';
+          links.forEach(l => {
+            extraContext += `\n- رابط: ${l.url} (${l.title || l.domain})\n`;
+          });
+        }
+      }
+
+      const systemPrompt = `أنت "سِراج" (Siraj): المساعد الذكي والرفيق الدراسي لطلبة فلسطين في تطبيق "مِشكاتي".
+1. أجب بوضوح ومباشرة وبدقة علمية وتربوية عالية باللغة العربية.
+2. في المسائل العلمية (رياضيات، فيزياء، كيمياء، أحياء، توجيهي، برمجة، لغات، تلخيص): اشرح الحل خطوة بخطوة بترتيب واضح ومفهوم.
+3. في التوجيه الروحي وتنظيم الوقت: اربط الدراسة ببركة الوقت ومواقيت الصلاة والأذكار الصحيحة.
+4. ${genderInstruction}
+5. الموقع: ${townName}، فلسطين | التاريخ: ${currentDate}.`;
+
+      const messages = [
+        { role: 'system', content: systemPrompt }
+      ];
+
+      // Include recent conversation history for multi-turn continuity
+      if (Array.isArray(priorMessages) && priorMessages.length > 0) {
+        priorMessages.slice(-6).forEach(m => {
+          if (m && m.text) {
+            messages.push({
+              role: m.role === 'assistant' ? 'assistant' : 'user',
+              content: String(m.text).slice(0, 1500)
+            });
+          }
+        });
+      }
+
+      // Check for image attachments (Vision support)
+      const imgAttachments = (attachedItems || []).filter(a => (a.type === 'image' || a.type === 'camera') && a.previewUrl);
+      if (imgAttachments.length > 0) {
+        const contentParts = [{ type: 'text', text: query + extraContext }];
+        imgAttachments.forEach(img => {
+          contentParts.push({
+            type: 'image_url',
+            image_url: { url: img.previewUrl }
+          });
+        });
+        messages.push({ role: 'user', content: contentParts });
+      } else {
+        messages.push({ role: 'user', content: query + extraContext });
+      }
+
+      // Primary Zero-Config Provider: Pollinations OpenAI-compatible endpoint
+      try {
+        const res = await fetch('https://text.pollinations.ai/openai', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'openai',
+            messages: messages,
+            temperature: 0.4
+          })
+        });
+
+        if (res.ok) {
+          const contentType = res.headers.get('content-type') || '';
+          if (contentType.includes('application/json')) {
+            const data = await res.json();
+            const reply = data?.choices?.[0]?.message?.content;
+            if (reply && reply.trim()) {
+              return reply.trim();
+            }
+          } else {
+            const rawText = await res.text();
+            if (rawText && rawText.trim()) {
+              try {
+                const parsed = JSON.parse(rawText);
+                if (parsed?.choices?.[0]?.message?.content) {
+                  return parsed.choices[0].message.content.trim();
+                }
+              } catch (e) {
+                return rawText.trim();
               }
             }
-
-            if (appState.audio.soundEnabled) appState.audio.playCompletion();
-            return;
           }
-        } catch (serverErr) {
-          console.info('Backend route unavailable:', serverErr);
+        }
+      } catch (e) {
+        console.warn('Primary built-in AI endpoint error, trying secondary endpoint:', e);
+      }
+
+      // Secondary Zero-Config Fallback: Direct text generation endpoint
+      const compactPrompt = `${systemPrompt}\n\nسؤال الطالب/الطالبة: ${query}${extraContext}\n\nإجابة سِراج:`;
+      const fallbackUrl = `https://text.pollinations.ai/${encodeURIComponent(compactPrompt)}?model=openai`;
+      const res2 = await fetch(fallbackUrl);
+      if (res2.ok) {
+        const text2 = await res2.text();
+        if (text2 && text2.trim()) {
+          return text2.trim();
         }
       }
 
-      // 3. NO KEY CONFIGURED: CLEAR INLINE ACTIVATION CARD (NO CONFUSING CANNED ANSWER)
-      removeTyping();
-      if (!container.contains(sirajBubble)) container.appendChild(sirajBubble);
-      const contentBox = document.getElementById(messageId);
-      const badge = sirajBubble.querySelector(`#sirajBadge_${messageId}`);
-      if (badge) {
-        badge.textContent = 'يتطلب تفعيل المفتاح';
-        badge.className = 'text-[9px] bg-amber-500/20 text-amber-800 dark:text-amber-300 px-2 py-0.2 rounded-full font-bold';
-      }
-
-      const escapedQ = escapeHtml(query);
-      const safeJsQ = query.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-
-      if (contentBox) {
-        contentBox.innerHTML = `
-          <div class="space-y-3 text-xs leading-relaxed">
-            <div class="flex items-center gap-2 font-bold text-amber-900 dark:text-amber-300 text-sm">
-              <span>💡</span>
-              <span>لتلقي إجابة ذكية وحرة ومباشرة عن سؤالك:</span>
-            </div>
-            
-            <p class="text-slate-700 dark:text-slate-300">
-              أهلاً بك يا بطل! لكي يستطيع <strong>سِراج</strong> التفكير والإجابة الحرة الذكية عن:
-              <br><strong class="font-serif text-amber-900 dark:text-amber-300 text-sm block my-1">« ${escapedQ} »</strong>
-              بدلاً من إعطائك رداً مبرمجاً مسبقاً، يرجى تفعيل مفتاح <strong>Google Gemini</strong> المجاني الخاص بك أدناه (مجاني تماماً ولا يتطلب بطاقة بنكية):
-            </p>
-
-            <div class="p-3.5 bg-white dark:bg-obsidian-900 rounded-2xl border border-amber-300/80 dark:border-obsidian-700 shadow-sm space-y-2.5">
-              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
-                <input 
-                  type="password" 
-                  id="inlineGeminiKeyInput" 
-                  placeholder="الصق مفتاحك هنا (يبدأ بـ AIzaSy...)" 
-                  class="flex-grow p-2.5 rounded-xl border border-slate-300 dark:border-obsidian-600 bg-slate-50 dark:bg-obsidian-950 text-xs font-mono text-left focus:outline-none focus:ring-2 focus:ring-amber-500 text-slate-800 dark:text-slate-200"
-                />
-                <button 
-                  onclick="activateInlineGeminiKey('${safeJsQ}')" 
-                  class="px-4 py-2.5 bg-gradient-to-r from-amber-600 to-lantern-600 hover:from-amber-500 hover:to-lantern-500 text-white rounded-xl font-bold text-xs transition shadow-sm cursor-pointer whitespace-nowrap"
-                >
-                  تفعيل وإجابة فورية 💡
-                </button>
-              </div>
-
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[11px] pt-1 border-t border-slate-100 dark:border-obsidian-800">
-                <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="text-lantern-600 dark:text-lantern-400 font-bold underline hover:text-lantern-700 inline-flex items-center gap-1">
-                  <span>احصل على مفتاح مجاني في 10 ثوانٍ من Google AI Studio ↗</span>
-                </a>
-                <span class="text-slate-400 text-[10px]">يُحفظ بأمان في متصفحك فقط</span>
-              </div>
-            </div>
-
-            <div class="pt-2 text-[11px] text-slate-500 dark:text-slate-400">
-              📌 <em>بمجرد وضع المفتاح لمرة واحدة، سيجيبك سراج دائماً بذكاء حقيقي متقدم على أي مسألة أو سؤال في جميع المواد.</em>
-            </div>
-          </div>
-        `;
-      }
-      container.scrollTop = container.scrollHeight;
-      if (appState.audio.soundEnabled) appState.audio.playCompletion();
+      throw new Error('Built-in AI unreachable');
     }
 
     function activateInlineGeminiKey(originalQuery) {
       const input = document.getElementById('inlineGeminiKeyInput');
       if (!input) return;
       const key = input.value.trim().replace(/['"\s]/g, '');
-      if (!key) {
-        showToast('يرجى لصق مفتاح Google Gemini أولاً', '⚠️');
-        return;
-      }
+      if (!key) return;
       localStorage.setItem('mishkati_gemini_key', key);
       localStorage.setItem('mishkati_gemini_model', 'auto');
-      localStorage.removeItem('mishkati_working_model');
-      localStorage.removeItem('mishkati_working_version');
       updateSirajKeyStatus();
-      showToast('تم تفعيل سراج بنجاح! جاري التفكير في سؤالك...', '💡');
-
-      // Re-trigger query immediately
       const sInput = document.getElementById('sirajInput');
       if (sInput) sInput.value = originalQuery;
       handleSirajSubmit(new Event('submit'));
@@ -13798,8 +14167,9 @@ ${query}${extraContext}
       loadMasarYawmDayData();
       renderHomeTasksWidget();
 
-      // Initialize Siraj Key Status & Multimodal Drag-and-Drop Vision
+      // Initialize Siraj Key Status, History & Multimodal Drag-and-Drop Vision
       updateSirajKeyStatus();
+      initSirajHistory();
       initSirajDragAndDrop();
 
       // Initialize Smooth Viewport Scroll Reveal Engine
@@ -13940,7 +14310,7 @@ ${query}${extraContext}
     if ('caches' in window) {
       caches.keys().then((keys) => {
         keys.forEach((key) => {
-          if (key !== 'mishkati-v10-live') {
+          if (key !== 'mishkati-v14-candle') {
             caches.delete(key);
           }
         });
