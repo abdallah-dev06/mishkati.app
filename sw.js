@@ -1,9 +1,11 @@
 // Service Worker for "مِشكاتي" (Mishkati) PWA — Network-First Strategy
-const CACHE_NAME = 'mishkati-v11-cloud-db';
+const CACHE_NAME = 'mishkati-v12-playstore';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
-  './manifest.json'
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 self.addEventListener('install', (event) => {
