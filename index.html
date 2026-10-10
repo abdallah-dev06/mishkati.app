@@ -16,11 +16,15 @@
   <meta name="format-detection" content="telephone=no" />
 
   <!-- Web App Manifest -->
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="manifest.json?v=18" />
   
-  <!-- Candle Favicon & Apple Touch Icon -->
-  <link rel="icon" type="image/svg+xml" href="icon-candle.svg" />
-  <link rel="apple-touch-icon" href="icon-candle.svg" />
+  <!-- Candle Favicon, Apple Touch Icon & Social Preview -->
+  <link rel="icon" type="image/svg+xml" href="icon-candle.svg?v=18" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png?v=18" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png?v=18" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icon-192.png?v=18" />
+  <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png?v=18" />
+  <meta property="og:image" content="icon-512.png?v=18" />
 
   <!-- Google Fonts: Tajawal, Cairo, Amiri, Scheherazade New, IBM Plex Sans Arabic -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14185,7 +14189,7 @@ ${query}${extraContext}
     if ('caches' in window) {
       caches.keys().then((keys) => {
         keys.forEach((key) => {
-          if (key !== 'mishkati-v17-no-install') {
+          if (key !== 'mishkati-v18-candle-app-icon') {
             caches.delete(key);
           }
         });
